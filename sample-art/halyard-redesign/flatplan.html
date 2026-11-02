@@ -1,0 +1,29 @@
+<!doctype html><meta charset="utf-8"><meta name="art-size" content="1440x900"><link rel="stylesheet" href="_base.css">
+<style>
+body{width:1440px;height:900px;background:#EFE9D9;color:#14202B;padding:40px 44px 34px;display:flex;flex-direction:column}
+.hd{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #14202B;padding-bottom:10px}
+h1{font-family:'Abril Fatface';font-weight:400;font-size:44px;line-height:1}
+.m{font-family:'Archivo Narrow';font-size:14px;max-width:640px;line-height:1.3;text-align:right}
+.sec{display:grid;grid-template-columns:96px 1fr;column-gap:14px;border-bottom:1px solid #14202B;padding:10px 0 9px;align-items:stretch;flex:1}
+.sec .t{font-family:'Archivo Narrow';font-size:12px;line-height:1.25}
+.sec .t b{display:block;font-family:'Abril Fatface';font-weight:400;font-size:22px;line-height:1}
+.pp{display:grid;grid-template-columns:repeat(16,1fr);column-gap:2px}
+.p{position:relative;padding:4px 5px;border:1px solid #14202B;font-size:10.5px;line-height:1.14;font-family:'Archivo Narrow';font-weight:500;overflow:hidden}
+.p b{display:block;font-family:'Abril Fatface';font-weight:400;font-size:15px;line-height:1.02;margin-bottom:2px}
+.p.sp{background:#E4572E;}
+.p.ad{background:#14202B;color:#EFE9D9;border-color:#14202B}
+.p:nth-child(2n+1){margin-right:7px}
+.lg{display:flex;gap:30px;font-family:'Archivo Narrow';font-size:12.5px;padding-top:12px;align-items:center}
+.lg i{display:inline-block;width:18px;height:13px;border:1px solid #14202B;margin-right:7px;vertical-align:-2px}
+</style>
+<div class="hd"><h1>N.º 739: flatplan</h1><div class="m">Six 16-page sections on the Gráfica do Barreiro web. The second ink is loaded on one form per section, so it falls on every other spread. Editors plan around it instead of paying for it.</div></div>
+<div id="s" style="display:flex;flex-direction:column;flex:1"></div>
+<div class="lg"><span><i style="background:#E4572E"></i>Black and orange form</span><span><i></i>Black only</span><span><i style="background:#14202B"></i>Advertising</span><span style="margin-left:auto;font-weight:600">96 pages + cover · 70 gsm uncoated · 42 000 copies · on press 19 June</span></div>
+<script src="_halyard.js"></script><script>
+const names={1:'Inside cover',2:'Sumário',3:'Sumário',4:'Ship’s Log',5:'Ship’s Log',6:'Ship’s Log',7:'Ship’s Log',8:'Letters',9:'Letters',10:'Chart',11:'Chart',12:'Ferry',13:'Ferry',14:'Ferry',15:'Ferry',16:'Ferry',17:'Ferry',18:'Ferry',19:'Ferry',20:'Ferry PT',21:'Ferry PT',22:'Ferry PT',23:'Ferry PT',24:'Ferry PT',25:'Ferry PT',26:'Pilots',27:'Pilots',28:'Pilots',29:'Pilots',30:'Pilots',31:'Pilots',32:'Pilots',33:'Pilots',34:'Pilots PT',35:'Pilots PT',36:'Pilots PT',37:'Pilots PT',38:'Knots',39:'Knots',40:'Knots',41:'Knots',42:'Knots',43:'Knots',44:'Knots',45:'Knots PT',46:'Knots PT',47:'Knots PT',48:'Knots PT',49:'Knots PT',50:'Knots PT',51:'Knots PT',52:'Ballast',53:'Ballast',54:'Ballast',55:'Ballast',56:'Ballast',57:'Ballast',58:'Ballast',59:'Ballast',60:'Ballast PT',61:'Ballast PT',62:'Ballast PT',63:'Ballast PT',64:'Sand',65:'Sand',66:'Sand',67:'Sand',68:'Sand PT',69:'Sand PT',70:'Net menders',71:'Net menders',72:'Net menders',73:'Net menders',74:'Net menders',75:'Net menders',76:'Net menders',77:'Net menders',78:'Books',79:'Books',80:'Books',81:'Books',82:'Books',83:'Books',84:'Books',85:'Books',86:'Tides',87:'Tides',88:'Tides',89:'Tides',90:'Crossword',91:'Crossword',92:'Classifieds',93:'Classifieds',94:'Classifieds',95:'Colophon',96:'Last word'};
+const ads=new Set([5,15,31,47,61,75,85,93,94]);
+const labels=['A','B','C','D','E','F'];let n=1,h='';
+labels.forEach((L,si)=>{const first=n;let row='';for(let i=0;i<16;i++){const onForm=[0,3,4,7,8,11,12,15].includes(i);const nm=names[n];const big=names[n-1]!==nm;row+=`<div class="p ${ads.has(n)?'ad':onForm?'sp':''}">${ads.has(n)?`<b>${n}</b>Ad`:big?`<b>${n}</b>${nm}`:`<b>${n}</b>`}</div>`;n++}
+h+=`<div class="sec"><div class="t"><b>${L}</b>pp. ${first} to ${n-1}</div><div class="pp">${row}</div></div>`});
+s.innerHTML=h;window.artReady=true;
+</script>

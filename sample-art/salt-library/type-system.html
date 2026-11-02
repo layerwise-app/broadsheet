@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="art-size" content="1440x960"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&family=Familjen+Grotesk:wght@400..700&display=block" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1440px;height:960px;overflow:hidden}body{font-family:'Familjen Grotesk',sans-serif;-webkit-font-smoothing:antialiased}body{background:#f6f1e4;color:#1e1b18}#a{position:absolute;inset:0}</style></head><body><div id="a"></div>
+<script src="_jackets.js"></script><script>
+const k=840/792, jx=64, jy=60, sx=jx+516*k+64; const V='#e3401b';
+const b=BOOKS[2];
+let o='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 960" width="1440" height="960" style="display:block;isolation:isolate">'+defs;
+o+='<svg x="'+jx+'" y="'+jy+'" width="'+516*k+'" height="840" viewBox="0 0 516 792">'+frontInner(b)+'</svg>';
+const sw=b.mm*4; o+='<svg x="'+sx+'" y="'+jy+'" width="'+sw*k+'" height="840" viewBox="0 0 '+sw+' 792">'+paper(b.stock,sw,792,3)+spineInner(b,sw)+'</svg>';
+const hl=(y,label)=>{ const Y=jy+y*k; return '<line x1="'+(jx-22)+'" y1="'+Y+'" x2="'+(sx+sw*k+22)+'" y2="'+Y+'" stroke="'+V+'" stroke-width=".8"/>'+'<text x="'+(sx+sw*k+28)+'" y="'+(Y+4)+'" font-family="'+FONT_S+'" font-size="11.5" font-weight="600" fill="'+V+'">'+label+'</text>'; };
+o+=hl(54,'13.5 mm  author');
+o+=hl(106,'26.5 mm  title line 1');
+o+=hl(156,'39 mm  title line 2');
+o+=hl(186,'46.5 mm  art may start');
+o+=hl(700,'175 mm  author ends');
+o+=hl(768,'192 mm  foot');
+[34,482].forEach(x=>{ const X=jx+x*k; o+='<line x1="'+X+'" y1="'+(jy-22)+'" x2="'+X+'" y2="'+(jy+862)+'" stroke="'+V+'" stroke-width=".8"/>'; });
+o+='<text x="'+(jx+34*k+4)+'" y="'+(jy-10)+'" font-family="'+FONT_S+'" font-size="11.5" font-weight="600" fill="'+V+'">8.5 mm</text><text x="'+(jx+482*k+4)+'" y="'+(jy-10)+'" font-family="'+FONT_S+'" font-size="11.5" font-weight="600" fill="'+V+'">120.5 mm</text>';
+o+='</svg>'; document.getElementById('a').innerHTML=o;
+const R=document.createElement('div'); R.style.cssText='position:absolute;left:'+(sx+sw*k+250)+'px;right:64px;top:60px;';
+const sp=(a,c,d)=>'<div style="border-top:1px solid #1e1b18;padding:9px 0 12px"><div style="font:700 15.5px/20px Besley">'+a+'</div><div style="font:500 12.5px/18px Familjen Grotesk;margin-top:3px">'+c+'</div>'+(d?'<div style="font:500 12.5px/18px Familjen Grotesk">'+d+'</div>':'')+'</div>';
+const bars=(mm)=>{ const fl=(440-258-mm)/2,s=380/440; return '<div style="display:flex;height:34px;font:600 11px/34px Familjen Grotesk;text-align:center;color:#f6f1e4"><div style="width:'+fl*s+'px;background:#143d6b">'+fl+'</div><div style="width:'+129*s+'px;background:#c9a87b;color:#1e1b18">129</div><div style="width:'+mm*s+'px;background:#e3401b">'+mm+'</div><div style="width:'+129*s+'px;background:#c9a87b;color:#1e1b18">129</div><div style="width:'+fl*s+'px;background:#143d6b">'+fl+'</div></div>'; };
+R.innerHTML='<div style="font:800 46px/50px Besley;letter-spacing:-.6px;margin-bottom:26px">The rule<br>sheet</div>'
++sp('Title. Besley ExtraBold, 46 on 50','Always two lines, always ragged by sense. No title','has ever been allowed a third line.')
++sp('Author. Familjen Grotesk SemiBold, 19','Above the title, never below, in the same ink.')
++sp('Spine. Besley Bold, 25, reading downward','Numeral at the head, author ranged to 175 mm,','the Ostra mark at the foot. Inks swap, positions do not.')
++sp('Inks. Two, chosen per title','Type prints in the darker ink, or reverses to stock.','Everything else is an overprint.')
++'<div style="border-top:1px solid #1e1b18;padding:9px 0 0"><div style="font:700 15.5px/20px Besley;margin-bottom:10px">One die, 440 mm wide. The flaps give way.</div>'+bars(17)+'<div style="font:500 12px/16px Familjen Grotesk;margin:5px 0 12px">168 pages. Spine 17 mm, flaps 82.5 mm.</div>'+bars(31)+'<div style="font:500 12px/16px Familjen Grotesk;margin-top:5px">416 pages. Spine 31 mm, flaps 75.5 mm.</div></div>'
++'<div style="border-top:1px solid #1e1b18;margin-top:18px;padding:9px 0 0"><div style="font:700 15.5px/20px Besley">Accents, because of the authors</div><div style="font:800 43px/68px Besley;white-space:nowrap">Ãã Çç Éé Õõ Ñ</div><div style="font:500 12.5px/18px Familjen Grotesk">Besley carries every mark Portuguese, Galician, and Creole ask for, at the weight of the letter.</div></div>';
+document.body.appendChild(R);</script></body></html>

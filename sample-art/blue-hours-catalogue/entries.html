@@ -1,0 +1,36 @@
+<!doctype html><meta charset="utf-8"><meta name="art-size" content="1440x1800"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Hanken+Grotesk:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=IBM+Plex+Mono:wght@400;500&family=Reenie+Beanie&display=block"><style>*{margin:0;padding:0;box-sizing:border-box}html,body{overflow:hidden;background:#f4f0e6}body{font-family:"EB Garamond",serif;color:#13286e;font-kerning:normal;font-feature-settings:"onum","pnum","liga"}svg{display:block}.cap{font-family:"Hanken Grotesk",sans-serif;font-size:10.5px;line-height:15px;letter-spacing:.01em}</style><script src="_tiles.js"></script><script src="_panel.js"></script><script src="_book.js"></script>
+<style>
+.page{position:relative;width:1440px;height:1800px;background:#f6f3eb;padding:96px 110px}
+.head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #13286e;padding-bottom:12px}
+.head h2{font-family:"Cormorant Garamond";font-weight:500;font-size:40px;letter-spacing:-.008em}
+.head span{font-family:"Hanken Grotesk";font-weight:600;font-size:13px;letter-spacing:.09em}
+.grid{display:grid;grid-template-columns:repeat(3,370px);column-gap:55px;row-gap:42px;margin-top:40px}
+.e svg{width:370px;height:370px}
+.n{display:flex;gap:12px;margin-top:14px;border-top:1px solid #13286e;padding-top:8px}
+.n b{font-family:"Hanken Grotesk";font-weight:600;font-size:17px;line-height:22px;width:32px;flex:none}
+.t{font-style:italic;font-size:19px;line-height:22px}
+.d{font-family:"Hanken Grotesk";font-size:12px;line-height:16.5px;margin-top:3px}
+.foot{position:absolute;left:110px;right:110px;bottom:60px;display:flex;justify-content:space-between;font-family:"Hanken Grotesk";font-weight:600;font-size:13px}
+</style>
+<body><div class="page">
+<div class="head"><h2>Catalogue, 1498–1998</h2><span>ENTRIES 61–69</span></div>
+<div class="grid" id="g"></div>
+<div class="foot"><span>Dimensions in millimetres, height by width. Inv. numbers belong to the lender.</span><span>214</span></div>
+</div>
+<script>
+const E=[
+['aresta',61,'Aresta, lacería','Seville, Alfarería de Triana','c. 1510–30. Pressed earthenware, four glazes. 138 × 136','Museu da Ribeira, inv. MR 1187 Cer'],
+['pom',62,'Romã, polychrome','Lisbon, Olaria de São Vicente','c. 1575–1600. Cobalt, antimony, manganese. 141 × 141','Col. Quinta dos Almotés, QA 42'],
+['star',63,'Estrela e cruz','Lisbon, Olaria de São Vicente','c. 1600–20. Cobalt on tin glaze. 140 × 140','Museu da Ribeira, inv. MR 2204 Cer'],
+['dia',64,'Ponta de diamante','Lisbon, Fábrica da Ribeira Velha','c. 1625–50. Cobalt in four dilutions. 139 × 142','Palácio dos Condes de Alvor, sn'],
+['alb',65,'Albarrada','Lisbon, Oficina de Afonso Brandoa','c. 1665–80. Cobalt, antimony. 140 × 140','Museu da Ribeira, inv. MR 3390 Cer'],
+['ship',66,'Figura avulsa: nau','Rotterdam, De Witte Schuit','c. 1700–10. Cobalt, oxhead corners. 131 × 131','Stedelijk Keramiekhuis, Gouda, 88.14'],
+['bird',67,'Figura avulsa: pintassilgo','Lisbon, Fábrica da Ribeira Velha','c. 1760–75. Lime-thinned cobalt. 138 × 138','Museu da Ribeira, inv. MR 4417 Cer'],
+['studio',68,'Painel do Metro, module C','Lisbon, Atelier Isaura Telles','1962. Silk-screen and hand-cut mask. 150 × 150','Coll. Isaura Telles Estate, 1962/7'],
+['screen',69,'Facade system, type 4','Aveiro, Cerâmica de Sacavinha','1998. Four-colour screenprint. 150 × 150','Museu da Ribeira, gift of the maker, 2001']
+];
+const {tile,pat,C}=Tiles;
+const paints={aresta:p=>pat.aresta(p),pom:p=>pat.pomegranate(p),star:p=>pat.star(p),dia:p=>pat.diamond(p),alb:p=>pat.albarrada(p),ship:p=>pat.figure(p,'ship'),bird:p=>pat.figure(p,'bird'),studio:p=>pat.studio(p),screen:p=>pat.screen(p)};
+document.getElementById('g').innerHTML=E.map(([k,n,t,w,d,inv],i)=>`<div class="e"><svg viewBox="0 0 100 100">${tile(0,0,100,311+i*17,paints[k],{chipCount:(i===0||i===4||i===6)?2:i===2?1:0})}</svg>
+<div class="n"><b>${n}</b><div><div class="t">${t}</div><div class="d">${w}<br>${d}<br>${inv}</div></div></div></div>`).join('');
+</script></body>

@@ -1,0 +1,91 @@
+<!doctype html><meta charset="utf-8"><meta name="art-size" content="1440x950">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Hanken+Grotesk:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=IBM+Plex+Mono:wght@400;500&family=Reenie+Beanie&display=block">
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#f6f3eb;color:#13286e;font-family:"Hanken Grotesk",sans-serif;overflow:hidden}svg{display:block}</style>
+<body><div id="a"></div><script>
+const W=1440,H=950,L=262,R=W-64,Y0=214,RH=36;
+const x=(y)=>L+(y-1500)/(2000-1500)*(R-L);
+const D='#13286e',M='#254aa2',T='#7c97cf',P='#bccae6',O='#c58b2b';
+const rows=[
+ ['Alfarería de Triana','Seville',[[1503,1540,'S']]],
+ ['Olaria de São Vicente','Lisbon',[[1560,1684,'S'],[1684,1712,'H']]],
+ ['De Witte Schuit','Rotterdam',[[1625,1702,'H'],[1702,1755,'S']]],
+ ['Fábrica da Ribeira Velha','Lisbon',[[1620,1698,'S'],[1698,1756,'H'],[1756,1763,'L'],[1763,1834,'S']]],
+ ['Oficina de Afonso Brandoa','Lisbon',[[1655,1697,'S']]],
+ ['Master of the Ships','Lisbon',[[1704,1745,'H']]],
+ ['Fábrica de Santa Marinha','Porto',[[1766,1842,'S'],[1842,1910,'C']]],
+ ['Cerâmica de Sacavinha','Aveiro',[[1856,1904,'C'],[1904,1998,'C2']]],
+ ['Atelier Isaura Telles','Lisbon',[[1951,1987,'C2']]],
+];
+const fill={S:M,H:D,L:P,C:T,C2:'#fff'};
+const legend=[['S','Saxon zaffre, Schneeberg group'],['H','Saxon zaffre, high-arsenic group'],['L','Lime-thinned, wartime shortage'],['C','Industrial cobalt oxide, Norway and Belgium'],['C2','Refined oxide, Zaire and Canada']];
+let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">`;
+const t=(X,Y,txt,o='')=>`<text x="${X}" y="${Y}" ${o}>${txt}</text>`;
+const g=`font-family="Hanken Grotesk"`;
+s+=t(64,86,'Who painted with whose blue',`font-family="Cormorant Garamond" font-weight="500" font-size="46" letter-spacing="-.4" fill="${D}"`);
+s+=t(64,116,'Workshops by decade of activity, coloured by the cobalt identified in their surviving work. 1,140 fragments, X-ray fluorescence, 2021–24.',`font-family="EB Garamond" font-size="17" font-style="italic" fill="${D}"`);
+for(let y=1500;y<=2000;y+=50){
+  const big=y%100===0;
+  s+=`<path d="M${x(y)} ${Y0-14}V${Y0+rows.length*RH+8}" stroke="${big?D:'#b6bfd8'}" stroke-width="${big?.8:.5}"/>`;
+  if(big) s+=t(x(y)+ (y===2000?-34:4),Y0-20,y,`${g} font-weight="600" font-size="13" fill="${D}"`);
+}
+rows.forEach(([n,c,spans],i)=>{
+  const y=Y0+i*RH;
+  s+=`<path d="M64 ${y+RH}H${R}" stroke="#b6bfd8" stroke-width=".5"/>`;
+  s+=t(64,y+15,n,`font-family="EB Garamond" font-size="15.5" fill="${D}"`);
+  s+=t(64,y+26,c,`${g} font-size="9.5" fill="${M}"`);
+  spans.forEach(([a,b,k])=>{
+    s+=`<rect x="${x(a)}" y="${y+6}" width="${x(b)-x(a)}" height="${RH-12}" fill="${fill[k]}" ${k==='C2'?`stroke="${D}" stroke-width=".8"`:''}/>`;
+  });
+});
+// Events.
+const by=Y0+rows.length*RH+8;
+const LN=`style="font-feature-settings:'lnum'"`;
+[[1755,by+24,'1755','The earthquake. 9,000 buildings lost; tile orders begin within the year.',1,28],
+ [1704,by+86,'1704','Master of the Ships buys high-arsenic zaffre, sixteen years earlier than assumed.',1,44],
+ [1834,by+86,'1834','Dissolution of the religious orders. The largest buyers disappear.',1,44],
+ [1962,by+24,'1962','Telles paints for the Metro in silk-screen, using a blue from a Zaire mine.',-1,44]
+].forEach(([yr,yy,a,b,side,wrap])=>{
+  s+=`<path d="M${x(yr)} ${Y0-14}V${yy+2}" stroke="${O}" stroke-width="1.1"/>`;
+  const X=x(yr)+side*7;
+  const anc=side<0?'text-anchor="end"':'';
+  s+=t(X,yy+1,a,`${g} font-weight="600" font-size="11" ${anc} fill="#9a6a16"`);
+  const words=b.split(' ');let line='',ln=0;
+  words.forEach(w=>{ if((line+' '+w).length>wrap){s+=t(X,yy+15+ln*15,line,`font-family="EB Garamond" font-size="14" ${anc} fill="${D}"`);line=w;ln++;} else line=(line?line+' ':'')+w;});
+  s+=t(X,yy+15+ln*15,line,`font-family="EB Garamond" font-size="14" ${anc} fill="${D}"`);
+});
+// Legend, next to the chart.
+let lx=64;
+const ly=156;
+legend.forEach(([k,txt])=>{
+  s+=`<rect x="${lx}" y="${ly-9}" width="22" height="11" fill="${fill[k]}" ${k==='C2'?`stroke="${D}" stroke-width=".8"`:''}/>`;
+  s+=t(lx+28,ly+1,txt,`${g} font-size="10.5" fill="${D}"`);
+  lx+=28+txt.length*5.45+26;
+});
+// Provenance of the panel.
+const py=by+146;
+s+=`<path d="M64 ${py}H${R}" stroke="${D}" stroke-width=".8"/>`;
+s+=t(64,py+48,'Where the Cais',`font-family="Cormorant Garamond" font-weight="500" font-size="36" letter-spacing="-.3" fill="${D}"`);
+s+=t(64,py+84,'panel has been',`font-family="Cormorant Garamond" font-weight="500" font-size="36" letter-spacing="-.3" fill="${D}"`);
+s+=t(64,py+112,'Plate 112. 20 × 10 tiles, moved five times.',`font-family="EB Garamond" font-style="italic" font-size="15" fill="${D}"`);
+const steps=[
+ ['1738','Painted at the Fábrica da Ribeira Velha for the customs stair, Lisbon.'],
+ ['1756','Survives the earthquake. Taken down, crated, stored at São Tomé.'],
+ ['1883','Sold to a Porto wine shipper. Rehung in a dining room, lower row trimmed.'],
+ ['1931','Dealer’s sale, Paris. Two tiles replaced with blanks after a fall.'],
+ ['1968','Bought by the museum. Forty-one tiles cleaned, joints reset.'],
+ ['2026','Conserved for this exhibition. Blank infills kept, and shown on the cover.']
+];
+const sx=420, sw=(R-sx)/6;
+steps.forEach(([yr,txt],i)=>{
+  const X=sx+i*sw;
+  s+=`<path d="M${X-10} ${py+22}V${py+150}" stroke="#b6bfd8" stroke-width=".6"/>`;
+  s+=t(X,py+48,yr,`font-family="Cormorant Garamond" font-weight="500" font-size="30" ${LN} fill="${M}"`);
+  const words=txt.split(' ');let line='',ln=0;
+  words.forEach(w=>{ if((line+' '+w).length>20){s+=t(X,py+72+ln*15,line,`font-family="EB Garamond" font-size="13.6" fill="${D}"`);line=w;ln++;} else line=(line?line+' ':'')+w;});
+  s+=t(X,py+72+ln*15,line,`font-family="EB Garamond" font-size="13.6" fill="${D}"`);
+});
+s+=t(64,H-34,'Blue Hours, Appendix C',`${g} font-size="10.5" fill="${M}"`);
+s+=t(R,H-34,'391',`${g} font-weight="600" font-size="12" text-anchor="end" fill="${D}"`);
+s+='</svg>';
+document.getElementById('a').innerHTML=s;
+</script></body>

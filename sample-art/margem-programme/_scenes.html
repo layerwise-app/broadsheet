@@ -1,0 +1,8 @@
+<!doctype html><meta name="art-size" content="1440x1000"><script src="_halftone.js"></script>
+<style>body{margin:0;background:#222;display:grid;grid-template-columns:repeat(3,476px);gap:6px;padding:4px}canvas{width:476px;display:block}</style>
+<body><script>
+for (const n of ['river','cinema','bridge','road','moon','quay','window']) {
+  const c=document.createElement('canvas');c.width=952;c.height=640;document.body.append(c);
+  HT.halftone(c,n,{cell:7});
+}
+</script>

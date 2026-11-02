@@ -1,0 +1,16 @@
+:root { --ink:#0d0c0a; --signal:#ffb81c; --stock:#f1eadb; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html,body { background:var(--ink); color:var(--stock); font-family:'Archivo',sans-serif; font-stretch:88%; -webkit-font-smoothing:antialiased; overflow:hidden; }
+.caps { font-family:'Six Caps',sans-serif; font-weight:400; line-height:.86; letter-spacing:.004em; }
+.bs { font-family:'Big Shoulders Display',sans-serif; font-weight:800; line-height:.92; letter-spacing:.002em; font-variant-numeric:tabular-nums lining-nums; }
+.tn { font-variant-numeric:tabular-nums lining-nums; }
+
+/* Poster: everything measured in container width. */
+.poster { container-type:inline-size; position:relative; aspect-ratio:5/7; overflow:hidden; background:var(--ink); color:var(--signal); }
+.poster.alt { background:var(--signal); color:var(--ink); }
+.poster canvas { position:absolute; left:0; top:0; width:100%; display:block; }
+.poster .head { position:absolute; left:4cqw; right:4cqw; top:3.4cqw; display:flex; justify-content:space-between; font-weight:700; font-size:2.25cqw; line-height:1.14; font-stretch:80%; letter-spacing:.012em; z-index:2; }
+.poster .head span:nth-child(2) { text-align:center; } .poster .head span:last-child { text-align:right; }
+.poster .section { position:absolute; left:4cqw; right:4cqw; display:flex; justify-content:space-between; align-items:flex-end; z-index:2; }
+.poster .section b { font-family:'Big Shoulders Display'; font-weight:800; font-size:13.4cqw; line-height:.8; letter-spacing:.004em; }
+.poster .section i { font-style:normal; font-weight:700; font-size:2.25cqw; line-height:1.16; text-align:right; font-stretch:80%; letter-spacing:.012em; }

@@ -1,0 +1,55 @@
+<!doctype html><meta charset="utf-8"><meta name="art-size" content="1440x960"><link rel="stylesheet" href="_base.css">
+<style>
+body{width:1440px;height:960px;background:#F2EEE4;color:#1B1F2E;display:grid;grid-template-columns:720px 720px;position:relative}
+body:after{content:'';position:absolute;left:720px;top:0;bottom:0;width:1px;background:#1B1F2E;opacity:.3}
+.pg{padding:40px 48px 34px;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;font-size:11px;border-bottom:1px solid #1B1F2E;padding-bottom:8px}
+h1{font-family:'Abril Fatface';font-weight:400;font-size:71px;line-height:1;margin-top:16px}
+h2{font-family:'Spectral';font-style:italic;font-weight:400;font-size:38px;line-height:1.06;margin-top:10px;color:#4F6D8A}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;border-top:1px solid #1B1F2E;padding-top:10px;font-size:13.8px;line-height:1.37;hyphens:auto}
+.cols p+p{text-indent:1em}
+.pt{color:#1B1F2E;font-style:italic}
+.tag{display:block;font-size:10px;margin-bottom:6px;color:#4F6D8A}
+.drop{float:left;font-family:'Abril Fatface';font-size:66px;line-height:.78;padding:5px 6px 0 0;color:#4F6D8A;font-style:normal}
+.foot{display:flex;justify-content:space-between;align-items:baseline;font-size:11px;padding-top:10px}
+.foot b{font-family:'Abril Fatface';font-weight:400;font-size:20px;letter-spacing:0}
+table{border-collapse:collapse;width:100%;font-family:'Archivo Narrow';font-size:13px;margin-top:12px;font-variant-numeric:tabular-nums}
+th{font-weight:600;font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-align:right;padding:4px 0 5px;border-bottom:1.5px solid #1B1F2E}
+th:first-child,td:first-child{text-align:left}
+td{padding:2.3px 0;border-bottom:1px solid #1B1F2E40;text-align:right}
+tr.sp td{background:#6F8CA8;color:#F2EEE4;}
+tr.sp td:first-child{padding-left:6px}
+tr.sp td:last-child{padding-right:6px}
+.t2{font-family:'Abril Fatface';font-size:44px;line-height:1;margin-top:18px}
+.legend{font-size:12.6px;line-height:1.36;margin-top:12px}
+</style>
+<section class="pg">
+ <div class="top lab"><span>Feature / Reportagem</span><span>N.º 738, Junho / June</span></div>
+ <h1>Salt Is a Political Substance</h1><h2 lang="pt">O sal é uma substância política</h2>
+ <div class="cols">
+  <div lang="en"><span class="tag lab">English</span><p><span class="drop">A</span>t Castro Marim the pans are drawn in rectangles older than the country. Zé Baltazar rakes the flor de sal at dusk, when the wind drops, because a crust that breaks is a crust that sinks. He sells it for less than his grandfather did, adjusted for bread.</p><p>The Crown taxed this crust for four centuries. It set the price of a Lisbon winter and the wages of the Newfoundland fleet, and when it rose too sharply there were riots in Setúbal, in 1637, that took a regiment to end. Nothing else on the Portuguese table has ever needed soldiers.</p><p>What Baltazar’s pans make now is a garnish. The bulk grade comes by ship from Tunisia, and costs less landed at Sines than his costs at the gate.</p></div>
+  <div lang="pt" class="pt"><span class="tag lab" style="font-style:normal">Português</span><p>Em Castro Marim, as salinas desenham-se em rectângulos mais velhos do que o país. Zé Baltazar recolhe a flor de sal ao fim da tarde, quando o vento amaina, porque crosta que parte é crosta que vai ao fundo. Vende-a por menos do que o avô, feitas as contas ao pão.</p><p>A Coroa taxou esta crosta durante quatro séculos. Fixou o preço do inverno em Lisboa e o salário da frota da Terra Nova e, quando subiu de mais, houve motins em Setúbal, em 1637, que só um regimento conseguiu travar. Nada mais na mesa portuguesa precisou alguma vez de soldados.</p><p>O que as salinas de Baltazar produzem hoje é um condimento de luxo. O sal a granel chega de barco da Tunísia, e fica mais barato em Sines do que o dele à porta.</p></div>
+ </div>
+ <div id="salt" style="flex:1;min-height:0;margin:20px -48px 0;--a:#6F8CA8;--fg:#1B1F2E;--bg:#F2EEE4;display:flex"></div><div class="foot lab"><b>32</b><span>By / Por Rui Sotomaior</span></div>
+</section>
+<section class="pg">
+ <div class="top lab"><span>Tide tables / Tábuas de marés</span><span>Lisboa, Cais do Sodré</span></div>
+ <div class="t2">Junho 2025</div>
+ <p class="legend" lang="en">Heights in metres above chart datum. Times in WEST. Spring tides are printed on the second ink. Do not use for navigation; the harbour master would like that understood.</p>
+ <table id="tt"></table>
+ <div class="foot lab" style="margin-top:auto"><span>Fonte: Instituto Hidrográfico Fictício</span><b>33</b></div>
+</section>
+<script>
+const days=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];let seed=7;const rnd=(a,b)=>{seed=(seed*16807)%2147483647;return a+(seed/2147483647)*(b-a)};
+const fmt=m=>{m=(m+1440)%1440;return String(Math.floor(m/60)).padStart(2,'0')+':'+String(Math.floor(m%60)).padStart(2,'0')};
+let html='<tr><th>Dia</th><th>Preia-mar</th><th>m</th><th>Baixa-mar</th><th>m</th><th>Preia-mar</th><th>m</th><th>Baixa-mar</th><th>m</th></tr>';
+for(let d=1;d<=30;d++){const b=(d*50+150)%1440,sp=Math.cos((d-11)*Math.PI/7.4);const hi=(3.05+sp*.72).toFixed(1).replace('.',','),lo=(1.25-sp*.72).toFixed(1).replace('.',','),hi2=(2.95+sp*.68).toFixed(1).replace('.',','),lo2=(1.32-sp*.66).toFixed(1).replace('.',',');
+html+=`<tr class="${sp>.85?'sp':''}"><td>${String(d).padStart(2,'0')} ${days[(d)%7]}</td><td>${fmt(b)}</td><td>${hi}</td><td>${fmt(b+378)}</td><td>${lo}</td><td>${fmt(b+745)}</td><td>${hi2}</td><td>${fmt(b+1118)}</td><td>${lo2}</td></tr>`}
+tt.innerHTML=html;
+let sd=11;const R=(a,b)=>{sd=(sd*16807)%2147483647;return a+(sd/2147483647)*(b-a)};
+const NV='#1B1F2E',BL='#6F8CA8';let o='';
+const rows=[[12,23],[23.6,33.5],[34.1,42.5]];
+rows.forEach(([y0,y1],r)=>{let x=-1;while(x<101){const w=R(7,15);const v=Math.floor(R(0,3));o+=v==2?`<rect x="${x+.3}" y="${y0}" width="${w-.6}" height="${y1-y0}" fill="none" stroke="${NV}" stroke-width=".22"/>`:`<rect x="${x+.3}" y="${y0}" width="${w-.6}" height="${y1-y0}" fill="${v?BL:NV}"/>`;x+=w}});
+[[9,6],[24,9],[38,5],[56,8],[73,11],[90,6]].forEach(([x,h],i)=>{const w=h*1.15;o+=`<polygon points="${x-w},11.4 ${x},${11.4-h} ${x+w},11.4" fill="${i%2?NV:BL}"/><polygon points="${x},${11.4-h} ${x+w*.34},11.4 ${x-w*.24},11.4" fill="${i%2?BL:NV}"/>`});
+salt.innerHTML=`<svg viewBox="0 0 100 42.5" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%;display:block">${o}</svg>`;
+</script>

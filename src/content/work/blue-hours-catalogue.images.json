@@ -1,0 +1,159 @@
+{
+  "carpet-spread": {
+    "format": "webp",
+    "base": "/work/blue-hours-catalogue/carpet-spread",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACQAwCdASoUAA0APu1kq04ppaQiMAgBMB2JZ1L/1pDYczM9zZLAAP7txVX3epOzGZ9/MQjQRC3bUme9ijitA1RMpJhLRPpJbmAAAA=="
+  },
+  "cover": {
+    "format": "webp",
+    "base": "/work/blue-hours-catalogue/cover",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAwBACdASoUAA0APu1iqU2ppaOiMAgBMB2JagCsLwAB0aTo7Fv/sBwlaKAA4n3bz9iRoQ6OrjKzXIglbpnVd7kLqoGKkNnReS4KMUEIshc2tUz/sTroLUi3FXc103RtliR9ZU2vleJj8ZF6VKwaNNffYNmHGcimTik+QAAA",
+    "share": "/work/blue-hours-catalogue/cover-share.jpg"
+  },
+  "entries": {
+    "format": "webp",
+    "base": "/work/blue-hours-catalogue/entries",
+    "width": 2880,
+    "height": 3600,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAABwBQCdASoUABkAPu1sq1EppaOiqAqpMB2JQBibZhQMEzgF/sXqjBlpsXmpHRdjJBrjpXEAAP7h7JWADio1CC3Yq8UvVHSbXTOeJ0oNATtsmD3a7hsITIZJynVBeuDFE1aMSgY7s4WZelVBQviMImR/XCCvNmpsho10+9AJkAth/q7/UOD1cud8r8tkQOlqAZFrp/iT5dspUc5CdGP+fmFIryHi9yca/V14ZSYBKUi03G35/cRvMN3vwEsenXWBpN0zorn8BFvE1V/rwviYQHb8f03PwAAA"
+  },
+  "essay-opening": {
+    "format": "webp",
+    "base": "/work/blue-hours-catalogue/essay-opening",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAwCdASoUAA0APu1iqU2ppaQiMAgBMB2JZwDDNCHhT5O90DgAhoAA/u1ZbDH9e5zlCe0vND0BBU+gP1yJT7LOjrkJgK3A4CDq8kwJVAAAAA=="
+  },
+  "flatplan": {
+    "format": "webp",
+    "base": "/work/blue-hours-catalogue/flatplan",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JZwDG9CHop+JgjBj9/MAAAP7tSBwhQfS5MTD9orcTKWHhbM3w4/gs8dYIfWIc3ocMOTffMKxUAAAA"
+  },
+  "panel-harbour": {
+    "format": "webp",
+    "base": "/work/blue-hours-catalogue/panel-harbour",
+    "width": 2880,
+    "height": 1440,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwAwCdASoUAAoAPu1iqU2ppaQiMAgBMB2JQBOgBFS6VDeyt7IERK1gAP618Wz1DMuueVs3qMCr+BKFenPlbDai7RNrO8q313gx+cnitjZK+fwbwKTdMwsnAzZOAPPmwo5FAAAA"
+  },
+  "plate": {
+    "format": "webp",
+    "base": "/work/blue-hours-catalogue/plate",
+    "width": 2880,
+    "height": 3840,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAABwBgCdASoUABsAPu1qrFEppaQiqAqpMB2JYgC7MuOCrf/s0FtqUniI/xPWtQfn3/NoWOp/PCrgycoLEAAAzFSezxGbSxvDhTEceHMUUjVvEstOfnCmqTDPURwvf/yUAVPxfFFf/n4e+GGE8kx2HAnPq2v72MnUVXLTVqSujKaAB34AmYRsUGrh2ZK21kwLHxHWeRowepND6LEongvOdUmbBUw2KaNLZbHXjW9B3vd/I2MicT6+Mg511SBr0NvuiT9/PSvEXmjwipKFgphftAravqoR516tlOFzTxSJM0sYg6rQPbWIKkRNUdF8eknBAAA="
+  },
+  "proofs": {
+    "format": "webp",
+    "base": "/work/blue-hours-catalogue/proofs",
+    "width": 2880,
+    "height": 2160,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAwBACdASoUAA8APu1iqU2ppaOiMAgBMB2JaACdACHcbyXxTUvwbd3VwsAA/rgMml6yCgXFzZycvL00wNidvu/e1NdHmUc8UvnpRFydrVJ0nQ0F73NsjKoC8WTwVG3sXEx6iMEfGou7jGxjCzS7fZx2/dj6iE8LRsA9fMFXbqRB7AMX/vOXkm6nr3O/aCUAAAA="
+  },
+  "tile-albarrada": {
+    "format": "webp",
+    "base": "/work/blue-hours-catalogue/tile-albarrada",
+    "width": 2880,
+    "height": 2880,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABwBACdASoUABQAPu1ur1IppiQiqAgBMB2JYwDH5BEl/Ziv4srx7k0mGM4AAAD+6oTj1KYHisgakMFoUW1v4vt23Yg7yKVaHJ6LprF0idAuFmdqGopKMrHPrDzu8wGn23kZEWQdPiS2R+2Bo65Q07QPAwggAAAA"
+  },
+  "tile-aresta": {
+    "format": "webp",
+    "base": "/work/blue-hours-catalogue/tile-aresta",
+    "width": 2880,
+    "height": 2880,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAwBQCdASoUABQAPu1urlIppiQiqAgBMB2JbADFB1CfRAGMiFTBlk5mdhNvjguqSnzYAAD+yjHC/kCGcI3b7Dn3smm9bsAfD9OlZvuosYNm6lRY8nju5eMkTtIQlXUwZ6Cgn4HtZQAlavw701WiRqOixmUdkGM4k2NRyMS7OBWXELdsz5IogetuTeRYKAs6dmxX4b0qMCk2FEVSuYStp6v6V6BaTHV8jjWQNce5huDjGvAAAAA="
+  },
+  "tile-ship": {
+    "format": "webp",
+    "base": "/work/blue-hours-catalogue/tile-ship",
+    "width": 2880,
+    "height": 2880,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABwBACdASoUABQAPu1wsFIppiSiqAgBMB2JZQC7ABEdqQXH5oinSFNB9SW4AAD+6oKbN4FxryXPoHbKH1V7wVQLhNOfEd5Q5EZsGdfAtLt99QWubQtFPAyWMfPih13SmpPLqS1RJqgAAA=="
+  },
+  "tile-star": {
+    "format": "webp",
+    "base": "/work/blue-hours-catalogue/tile-star",
+    "width": 2880,
+    "height": 2880,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAADwBACdASoUABQAPu1urlIppiQiqAgBMB2JbACdAYvWcLehi7WyiI8bhmRRUf09AAAA/uHhMNhtgaM4IUpVHXpdqS7DVIYEETYr34WLfykPjxBxVUpFjInfboayAEEFoMHIYNtMl4B8OOfFJ+AkabG4FBseFfzKKvqOMrrxoi04kb7ukRiUFRPAG1cY9doXTZBrXrkkOf1Wlfr8KRqh52dkwYbcSLng4IGfb/eDGpRM//Q2UC9chYTLOpE5yoDG4AsAAA=="
+  },
+  "timeline": {
+    "format": "webp",
+    "base": "/work/blue-hours-catalogue/timeline",
+    "width": 2880,
+    "height": 1900,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAABwAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JZwDE2CHw48ZMO3AA/u1Zo3GyLTv8ZVVzYi8WUheUsGv/gmOAAA=="
+  }
+}

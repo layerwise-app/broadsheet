@@ -1,0 +1,22 @@
+/* Seventh Day house style. Newsprint, ink, one spot colour a week. */
+:root{
+  --paper:#E9E2D2; --ink:#171513;
+  --red:#E03A1E; --blue:#1E4FC7; --custard:#F3BC12; --green:#17874B;
+  --spot:var(--red);
+  --slab:'Alfa Slab One',serif; --head:'Anton',sans-serif;
+  --label:'Libre Franklin',sans-serif; --text:'PT Serif',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);overflow:hidden;font-family:var(--text);-webkit-font-smoothing:antialiased}
+.front{position:relative;width:1440px;height:1920px;background:var(--paper);overflow:hidden;font-feature-settings:'lnum'}
+.front canvas{position:absolute;left:0;top:0;width:1440px;height:1920px}
+.abs{position:absolute}
+.strip{font:700 19px/1 var(--label);letter-spacing:.09em;text-transform:uppercase;display:flex;justify-content:space-between}
+.head{font-family:var(--head);font-weight:400;text-transform:uppercase;line-height:.98;letter-spacing:.002em}
+.slab{font-family:var(--slab);font-weight:400;text-transform:uppercase;line-height:.9;white-space:nowrap}
+.label{font:800 13px/1.1 var(--label);letter-spacing:.1em;text-transform:uppercase}
+.nowrap{white-space:nowrap}
+.folio{font:700 12px/1 var(--label);letter-spacing:.08em;text-transform:uppercase}
+.body{font:400 15px/20px var(--text);hyphens:auto;text-align:justify}
+.body p+p{text-indent:1.1em}
+.ad{border:3px solid var(--ink);padding:12px;display:flex;flex-direction:column;justify-content:space-between}

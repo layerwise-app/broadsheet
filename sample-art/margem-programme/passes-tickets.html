@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="art-size" content="1440x960"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Big+Shoulders+Display:wght@400..900&family=Six+Caps&display=block" rel="stylesheet"><link rel="stylesheet" href="_margem.css"><script src="_halftone.js"></script><script src="_posters.js"></script>
+<style>
+html,body{background:var(--signal);color:var(--ink)}
+.pass{position:absolute;left:52px;top:52px;width:396px;height:856px;background:var(--ink);color:var(--signal);overflow:hidden}
+.pass .slot{position:absolute;left:50%;top:18px;width:66px;height:13px;margin-left:-33px;background:var(--signal)}
+.pass svg{position:absolute;left:0;top:0}
+.pass .c{position:absolute;left:0;top:520px;width:396px;height:336px;background:var(--signal);color:var(--ink);padding:18px 24px;border:0}
+.pass .lvl{font:800 76px/.92 'Big Shoulders Display'}
+.pass dl{display:grid;grid-template-columns:82px 1fr;font-size:14.5px;line-height:1.2;margin-top:16px;border-top:2.5px solid var(--ink)}
+.pass dl>*{border-bottom:1px solid var(--ink);padding:6px 0 7px}
+.pass dt{font-weight:800;font-stretch:80%}
+.t{position:absolute;display:grid;grid-template-columns:1fr 104px;background:var(--stock);color:var(--ink);height:186px}
+.t .main{padding:12px 16px 10px;position:relative;display:flex;flex-direction:column}
+.t .stub{border-left:2px dashed var(--ink);padding:10px 11px;display:flex;flex-direction:column;justify-content:space-between}
+.t .v{font:800 134px/.78 'Big Shoulders Display'}
+.t h4{font:700 31px/1 'Big Shoulders Display'}
+.t .r1{display:flex;gap:14px;align-items:flex-start}
+.t .big{font:800 62px/.9 'Big Shoulders Display';white-space:nowrap}
+.t small{font-weight:650;font-size:11.5px;line-height:1.2;font-stretch:82%}
+.t.dark{background:var(--ink);color:var(--signal)} .t.dark .stub{border-color:var(--signal)}
+.bar{display:flex;height:34px}.bar i{display:block;background:currentColor}
+.band{position:absolute;left:0;right:0;bottom:0;}
+.wrist{position:absolute;left:488px;top:788px;width:900px;height:120px;background:var(--ink);color:var(--signal);display:flex;align-items:center;overflow:hidden;padding-left:16px;gap:16px;white-space:nowrap}
+.wrist span{font:400 124px/1 'Six Caps';letter-spacing:.01em;margin-top:6px}
+.wrist small{font-weight:750;font-size:13px;line-height:1.16;font-stretch:80%}
+</style>
+<body>
+<article class="pass" id="pass"><div class="slot"></div>
+  <canvas id="pc" width="792" height="500" style="position:absolute;left:0;top:44px;width:396px;height:250px;clip-path:polygon(0 0,100% 0,100% 62%,66% 100%,28% 100%,0 70%)"></canvas><svg width="396" height="520"><text id="w" font-family="Six Caps" fill="#ffb81c">MARGEM</text></svg>
+  <div class="c">
+    <div class="lvl">Imprensa<br>Press</div>
+    <dl><dt>Name</dt><dd>Joana Medeiros Paiva</dd><dt>Title</dt><dd>Revista Grande Plano</dd><dt>Valid</dt><dd class="tn">3–11 Outubro 2025, all rooms</dd><dt>No.</dt><dd class="tn">0147 / 0360</dd></dl>
+  </div>
+</article>
+
+<article class="t" style="left:488px;top:52px;width:900px;height:210px;grid-template-columns:1fr 150px">
+ <div class="main"><div class="r1"><div class="v">A</div><div style="flex:1"><h4 style="font-size:56px;line-height:.96">The Ferryman’s Daughter</h4><div class="big tn" style="margin-top:12px;font-size:76px">Sáb 4 Out &ensp;18:30</div></div></div>
+ <small style="margin-top:auto" class="tn">Cine-Teatro Alvarim. Largo da Alfândega 3. Doors 18:10. 112 min, director present.</small></div>
+ <div class="stub"><div class="bs" style="font-size:34px">Fila F<br>Lugar 12</div><div class="bar" data-b="1"></div><small class="tn">€6 &ensp;Nº 208841</small></div>
+</article>
+<article class="t dark" style="left:488px;top:278px;width:442px;height:236px;grid-template-columns:1fr 96px">
+ <div class="main"><div class="r1"><div class="v">C</div><div style="flex:1"><h4>V. Harbour Dog</h4><div class="big tn" style="margin-top:9px">19:00</div><div class="tn bs" style="font-size:30px;margin-top:4px">Sáb 4 Out</div></div></div>
+ <small style="margin-top:auto">O Barco, Cais Novo. Boards 18:50 and leaves on time. No refunds from the water.</small></div>
+ <div class="stub"><div class="bs" style="font-size:21px">Livre<br>Open</div><div class="bar" data-b="2" style="height:28px"></div><small class="tn">€6</small></div>
+</article>
+<article class="t" style="left:946px;top:278px;width:442px;height:236px;grid-template-columns:1fr 96px">
+ <div class="main"><div class="r1"><div class="v">D</div><div style="flex:1"><h4>The Long Quay</h4><div class="big tn" style="margin-top:9px">20:45</div><div class="tn bs" style="font-size:30px;margin-top:4px">Sáb 4 Out</div></div></div>
+ <small style="margin-top:auto">Jardim da Alfândega. Open air. Runs in light rain. Blankets at the gate until they run out.</small></div>
+ <div class="stub"><div class="bs" style="font-size:21px">Cadeira<br>Chair 88</div><div class="bar" data-b="3" style="height:28px"></div><small class="tn">€6</small></div>
+</article>
+<article class="t dark" style="left:488px;top:530px;width:900px;height:242px;grid-template-columns:230px 1fr 150px">
+ <div style="padding:12px 16px;display:flex;flex-direction:column;justify-content:space-between"><div class="caps" style="font-size:172px;line-height:.82">DIA</div><small>Passe de dia / Day pass</small></div>
+ <div class="main" style="border-left:1px solid var(--signal)"><div class="big tn" style="font-size:104px;line-height:.84">Dom 5 Out</div><div style="display:flex;gap:30px;margin-top:14px" class="bs"><span style="font-size:62px;letter-spacing:.12em" class="tn">A B C D</span></div><small style="margin-top:auto">All rooms, one day, until seats run out. Show at the door; it is stamped, not torn.</small></div>
+ <div class="stub"><div class="bs" style="font-size:46px">€14</div><div class="bar" data-b="4"></div><small class="tn">Nº 041552</small></div>
+</article>
+<div class="wrist"><small>Pulseira<br>Wristband<br>Sáb 4</small><span>MARGEM 12 MARGEM 12 MARGEM 12 MARGEM 12 MARGEM 12</span></div>
+<script>
+window.artReady=false;
+function draw(){
+ HT.halftone(document.getElementById('pc'),'moon',{cell:6.6,color:'#ffb81c',scale:1,sceneA:1.5,ox:.1,oy:.02,gamma:1});
+ const ctx=document.createElement('canvas').getContext('2d');ctx.font='100px "Six Caps"';const mt=ctx.measureText('MARGEM');
+ const ink=mt.actualBoundingBoxRight+mt.actualBoundingBoxLeft;const m=22;const size=100*(396-2*m)/ink;
+ const t=document.getElementById('w');t.setAttribute('font-size',size);t.setAttribute('x',m+mt.actualBoundingBoxLeft*size/100);t.setAttribute('y',503);
+ document.querySelectorAll('.bar').forEach((b,n)=>{let h='';for(let i=0;i<22;i++){const w=[1.5,3,1.5,4][Math.floor(HT.hash(i+n*40,3)*4)];const g=[1.5,3,1.5][Math.floor(HT.hash(i+n*40,7)*3)];h+='<i style="width:'+w+'px;margin-right:'+g+'px"></i>'}b.innerHTML=h});
+}
+document.fonts.ready.then(async()=>{await document.fonts.load('100px "Six Caps"','MARGEM');await document.fonts.load('800 100px "Big Shoulders Display"','A');await document.fonts.load('700 20px Archivo','A');draw();window.artReady=true;});
+</script></body></html>

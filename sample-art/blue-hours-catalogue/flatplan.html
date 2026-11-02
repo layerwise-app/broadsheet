@@ -1,0 +1,80 @@
+<!doctype html><meta charset="utf-8"><meta name="art-size" content="1440x960">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Hanken+Grotesk:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=IBM+Plex+Mono:wght@400;500&family=Reenie+Beanie&display=block">
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#f6f3eb;overflow:hidden}svg{display:block}</style>
+<body><div id="a"></div><script src="_tiles.js"></script><script>
+const {RNG}=Tiles;
+const D='#13286e',M='#254aa2',T='#7c97cf',P='#bccae6',O='#c58b2b';
+const W=1440,H=960;
+let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">`;
+const t=(X,Y,txt,o='')=>`<text x="${X}" y="${Y}" ${o}>${txt}</text>`;
+const g=`font-family="Hanken Grotesk"`;
+const r=RNG(416);
+s+=t(64,74,'Flatplan, version 31',`font-family="Cormorant Garamond" font-weight="500" font-size="42" letter-spacing="-.4" fill="${D}"`);
+s+=t(64,100,'26 signatures of 16 pages, A to Z. 212 plates. Every plate slot takes any shape from the same 24-unit grid.',`font-family="EB Garamond" font-style="italic" font-size="16.5" fill="${D}"`);
+// Sections of the book, in signatures.
+const sect=(sig)=>sig<1?'front':sig<5?'essay':sig<8?'plates':sig<9?'essay':sig<15?'plates':sig<16?'essay':sig<22?'entries':sig<24?'plates':'app';
+const pageW=30,pageH=42,rowH=60,Y0=132;
+const late=new Set();
+[[5,3],[5,4],[9,8],[9,9],[10,12],[12,1],[12,2],[13,6],[13,7],[22,5],[22,6],[23,10],[23,11],[14,13]].forEach(([a,b])=>late.add(a+'-'+b));
+for(let sig=0;sig<26;sig++){
+  const col=sig<13?0:1;
+  const row=sig%13;
+  const y=Y0+row*rowH;
+  const lx=col===0?64:634;
+  const x0=lx+34;
+  s+=t(lx,y+19,String.fromCharCode(65+sig),`font-family="Cormorant Garamond" font-weight="600" font-size="22" fill="${D}"`);
+  s+=t(lx,y+33,(sig*16+1),`${g} font-size="8" fill="${M}"`);
+  s+=t(lx,y+43,'–'+(sig*16+16),`${g} font-size="8" fill="${M}"`);
+  const k=sect(sig);
+  for(let pg=0;pg<16;pg++){
+    const x=x0+pg*(pageW+2)+(pg>=8?6:0);
+    const h=pageH,w=pageW;
+    s+=`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#fbf9f4" stroke="${D}" stroke-width=".35"/>`;
+    if(late.has(sig+'-'+pg)){
+      s+=`<rect x="${x+1.5}" y="${y+1.5}" width="${w-3}" height="${h-3}" fill="${O}"/>`;
+      continue;
+    }
+    if(k==='front'){
+      if(pg<4) continue;
+      for(let i=0;i<5;i++) s+=`<rect x="${x+5}" y="${y+6+i*3.6}" width="${w*0.45}" height="1.1" fill="${T}"/>`;
+    } else if(k==='essay'||k==='app'){
+      const cols=k==='app'?3:2;
+      const cw=(w-7)/cols;
+      for(let c=0;c<cols;c++) for(let i=0;i<10;i++) s+=`<rect x="${x+3.5+c*cw}" y="${y+4+i*3.5}" width="${cw-1.4}" height="1.05" fill="${k==='app'?P:T}"/>`;
+    } else if(k==='entries'){
+      for(let cc=0;cc<2;cc++) for(let rr=0;rr<2;rr++) {
+        s+=`<rect x="${x+3+cc*(w-5)/2}" y="${y+3+rr*(h-5)/2}" width="${(w-5)/2-1.6}" height="${(w-5)/2-1.6}" fill="${P}"/>`;
+        s+=`<rect x="${x+3+cc*(w-5)/2}" y="${y+3+rr*(h-5)/2+(w-5)/2}" width="${(w-5)/2-3}" height="1" fill="${T}"/>`;
+      }
+    } else {
+      const shape=Math.floor(r()*5);
+      const f=r()>0.5?M:D;
+      if(shape===0) s+=`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${f}"/>`;
+      else if(shape===1) s+=`<rect x="${x+3}" y="${y+3}" width="${w-6}" height="${h-10}" fill="${f}"/><rect x="${x+3}" y="${y+h-5}" width="${w*0.5}" height="1.1" fill="${T}"/>`;
+      else if(shape===2) s+=`<rect x="${x+3}" y="${y+3}" width="${w-6}" height="${h/2-3}" fill="${f}"/><rect x="${x+3}" y="${y+h/2+2}" width="${w-6}" height="${h/2-5}" fill="${T}"/>`;
+      else if(shape===3) s+=`<rect x="${x+3}" y="${y+h*0.4}" width="${w-6}" height="${h*0.6-3}" fill="${f}"/><rect x="${x+3}" y="${y+4}" width="${w*0.5}" height="1.1" fill="${T}"/><rect x="${x+3}" y="${y+7.5}" width="${w*0.5}" height="1.1" fill="${T}"/>`;
+      else { for(let c=0;c<2;c++) for(let q=0;q<2;q++) s+=`<rect x="${x+3+c*(w-5)/2}" y="${y+3+q*(h-5)/2}" width="${(w-5)/2-1.5}" height="${(h-5)/2-1.5}" fill="${(c+q)%2?T:f}"/>`; }
+    }
+  }
+}
+// Side key.
+const kx=1232;
+const LN=`style="font-feature-settings:'lnum'"`;
+const key=(y,color,head,body)=>{
+  s+=`<rect x="${kx}" y="${y-10}" width="16" height="11" fill="${color}"/>`;
+  s+=t(kx+23,y,head,`${g} font-weight="600" font-size="11" fill="${D}"`);
+  body.forEach((b,i)=>{ s+=t(kx,y+17+i*14.5,b,`font-family="EB Garamond" font-size="13.2" fill="${D}"`); });
+};
+key(142,M,'Plates',['212 images in F–H, J–O and','W–X, on 150 gsm matte','coated, every sheet proofed','to one cobalt.']);
+key(244,T,'Essays',['Eight, in B–E, I and P, on','120 gsm uncoated.']);
+key(314,P,'Entries',['306 objects in Q–V, up to','four to a page. Appendices','in Y–Z.']);
+key(400,O,'Late loans',['14 pages changed after 1 May,','when five lenders confirmed.','No signature was reimposed.','Pagination held from version','19 to the press.']);
+const big=(y,a,b)=>{ s+=t(kx,y,a,`font-family="Cormorant Garamond" font-weight="500" font-size="52" ${LN} fill="${D}"`); s+=t(kx,y+21,b,`${g} font-size="11" fill="${D}"`); };
+s+=`<path d="M${kx} 540H1376" stroke="${D}" stroke-width=".8"/>`;
+big(590,'416','pages, 240 × 320 mm');
+big(672,'11','weeks, final text to press');
+big(754,'31','versions of this sheet');
+s+=t(kx,890,'Production file, 30 May',`${g} font-size="10" fill="${M}"`);
+s+='</svg>';
+document.getElementById('a').innerHTML=s;
+</script></body>

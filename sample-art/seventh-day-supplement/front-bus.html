@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Seventh Day: front-bus</title><meta name="art-size" content="1440x1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Libre+Franklin:wght@400;600;700;800;900&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=block" rel="stylesheet"><link rel="stylesheet" href="_base.css">
+<script src="_lib.js"></script><script src="_fronts.js"></script></head>
+<body><div class="front" id="f"></div>
+<script>
+Promise.all(["10px Anton","10px 'Alfa Slab One'","700 10px 'PT Serif'","800 10px 'Libre Franklin'"].map(f=>document.fonts.load(f))).then(()=>{Fronts.bus(document.getElementById('f'));window.artReady=true;});
+</script></body></html>

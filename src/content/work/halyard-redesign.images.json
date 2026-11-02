@@ -1,0 +1,159 @@
+{
+  "contents": {
+    "format": "webp",
+    "base": "/work/halyard-redesign/contents",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADQAwCdASoUAA0APu1kq04ppaQiMAgBMB2JZgCdACICqPtV20tpTQAA/uCom7hyBVsplnUBm04HSwxam5IcakdVkjTbWiULvX6Pz30Et6Ijr4GHY6kctaPh2/LbPsy6/4AGDpmnN41Euhs9DLv+E/y3vVrR/s4w9AA="
+  },
+  "cover": {
+    "format": "webp",
+    "base": "/work/halyard-redesign/cover",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACQBACdASoUAA0APu1iqU2ppaOiMAgBMB2JaACsOUDZABSu2HU3k0J0l21T9cAA/iaejef3mJYTbPJqUAjGO58Z6pGC+dymymf6MryDHyndikKxrbVoY5fg+N0ARxNA0F/AtMtcg/I+JhKorL8wW+2mHHbhceBItQDTgOj9/dnxTqKRmF1qNivkYROb+YAA",
+    "share": "/work/halyard-redesign/cover-share.jpg"
+  },
+  "cover-august": {
+    "format": "webp",
+    "base": "/work/halyard-redesign/cover-august",
+    "width": 2880,
+    "height": 4000,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4IOwAAABQBQCdASoUABwAPu1qr1CppaQiqAqpMB2JbAC/7YxidKL7pbo3vnWzfmgxL11qJGf3MAAA+Q60n/HujtpccMxPAgiE+/yZjgJGYw7JUFKT3nLw6CQYLn8r1Puf4CHN75OMjX3jTIucxXjYhdUeaGSrEaPrnYooCZCYixpWj3VS//C/4yf4I/0pmG+Y8ObqJQhjmLonXiVdHG3YWIXSXNp3Vy//GtqAoQGDay58azvzvP36hrvTinOxSYqkhMpDWN+dSIplTPZOckuNEh/m8RmEJbaZDJ83uJk6lKuAdLobmiN32eAY64hTA4YkAA=="
+  },
+  "cover-march": {
+    "format": "webp",
+    "base": "/work/halyard-redesign/cover-march",
+    "width": 2880,
+    "height": 4000,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRugAAABXRUJQVlA4INwAAADQBQCdASoUABwAPu1qrVCppaQiqAqpMB2JZQC7AYw6dIDm1+KQdGU1dMnfGgMb2LrVq6wdqeYAAPzkx7l+loatK6SNxkrxmk0yEN+0G07ptJQOmkNwe9Yv/18z5yORHmKEJ1gM9WZfL7DN8fv5Lw8JmXZsl6b5HwPNPXH3l32yXzrHdRqyVjN087+ovzdUpIafHVTE0dJ7JcElyl2tF9wtbz7iKzKyggUuaUzjgssdZ04i1EIE3m8ScbLZ8cSrqS/fjDxbP6E64j0HS/Dpm/KXKJ+/ocUKGQQpAAAA"
+  },
+  "cover-november": {
+    "format": "webp",
+    "base": "/work/halyard-redesign/cover-november",
+    "width": 2880,
+    "height": 4000,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4IOoAAABQBQCdASoUABwAPu1qq08ppiOiMBgIATAdiWIAwoGM0HNZKjnkjhe+C+ihsSD2OMxJqBgA+Q60n/reHBJUkTB72puBCnOak4J8I60Xt3tXX7s1LXKEN4+9OA08RN7Mv1o7D81FDJ5Je45tsKyIj7hZqTg/gBOqnCgj4gtzhufqKDDg/bRp8+V4FKgdZAa5/a6po3Q58kns3CJDpDJn9HIQDOR49+ZOoZDyuU8wegZDzEaetDXjCEiz+N4nLIaNxDjmFYfel3MCZ/WmlAClAL3fnkde+2tEDVJWj6z8odxfRYGy/PI/pC3gAAA="
+  },
+  "cover-october": {
+    "format": "webp",
+    "base": "/work/halyard-redesign/cover-october",
+    "width": 2880,
+    "height": 4000,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAABQBQCdASoUABwAPu1kqU2ppaOiMAgBMB2JZwDNwYyK5rB1dfdn4Wi1nGa2QLaNoLQpGgAA/knNMr+omX5sLQbHbxdUliKhhyqDOwnj0ehrkySBXZ3SDmuO/HdG1WQrwtm5Eq7yR5VXI3JoIpuJn+WxyP0KqQK2GxEuQx6fBAsCtfW+uSB/E1nB+CX8tHetmmPPfH0/2BYQwN3VaIFTRSHga/+OAqNH1pPn7vyuPVHpRQX8Q7D+ezzf8h+vBpDv+nR4r/w3y/+GhqOPqhdfFmTMAAA="
+  },
+  "feature": {
+    "format": "webp",
+    "base": "/work/halyard-redesign/feature",
+    "width": 2880,
+    "height": 1800,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACQAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JaACdABcVkF5TR+zAAMQwg37E9Ty6hvgyWHp/HurtDNrqvn07viFJ8fIq7UFV4uqh9HSkGvwcuYAXXBusQu+4dzDQXD2FC16Bp+eXCWCgrwrJNwAAAA=="
+  },
+  "flatplan": {
+    "format": "webp",
+    "base": "/work/halyard-redesign/flatplan",
+    "width": 2880,
+    "height": 1800,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAADQBACdASoUAA0APu1iqU2ppaOiMAgBMB2JbACdMoHgz5+AWukzgdX2/xW1xFcBYAD+4HdZy7+XxHyRhVS74C4oxomA1iMln4EEKgBU3l1k1M8bKYuK5Qn3Uf7syHww96saV5PE1/Q+IBf4hvLyB71coaDqpsmsTH16h2tl45LvIXiJ8X4j1aIuJOJvJNAYnEe7EhTie5oteEaCmgA="
+  },
+  "masthead": {
+    "format": "webp",
+    "base": "/work/halyard-redesign/masthead",
+    "width": 2880,
+    "height": 1580,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBACdASoUAAsAPu1iqU2ppaOiMAgBMB2JYwDKACFmAm8YSY/jUJ3voAD+3/MFRKXDWz6vmjfHwZ7nhjiJKd7l2Ygv5epvWHcE/gPNNBGj5t0VXqGKgip7vSGO+pbr0j0YIRXfwl36N4Kz8YtZqtmpjY3DFEH3r702wk0w4wAAAA=="
+  },
+  "parallel": {
+    "format": "webp",
+    "base": "/work/halyard-redesign/parallel",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADQAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JZwAAYcJuFNT8IFwC7SgA/t8oI60Idd2gBxaNk+gWZsYvWHy5ypW9bGQw3NIMLbYXnvZ41kZp38AciNvsLqLpJkiNKSJh5TRKmtcu+kATQADNMX8AdiAA"
+  },
+  "plate": {
+    "format": "webp",
+    "base": "/work/halyard-redesign/plate",
+    "width": 2880,
+    "height": 3840,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRvQAAABXRUJQVlA4IOgAAABwBgCdASoUABsAPu1kqk+ppSOiMBgIATAdiWoAtvro1oEeBrIXsAc1mHz+/dXl6Gl2b+tYrr0KYrfklgAA/gFyAX9eiheyrVvzgXasHM6JtTGMRFUXheGx7rGQf4HKFhcUWwPT3cWOCpqDV6pjaafb018Lv68/Jo60or3TidDv+LvA78EiLBk4I90ZqPvzd+rF/K8CixhDn/aP2MgFyT1/FF1s62zvt+JF4cniuQCSZ6nbjFstjbXEPv6KiiA+NXF2zJi3la+1yPDn/o6fKcnjYujoBEIH2liTmrqrhSi7ThyXAMhoAAAA"
+  },
+  "system": {
+    "format": "webp",
+    "base": "/work/halyard-redesign/system",
+    "width": 2880,
+    "height": 2000,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACwAwCdASoUAA4APu1iqU2ppaOiMAgBMB2JZgCdABi7x2cJO/oyYAD+BLutZDKYkygCoyujiAjgL+w6Pj1tgU3F7c0mvfPh3WiuLKlpZSvopy/NtJGf8gUl9e8o56pkquzizg4sgAA="
+  },
+  "year": {
+    "format": "webp",
+    "base": "/work/halyard-redesign/year",
+    "width": 2880,
+    "height": 1520,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABQBACdASoUAAsAPu1iqU2ppaOiMAgBMB2JZAC7AYxE33s0uVT11lvoTAoAAPR23LT8WcFdvg8JWSo+heMLJaE5Gvek4XSBWZzZJO7sc9YLCTweI7oC6W4o2Q5ms3rjq+1ToNAWSejElp4qWBOM/Xe501s92MuAnrWDLotnrYDq3j/YI1dsAAAA"
+  }
+}

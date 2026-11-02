@@ -1,0 +1,69 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="art-size" content="1440x900"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Big+Shoulders+Display:wght@400..900&family=Six+Caps&display=block" rel="stylesheet"><link rel="stylesheet" href="_margem.css"><script src="_halftone.js"></script><script src="_posters.js"></script>
+<style>
+html,body{background:var(--signal);color:var(--ink)}
+.page{position:absolute;inset:0}
+.top{position:absolute;left:36px;right:60px;top:42px;height:138px;display:flex;align-items:flex-end;justify-content:space-between}
+.day{display:flex;align-items:flex-end;gap:18px}
+.rows{position:absolute;left:36px;right:60px;top:236px;z-index:2}
+.row{position:relative;height:138px;border-top:2.5px solid var(--ink)}
+.row:last-child{border-bottom:2.5px solid var(--ink)}
+.vn{position:absolute;left:0;top:7px;width:84px}
+.vn b{display:block;font:800 74px/.84 'Big Shoulders Display'}
+.vn span{display:block;font-weight:700;font-size:10.5px;line-height:1.14;font-stretch:76%;margin-top:6px}
+.sl{position:absolute;top:8px;bottom:8px;background:var(--ink);color:var(--signal);padding:6px 6px 5px;overflow:hidden;display:flex;flex-direction:column}
+.sl.short{background:var(--signal);color:var(--ink);border:2px solid var(--ink);padding:4px 4px 3px}
+.sl time{font:800 21px/1 'Big Shoulders Display';letter-spacing:.01em}
+.sl h4{hyphens:manual;font:700 14.4px/1.04 'Big Shoulders Display';letter-spacing:.012em;margin-top:5px;}
+.sl small{margin-top:auto;font-weight:700;font-size:10px;font-stretch:78%;line-height:1.1;letter-spacing:.01em;display:flex;justify-content:space-between}
+.ruler{position:absolute;left:36px;right:60px;top:192px;height:42px}
+.ruler span{position:absolute;bottom:3px;font:800 25px/1 'Big Shoulders Display';transform:translateX(0)}
+.tick{position:absolute;top:236px;width:0;border-left:1px solid var(--ink);height:556px;opacity:1}
+.tick.half{border-left:1px dotted var(--ink)}
+.notes{position:absolute;left:36px;right:60px;top:806px;display:flex;gap:36px;font-weight:600;font-size:13.5px;line-height:1.2;font-stretch:84%}
+.notes b{font-weight:800}
+.fold{position:absolute;top:0;bottom:0;width:0;border-left:1px dashed var(--ink)}
+.tab{position:absolute;right:0;top:128px;width:34px;height:84px;background:var(--ink);color:var(--signal);display:flex;align-items:center;justify-content:center;font:800 30px/1 'Big Shoulders Display'}
+.folio{position:absolute;bottom:18px;font:800 21px/1 'Big Shoulders Display'}
+.tr{position:absolute;right:60px;top:40px;text-align:right;font-weight:700;font-size:15px;line-height:1.18;font-stretch:82%}
+</style>
+<body><div class="page" id="p">
+  <div class="top"><div class="day">
+    <span class="caps" style="font-size:146px;line-height:.8">SÁB 4</span>
+    <div style="padding-bottom:6px"><div class="bs" style="font-size:44px">Sábado<br>Saturday</div></div></div>
+  </div>
+  <div class="tr">Dia 2 de 9 / Day 2 of 9<br>4 Outubro 2025<br>22 sessões / 22 screenings<br>Sol-posto / Sunset 19:03</div>
+  <div class="ruler" id="ruler"></div>
+  <div class="rows" id="rows"></div>
+  <div class="notes">
+    <span><b>Q</b>&ensp;Director present</span><span><b>U</b>&ensp;Last screening</span><span><b>L</b>&ensp;Portuguese subtitles only</span><span><b>Open outline</b>&ensp;Shorts programme or newsreels</span><span><b>Room C</b>&ensp;boards 10 minutes before and leaves on time. Last ferry 00:40.</span>
+  </div>
+  <div class="tab">2</div>
+  <div class="fold" style="left:575px"></div><div class="fold" style="left:1150px"></div>
+  <div class="folio tn" style="left:36px">44</div><div class="folio tn" style="right:60px">46</div>
+</div>
+<script>
+window.artReady=false;
+const T0=10, T1=25.5, LEFT=88, RIGHT=1344;
+const px=h=>LEFT+(h-T0)/(T1-T0)*(RIGHT-LEFT);
+const hm=s=>{const [a,b]=s.split(':').map(Number);return (a<9?a+24:a)+b/60};
+const rooms=[
+ {k:'A',n:'Cine-Teatro<br>412 seats',s:[
+  ['11:00',88,'The Salt Road'],['13:30',104,'Nine Bells at Low Water','Q'],['16:00',72,'Inventory of a Flood','L'],['18:30',112,"The Ferryman’s Daughter",'Q'],['21:30',97,'Tonight Nobody Drowns'],['23:45',81,'Cold Engine','U']]},
+ {k:'B',n:'Armazém 7<br>180 seats',s:[
+  ['10:30',64,'Shorts 1: Tidal','',1],['12:15',78,'Letters to a Dredger'],['14:15',126,'The Lamplighter’s Strike','U'],['17:00',58,'Shorts 3: Night Work','',1],['18:45',91,'Low Bridge','Q'],['21:00',109,'A Season Without Eels'],['23:15',49,'Shorts 5: After Hours','',1]]},
+ {k:'C',n:'O Barco<br>64 seats',s:[
+  ['11:30',40,'I. Upstream'],['13:00',45,'II. The Reed Cutters'],['15:00',38,'III. Silt','U'],['16:30',44,'IV. Father River'],['19:00',42,'V. Harbour Dog','Q'],['21:30',47,'VI. Dark Water Hymnal']]},
+ {k:'D',n:'Jardim<br>300 chairs',s:[
+  ['19:45',40,'News&shy;reels 1962–74','',1],['20:45',131,'The Long Quay','Q'],['23:15',86,'Swimmers','U']]}
+];
+const rows=document.getElementById('rows');const ruler=document.getElementById('ruler');const page=document.getElementById('p');
+for(let h=T0;h<=25;h++){const x=px(h)+36;const s=document.createElement('span');s.textContent=String(h%24).padStart(2,'0');s.style.left=px(h)+'px';ruler.append(s);
+ const t=document.createElement('div');t.className='tick';t.style.left=x+'px';page.append(t);}
+for(const r of rooms){const row=document.createElement('div');row.className='row';row.innerHTML='<div class="vn"><b>'+r.k+'</b><span>'+r.n+'</span></div>';
+ for(const [start,mins,title,flag,short] of r.s){const a=hm(start);const d=document.createElement('div');d.className='sl'+(short?' short':'');d.style.left=px(a)+'px';d.style.width=(mins/60)/(T1-T0)*(RIGHT-LEFT)+'px';
+  if(mins<50){d.style.paddingLeft='4px';d.style.paddingRight='2px'}
+  d.innerHTML='<time class="tn">'+start+'</time><h4>'+title+'</h4><small><span>'+mins+'′</span><span>'+(flag||'')+'</span></small>';row.append(d);}
+ rows.append(row);}
+function draw(){}
+document.fonts.ready.then(async()=>{await document.fonts.load('100px "Six Caps"','MARGEM');await document.fonts.load('800 100px "Big Shoulders Display"','A');await document.fonts.load('700 20px Archivo','A');draw();window.artReady=true;});
+</script></body></html>

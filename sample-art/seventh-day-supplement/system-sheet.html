@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Seventh Day: nameplate and spot colour</title><meta name="art-size" content="1440x960">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Libre+Franklin:wght@400;600;700;800;900&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=block" rel="stylesheet"><link rel="stylesheet" href="_base.css">
+<script src="_lib.js"></script>
+<style>
+.sw{height:206px;padding:11px 12px;display:flex;flex-direction:column;justify-content:space-between;border:3px solid var(--ink)}
+.sw .n{font:400 37px/1 var(--head);text-transform:uppercase}.sw .m{font:600 12px/1.3 var(--label)}
+.h{font:400 28px/1 var(--head);text-transform:uppercase;border-top:5px solid var(--ink);padding-top:6px;margin-bottom:9px}
+.tx{font:400 14.5px/1.3 var(--text)}
+</style></head>
+<body>
+<div class="abs strip" style="left:30px;right:30px;top:22px;font-size:13px"><span>Seventh Day, the house rules</span><span>Sheet 1 of 1, pinned above the subs&rsquo; desk</span><span>N. Castellan, 2024</span></div>
+<div class="abs" style="left:30px;right:30px;top:42px;height:3px;background:var(--ink)"></div>
+<div class="abs slab" style="left:30px;top:55px"><span data-fit="1380">Seventh Day</span></div>
+<div class="abs" style="left:30px;right:30px;top:244px;height:9px;background:var(--ink)"></div>
+<div class="abs" style="left:30px;right:30px;top:257px;height:2px;background:var(--ink)"></div>
+<div class="abs" style="left:30px;top:278px;width:680px">
+ <div class="h">One spot a week, chosen on Monday</div>
+ <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0">
+  <div class="sw" style="background:var(--red)"><span class="n">Post box</span><span class="m">Leeks, scandal, anything with a court date<br>CMYK 0/90/90/0</span></div>
+  <div class="sw" style="background:var(--blue);color:var(--paper);border-left:0"><span class="n">Harbour</span><span class="m">The sea, the council, the weather<br>CMYK 95/70/0/0</span></div>
+  <div class="sw" style="background:var(--custard);border-left:0"><span class="n">Custard</span><span class="m">Transport, puzzles, bank holidays<br>CMYK 0/25/95/0</span></div>
+  <div class="sw" style="background:var(--green);color:var(--paper);border-left:0"><span class="n">Allotment</span><span class="m">Listings, the soil, autumn<br>CMYK 85/0/80/15</span></div>
+ </div>
+</div>
+<div class="abs" style="left:740px;top:278px;width:670px">
+ <div class="h">The screen: 40 lines an inch, both plates</div>
+ <canvas id="tint" width="1340" height="412" style="display:block;width:670px;height:206px"></canvas>
+</div>
+<div class="abs" style="left:30px;top:540px;width:330px">
+ <div class="h">Headlines</div>
+ <div class="head" style="font-size:96px;line-height:1">Anton</div>
+ <p class="tx" style="margin-top:6px">In capitals only, from 28pt up, set solid. Headlines are written to fit the module, so the subs count characters before they write. Nameplate only in Alfa Slab One. Never in the spot.</p>
+</div>
+<div class="abs" style="left:390px;top:540px;width:320px">
+ <div class="h">Text</div>
+ <div style="font:700 44px/1 var(--text)">PT Serif</div>
+ <p class="tx" style="margin-top:9px"><b>9.4 on 11.5pt, min.</b> Coldset gain fills the counters at anything lighter, so nothing is ever set below 8pt or reversed below 12pt. Labels: Libre Franklin ExtraBold, tracked 10%, because it survives wet ink.</p>
+</div>
+<div class="abs" style="left:740px;top:540px;width:670px">
+ <div class="h">Six columns, twelve decks, three layouts a story</div>
+ <svg id="grid" width="670" height="324"></svg>
+</div>
+<div class="abs" style="left:30px;top:800px;width:680px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px">
+ <div class="tx"><div class="label" style="margin-bottom:5px">Black overprints</div>Text and rule never knock out of the spot. Press register drifts a full point at speed; overprinting black hides it.</div>
+ <div class="tx"><div class="label" style="margin-bottom:5px">No rich black</div>Newsprint takes 240% ink at most. One black plate, one spot plate, and no tint of the spot under 10%.</div>
+ <div class="tx"><div class="label" style="margin-bottom:5px">Dots are drawn big</div>Art is made for the screen, not fought into it. If the dots show, that is what they are for.</div>
+</div>
+<script>
+Promise.all(["10px Anton","10px 'Alfa Slab One'","700 10px 'PT Serif'","italic 10px 'PT Serif'","800 10px 'Libre Franklin'","400 10px 'Libre Franklin'"].map(f=>document.fonts.load(f))).then(()=>{
+ fitAll();
+ // Tint strip: real dot sizes at printed scale x2
+ const c=document.getElementById('tint'),x=c.getContext('2d');x.fillStyle=PAPER;x.fillRect(0,0,c.width,c.height);
+ const steps=[10,20,30,40,50,60,70,80,90,100],cw=134;
+ for(let row=0;row<2;row++){const col=row?INK:SPOT.red;const y0=row*206;steps.forEach((p,i)=>{const X=i*cw;x.save();x.beginPath();x.rect(X,y0,cw,206);x.clip();x.fillStyle=col;
+   if(p===100){x.fillRect(X,y0,cw,206)}else{const pitch=28,r=pitch*Math.sqrt(p/100/Math.PI)*1.05;for(let u=-2;u<40;u++)for(let v=-2;v<40;v++){const dx=X-200+(u-v)*pitch*.707+200,dy=y0-100+(u+v)*pitch*.707;x.beginPath();x.arc(dx,dy,r,0,7);x.fill()}}
+   x.restore();x.fillStyle=PAPER;const lw=70;x.fillRect(X+8,y0+8,lw,36);x.fillStyle=INK;x.font="800 25px 'Libre Franklin'";x.fillText(p+'%',X+13,y0+36);});}
+ x.strokeStyle=INK;x.lineWidth=6;x.strokeRect(3,3,c.width-6,c.height-6);
+ // Module diagram: 3 layouts
+ const NS='http://www.w3.org/2000/svg',s=document.getElementById('grid');const el=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);s.appendChild(e);return e};
+ const pw=206,ph=284,gap=26;
+ const ads=[[],[[3,8,3,4]],[[0,9,6,3],[4,3,2,6]]],names=['A. No ad sold','B. Quarter, bottom right','C. Half plus an upright'];
+ [0,1,2].forEach((k)=>{const X=k*(pw+gap);const u=pw/6,v=ph/12;
+  el('rect',{x:X,y:0,width:pw,height:ph,fill:PAPER,stroke:INK,'stroke-width':3});
+  for(let i=1;i<6;i++)el('line',{x1:X+i*u,x2:X+i*u,y1:0,y2:ph,stroke:INK,'stroke-width':.8});
+  for(let j=1;j<12;j++)el('line',{x1:X,x2:X+pw,y1:j*v,y2:j*v,stroke:INK,'stroke-width':.8});
+  el('rect',{x:X+3,y:3,width:pw-6,height:v*2.6,fill:INK});
+  if(k===0)el('rect',{x:X+3,y:v*3,width:pw-6,height:v*5,fill:SPOT.red});
+  if(k===1)el('rect',{x:X+3,y:v*3,width:pw-6,height:v*3.6,fill:SPOT.red});
+  if(k===2)el('rect',{x:X+3,y:v*3,width:u*4-6,height:v*2.6,fill:SPOT.red});
+  ads[k].forEach(([c,r,w,h])=>{const g=el('rect',{x:X+c*u+2,y:r*v+2,width:w*u-4,height:h*v-4,fill:PAPER,stroke:INK,'stroke-width':3});
+    const t=el('text',{x:X+(c+w/2)*u,y:(r+h/2)*v+6,'text-anchor':'middle',style:'font:800 13px Libre Franklin;letter-spacing:.1em'});t.textContent='AD';});
+  const t=el('text',{x:X,y:ph+24,style:'font:800 12.5px Libre Franklin;letter-spacing:.04em'});t.textContent=names[k];
+ });
+ window.artReady=true;
+});
+</script></body></html>

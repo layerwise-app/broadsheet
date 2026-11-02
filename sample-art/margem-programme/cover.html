@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="art-size" content="1440x960"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Big+Shoulders+Display:wght@400..900&family=Six+Caps&display=block" rel="stylesheet"><link rel="stylesheet" href="_margem.css"><script src="_halftone.js"></script><script src="_posters.js"></script>
+<style>html,body{background:#ffb81c}
+.wall{position:absolute;left:0;top:0;width:1440px;height:960px;overflow:hidden}
+.col{position:absolute;display:flex;flex-direction:column;gap:12px}
+</style>
+<body><div class="wall" id="w"></div><script>
+window.artReady=false;
+// A hoarding of the five section posters, pasted edge to edge on the signal field.
+const W=278,G=12,cols=[
+ {x:6,y:-180,k:['archive','crossings','competition']},
+ {x:6+W+G,y:-30,k:['openair','midnights','openair']},
+ {x:6+2*(W+G),y:-290,k:['midnights','competition','crossings']},
+ {x:6+3*(W+G),y:-110,k:['crossings','archive','midnights']},
+ {x:6+4*(W+G),y:-240,k:['competition','openair','archive']}];
+const ps=[];
+for(const c of cols){const d=document.createElement('div');d.className='col';d.style.left=c.x+'px';d.style.top=c.y+'px';for(const k of c.k){const p=makePoster(k,W,2);d.append(p);ps.push(p)}document.getElementById('w').append(d)}
+document.fonts.ready.then(async()=>{await document.fonts.load('100px "Six Caps"','MARGEM');await document.fonts.load('800 100px "Big Shoulders Display"','A');ps.forEach(p=>p._draw());window.artReady=true;});
+</script></body></html>

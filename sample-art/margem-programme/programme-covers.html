@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="art-size" content="1440x1127"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Big+Shoulders+Display:wght@400..900&family=Six+Caps&display=block" rel="stylesheet"><link rel="stylesheet" href="_margem.css"><script src="_halftone.js"></script><script src="_posters.js"></script>
+<style>
+.sheet{position:absolute;inset:0;display:grid;grid-template-columns:705px 30px 705px}
+.back{background:var(--signal);color:var(--ink);position:relative;padding:40px 44px}
+.spine{background:var(--ink);color:var(--signal);position:relative;border-left:1px solid #000}
+.spine div{writing-mode:vertical-rl;position:absolute;left:0;right:0;top:36px;bottom:36px;display:flex;justify-content:space-between;align-items:center;font:800 17px 'Big Shoulders Display';letter-spacing:.04em}
+.front{background:var(--ink);color:var(--signal);position:relative;overflow:hidden}
+.front canvas{position:absolute;left:0;top:0;width:705px;height:1127px}
+.front svg{position:absolute;left:0;top:0}
+.lab{position:absolute;font-weight:700;font-size:17px;line-height:1.16;font-stretch:80%;letter-spacing:.01em}
+.back h2{font:800 76px/.94 'Big Shoulders Display';margin-bottom:26px}
+.grid{display:grid;grid-template-columns:62px 1fr;row-gap:0;border-top:2.5px solid var(--ink)}
+.grid>*{border-bottom:1px solid var(--ink);padding:9px 0 10px}
+.grid b{font:800 44px/.9 'Big Shoulders Display'}
+.grid p{font-size:16.5px;line-height:1.2;font-weight:560}
+.grid p em{font-style:normal;font-weight:800;display:block;font-stretch:80%;font-size:19px}
+.price{display:grid;grid-template-columns:1fr auto;font-size:16.5px;font-weight:560;line-height:1.2;border-top:2.5px solid var(--ink);margin-top:30px}
+.price>*{border-bottom:1px solid var(--ink);padding:7px 0 8px}
+.price span:nth-child(even){font:800 25px/1 'Big Shoulders Display';text-align:right}
+.foot{position:absolute;left:44px;right:44px;bottom:40px;display:flex;justify-content:space-between;align-items:flex-end}
+.foot p{font-size:13.5px;line-height:1.22;font-weight:560;width:330px}
+.bar{display:flex;align-items:stretch;height:70px;gap:0}
+.bar i{display:block;background:var(--ink)}
+.tabs{position:absolute;right:0;top:0;bottom:0;width:0}
+.rot{position:absolute;right:0;top:30px;bottom:30px;width:62px;writing-mode:vertical-rl;transform:rotate(180deg);display:flex;justify-content:space-between;align-items:center;white-space:nowrap}
+.counts{display:grid;grid-template-columns:1fr auto;font-size:16.5px;font-weight:560;line-height:1.2;border-top:2.5px solid var(--ink);margin-top:30px}
+.counts>*{border-bottom:1px solid var(--ink);padding:7px 0 8px}
+.counts span:nth-child(even){font:800 25px/1 'Big Shoulders Display';text-align:right}
+</style>
+<body><div class="sheet">
+<section class="back">
+  <h2>Quatro salas.<br>Four rooms.</h2>
+  <div class="grid">
+    <b>A</b><p><em>Cine-Teatro Alvarim</em>Largo da Alfândega 3. 412 seats. Numbered.</p>
+    <b>B</b><p><em>Armazém 7</em>Cais do Sal. 180 seats on the old grain floor. Unnumbered.</p>
+    <b>C</b><p><em>O Barco</em>Ferry <i style="font-style:normal">Santa Iria</i>, Cais Novo. 64 seats. Boards 10 minutes before. Does not wait.</p>
+    <b>D</b><p><em>Jardim da Alfândega</em>Customs Garden. 300 chairs, open air, from dusk. Blankets at the gate.</p>
+  </div>
+  <div class="price">
+    <span>Single ticket, any room</span><span class="tn">€6</span>
+    <span>Five-ticket book</span><span class="tn">€25</span>
+    <span>Day pass</span><span class="tn">€14</span>
+    <span>Festival pass, nine days</span><span class="tn">€60</span>
+  </div>
+  <div class="counts">
+    <span>Competição / Competition</span><span class="tn">22</span>
+    <span>Travessias / Crossings, on the ferry</span><span class="tn">12</span>
+    <span>Meia-Noite / Midnights</span><span class="tn">9</span>
+    <span>Ar Livre / Open Air</span><span class="tn">9</span>
+    <span>Arquivo / Archive</span><span class="tn">32</span>
+  </div>
+  <div class="foot">
+    <p>Bilheteira / Box office: Largo da Alfândega 3, daily 09:30 until the last film starts. Late changes are posted on every door, in this same type, at this same size.<br><br>Câmara Municipal de Alvarim. Fundação Rio Sorna. Cervejaria Ribeirinha.</p>
+    <div style="text-align:right"><div class="bar" id="bar"></div><div class="tn" style="font-weight:700;font-size:13px;margin-top:5px;letter-spacing:.14em">5 601204 118237</div><div class="bs" style="font-size:40px;margin-top:8px">€4</div></div>
+  </div>
+</section>
+<section class="spine"><div><span>MARGEM 12</span><span>3–11 OUTUBRO 2025</span><span>PROGRAMA / PROGRAMME</span></div></section>
+<section class="front">
+  <canvas id="c" width="1410" height="2254"></canvas>
+  <div class="rot"><span class="bs" style="font-size:40px">Programa / Programme</span><span class="bs" style="font-size:40px">3–11 Outubro 2025</span><span class="bs" style="font-size:66px">12</span></div>
+</section>
+</div>
+<script>
+window.artReady=false;
+function draw(){
+  // The river printed inside the letters; the wordmark runs up the full height of the cover.
+  const c=document.getElementById('c');const k=c.width/705;
+  HT.halftone(c,'river',{cell:9.2,color:'#ffb81c',ground:null,scale:.82,ox:.03,oy:.04,gamma:.9,floor:.42});
+  const x=c.getContext('2d');x.font='100px "Six Caps"';const mt=x.measureText('MARGEM');
+  const ink=mt.actualBoundingBoxRight+mt.actualBoundingBoxLeft;const m=30;const size=100*(1127-2*m)/ink;const cap=mt.actualBoundingBoxAscent*size/100;
+  x.save();x.globalCompositeOperation='destination-in';x.fillStyle='#000';x.font=(size*k)+'px "Six Caps"';x.translate((cap+22)*k,(1127-m-mt.actualBoundingBoxLeft*size/100)*k);x.rotate(-Math.PI/2);x.fillText('MARGEM',0,0);x.restore();
+  const bar=document.getElementById('bar');let html='';for(let i=0;i<46;i++){const w=[1.5,3,1.5,4.5][Math.floor(HT.hash(i,3)*4)];const g=[1.5,3,1.5][Math.floor(HT.hash(i,7)*3)];html+='<i style="width:'+w+'px;margin-right:'+g+'px"></i>'}bar.innerHTML=html;
+}
+document.fonts.ready.then(async()=>{await document.fonts.load('100px "Six Caps"','MARGEM');await document.fonts.load('800 100px "Big Shoulders Display"','A');await document.fonts.load('700 20px Archivo','A');draw();window.artReady=true;});
+</script></body></html>

@@ -10,6 +10,11 @@ import {
 } from '@layerwise/vite';
 
 export default defineConfig({
+  build: {
+    // Fonts go inside the stylesheet, so they are ready at first paint and text
+    // never reflows when one arrives.
+    assetsInlineLimit: (file) => (file.endsWith('.woff2') ? true : undefined)
+  },
   server: {
     host: process.env.HOSTNAME || '127.0.0.1',
     watch: {

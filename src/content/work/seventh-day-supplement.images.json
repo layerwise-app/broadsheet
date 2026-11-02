@@ -1,0 +1,123 @@
+{
+  "ad-float": {
+    "format": "webp",
+    "base": "/work/seventh-day-supplement/ad-float",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAACwAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JQBOgBDsS6RnRemPwQAD2Rt40q/emr+d4O1ju6hJ9xXv656nfFuML3pUzPbl2+EEl93E2viNtFHUm0gaXfmjWNgyMymPxrN1FxfEfmYOMbsnRz0+KLJWFXtWrX/k3emDWqTpLVwAAAA=="
+  },
+  "chart-sunday": {
+    "format": "webp",
+    "base": "/work/seventh-day-supplement/chart-sunday",
+    "width": 2880,
+    "height": 3840,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAABQBQCdASoUABsAPu1qr1CppaQiqAqpMB2JZQC/7dwLapDB/gTQ0wqwaarJlnByvPYsmAAA/evXitnSeFBKVdCekaiJB8FeJEDgun994dPy2KOsP6e3l4TqXnbV4UxAIH8+dBqEbt11pzFsVqSRf6fAE7GrG9y2CGxjtERbjRlauWxvxJcs0zBa8Co2xlcBPFidsbcbZ6rSRrS7fwfVq5xQQg/ymOB3J4vF2WJHE4uyz8hGE+tGeS7fhbr+ZJ/lPB0dwIAA"
+  },
+  "cover": {
+    "format": "webp",
+    "base": "/work/seventh-day-supplement/cover",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADQBACdASoUAA0APu1iqU2ppaOiMAgBMB2JbACdFQA5/8WxExh0DDcn/v/73ywWzgD7djTcXaJIs0396ubjoTNb0+rgDm1xEqHKPp8Es712tzzbmCBc7xceN/BHASOW3S8QHp71rRhtCbL6fBynzJhR54HMfTJ+94ejdC9jmSLLBZSLGUPg3xj+e6mMALuFxAAAAA==",
+    "share": "/work/seventh-day-supplement/cover-share.jpg"
+  },
+  "front-bus": {
+    "format": "webp",
+    "base": "/work/seventh-day-supplement/front-bus",
+    "width": 2880,
+    "height": 3840,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRiwBAABXRUJQVlA4ICABAADQBgCdASoUABsAPu1or1AppaSiqAqpMB2JbACdMuHTJAFvEA/UD3/y7BGFBWgXCVIMJggApGEyOge59bVUWkAAzFUnhAOsKxFjocZYIOYgUzzNndjoULvN2ktdGg0jdn0zwFEUOJrOtylrFsJPH+S6nmu7as2h8WrFtYDn+OHI77E7uLFWENZllPqGCyT/tBLn17iY51JHmhonl/FpPjD2e+D7pSDgycJfH5OtJ4ar8CWKRWKePQ8CCbhcRV5m5UuIuNI0CNU6HRFZtZ86qP9JCTHoybxsNRi2tm/nHHdQ3fllIj2FZ39QKNHqvP0/jTZQGdtZcJZbs9BLnk3PME28MA+woI6cpdfh3j0sRk6PUA2Sk4PtKbSmbhAyn3oBAAA="
+  },
+  "front-tide": {
+    "format": "webp",
+    "base": "/work/seventh-day-supplement/front-tide",
+    "width": 2880,
+    "height": 3840,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRhoBAABXRUJQVlA4IA4BAADQBQCdASoUABsAPu1iq1AppSOisBgIATAdiWQAt8n/4tiwyXpaXBxroppVhC9ifC8AFLccj8wsAPyyslIzbFs8C/KU7c555dKY9nf8Xe4EVQbL7Ui0wcsFAKuEqioSFAzSkEwkR1mViQBLZRXlPhlYB5RbbYIUR5I/zZX36LdSmxre8tONU2oeEDlV4OBLpKadydylm+gnYNOs0SR5UiMqv2CKftiZ2sshvrmLNR0GX8balR17gdiM3K8B+pzipvmloY5ZOKqGkaO3NwBobeHRdMRCTK78+YFSXcwID0w7NCMobfflw/P2JmZjfBqLrV++P7jO46zyRgdM0cw/OCDuYrKfW0a6BjqnA0tAAAA="
+  },
+  "listings": {
+    "format": "webp",
+    "base": "/work/seventh-day-supplement/listings",
+    "width": 2880,
+    "height": 3840,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAABQBQCdASoUABsAPu1iqE2ppaOiMBgMATAdiWMAwpH/5dgBliHZ0DgUtxLRPyaQsAeMswAA/jRljKjHdT5oRbK7Qfv6061+dYD8I8mMmqbTxbW6cHjlJiUrt3ZYr3lDci1++HXKxRjIxzPgl2xQAqctC0BcR9/xRWYPbnucyQbqPo0Sl8d1nn1k+jEK24u2I55NXKcYkAcMHqBVvoDdU+hoejPnvY8VfXzpnceETRw9MS1yPZVCBTOHdv8qJH6d5uulrtAAAAA="
+  },
+  "plate": {
+    "format": "webp",
+    "base": "/work/seventh-day-supplement/plate",
+    "width": 2880,
+    "height": 3840,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRjQBAABXRUJQVlA4ICgBAABwBgCdASoUABsAPu1mqk+ppaOiMBgIATAdiWwAuzL1N3WAA5PA7SNkZUfbkFEmf8HHJUVj8DyLBWHF4AAA/LKyUi1xL4GOczPJgjjD6Ajas6ObFrK5vJQYZKT+A0eSNSr09u8wBV4Zw3BLt7wimM7o3kVzcpyLdRXPNDL9K+FvTP307HZ+pRr5T2Qm9VSham1Dwf1OuxUBnVEu/i3930UqQwdCq44JgkkPEjRzDGzpIfIJdCOV2JCnhRwmbBvXaeeRme2As1MC0PNb8wb1TlOrnlLX8pAQ1ipQ4liOFOt9Q591pOEjxsHafILymEJWbGB95eVGp+cZ+DGRAPHPbevllW4QMwemoExF0Tp+6Xef/cY17mWR8cYhBYLEvrSin097mSZNPF1gAA=="
+  },
+  "puzzles": {
+    "format": "webp",
+    "base": "/work/seventh-day-supplement/puzzles",
+    "width": 2880,
+    "height": 3840,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAACQBQCdASoUABsAPu1wr1KppiQiqAgBMB2JZgC06YzkcHj5mdSD2yZv/z6PDSB1uLJg8CHXAADMVV/v9mbL9lTenRODy4ra+XMt5RhlOLunga6mNWnw22wgpvDIOUbW3fM6C6mAWn36X067Xi+ott2zJXI/2fve1xo8EzB2L6bVM4/5SpUm3mhIh7wK2u8KYiuFAy3eCvuIva1+FF0qrqmBMdhy9CsplPngD5+Xv6Io4TNNukDIQav2XGSqvPXdH8afNKpkIVgorTyGEjC0Sv4aQmggagrpA4oAAA=="
+  },
+  "spread-leek": {
+    "format": "webp",
+    "base": "/work/seventh-day-supplement/spread-leek",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAACwAwCdASoUAA0APu1iqU2ppaQiMAgBMB2JbACdEf/gJ6W1v2i3MAD3OD7eDeWfggsiFS79YD8JrMoJ+TteLUi/ix75IcCw0qscEGAphNfXmkTlskRr4aQkA3vX4sQlC/S7VOnZtPklmwg+jIju70X620R4UVHe4oNkFnnlfcHOhqReP0GWU3W1jP7KnkOCagA="
+  },
+  "system-sheet": {
+    "format": "webp",
+    "base": "/work/seventh-day-supplement/system-sheet",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADwAwCdASoUAA0APu1iqk2ppaQiMAgBMB2JYgCdMoADTSHRozuIXaYAAPhf2SHGaA+38xBSVT6ODd+XxMDQJ8Ix6OIbkcZ/AUHsKimG5Y2JmXIsM76saPZN0yhg2cCOC0GTxkj2uocaPYWlpGEpekTBzGdWoIg17wRgFG79Pa1wkc0KoHNCasLzn4g17/YCIgA="
+  }
+}

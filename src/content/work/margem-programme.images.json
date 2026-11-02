@@ -1,0 +1,171 @@
+{
+  "cover": {
+    "format": "webp",
+    "base": "/work/margem-programme/cover",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAACwBACdASoUAA0APu1iqU2ppaOiMAgBMB2JbACdMoRwACkaB6XfV/WPbLxC9nKgAP54YPnIupFI9Hxccpt72RmO0hNSWG8uGTND6jTIvkWkMwFdhT0VLpdkaJkn2RQPlz9fFmvi+FKKrSG3Qds+/l2ZIBz+nHT25E2eRKMshziboX+04uvLW5zDO+2R/DpXinO9uyFoaKIJsIqekqgAAA==",
+    "share": "/work/margem-programme/cover-share.jpg"
+  },
+  "entries-crossings": {
+    "format": "webp",
+    "base": "/work/margem-programme/entries-crossings",
+    "width": 2880,
+    "height": 2254,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAAAwBACdASoUABAAPu1iqU2ppaOiMAgBMB2JZwAD5XE9HxajL674QVt2ZgAA9HckNIDx7JwtR3d0rbmdwqm74N6oh3v+XumpiGbYGgxYti0wxf2elC4Shp6D4oA8fuar+XaH4yW7Qwxy9pE8EYerYyYJJCQ448lNXpl2AugJps96ptF2qpmpbYMJgcYWdgUYpfzLQX30zEFmOAAA"
+  },
+  "entry-ferryman": {
+    "format": "webp",
+    "base": "/work/margem-programme/entry-ferryman",
+    "width": 2880,
+    "height": 2254,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADwAwCdASoUABAAPu1iqU2ppaOiMAgBMB2JZwDImCFpJ/D9iLxmXq2AAP7wy5eKJv/eycnrpDJd+yqU19RMqTlZ+qr9VlAfEMXREoXjz8n8TA0SeFWe+NAoAa0wEjNDRqkiygKUdUTmWGwAAAA="
+  },
+  "ident-poster": {
+    "format": "webp",
+    "base": "/work/margem-programme/ident-poster",
+    "width": 2880,
+    "height": 1620,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAQBACdASoUAAsAPu1iqU2ppaOiMAgBMB2JbACdMoRwAB4FwgTqjFkWAAD4YKWb1RxN0DUtpWz7aVs5HKI/M1cgy8Fx09ufJKLYa40J+j8nefmdhvM17ddg46NdWLuLv0/KpiT9iCcXNpeqziY+dd9AAAA="
+  },
+  "passes-tickets": {
+    "format": "webp",
+    "base": "/work/margem-programme/passes-tickets",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAwBACdASoUAA0APu1iqU2ppaOiMAgBMB2JbACdMoR3ABjtHUk93OmTskgA/n1XHjegXa/fK3uWJIfyBFxrYppsBuSlNHxwC0DhSLFyRka2AmrVlVNRSCkrxRT3884hFVzVJ/1oDWULUZV2Qo1TWZaOqW13eIk3k/7gyy1KUcYp6g4W20QRpTX+0V/Iyjz6DHGHPzprWAA="
+  },
+  "plate": {
+    "format": "webp",
+    "base": "/work/margem-programme/plate",
+    "width": 2880,
+    "height": 4032,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAADwBQCdASoUABwAPuFeqE2opSQiMAwBEBwJZgCxH0xvQBtrToKYrmQO/PRFLwMeeQKoV0sFR52zQgD+7pPivubDcpskkFMbf3YQK79iE1lOKLD/pKmvUDG+Abcs/pc3N38fJKcJBrjwIZEZDTCUmeQYQQTk3J/wi+4rCXl2sUHxzl675xWd1ck5vdugkeXGfgwhBSCVEEgb/Ds9fRALMb0IgrmD4dMUbMUoHjRBJj9BdAvvzwGitp/+Vly0BaF4dIndGPY7osdfD3hWIwyJjlA+3ReAAA=="
+  },
+  "poster-archive": {
+    "format": "webp",
+    "base": "/work/margem-programme/poster-archive",
+    "width": 2880,
+    "height": 4032,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRugAAABXRUJQVlA4INwAAADwBQCdASoUABwAPu1qq08ppiOiMBgIATAdiWwAnTKEhQA/DSErjJsnnuyI0s5jtdOCW43WgcGZAAD+8XDZag2ufS6KqicCxQ1wvchhZ6y8idHemNwuewFsJ7vbYRl48GfMexQFl5JtVSwLcJGGxl/5cdx4RpeO/dUslaI5SAMO1/dPmMNd8MOFSP3eK1zNvYr05LxXuKRsVl0w5o1Iktz/Kvu3PEhJ7nVVzg5Q3+ukFLMvc1jCIRf/ozPLI1SVf1NHjS8ZSGWZ7dHgLj15z34YQ9npGkyF7YlXAAAA"
+  },
+  "poster-crossings": {
+    "format": "webp",
+    "base": "/work/margem-programme/poster-crossings",
+    "width": 2880,
+    "height": 4032,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRhgBAABXRUJQVlA4IAwBAABwBgCdASoUABwAPu1irVAppSQisBgIATAdiWwAuyCKkANv/PADu5cSpvdWYooIXB6CbHK1tssf3zAqfLAA+p+sUAdJIiOC9q0lefYujkc4JlFa+hbBQ5sf3/nTaHv7h9fXsxifCuzvyfz+njv8HHfVn2uE9ajOXHd6t3an8DFkLgje3ojFRdn7dN7GnDGedMuzLQpJAnln+ElTys+hiR+DIbkT5vtGvMSiw9PmnTcsa7MmZIryAuBMS8sZ2X7sLrHai/Jz+guldjwXoKqEJczU8oC4gNT8af2Og1TJ7tXSh9GtPQ8/EOMk//qc1vzTZL7ekAj0PMwD/ol9rLE9Yz2js1rF0ngynsp4AAAA"
+  },
+  "poster-midnights": {
+    "format": "webp",
+    "base": "/work/margem-programme/poster-midnights",
+    "width": 2880,
+    "height": 4032,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAAAQBgCdASoUABwAPuFcqU2opSQiMAwBEBwJZAC7M47ugAmka4j0JIc8jJp/Od05xy6paizO/n5vxSAA/u7bBuGY8Mff3Rp8FA1H3osvPLvzmwXZ7wl6fejCo9PjtC6JtpVqG99OS9fICkBXjWaVzKKY6Jr9qf8ZfWADOiEq6q/3ufo8JLYXFjUqNLihLHqyrUwG/yNMSdkTRMb0IZuSBUJiQ8fVesfEtqTFUXV9PP36LWlA2BaRBpMqV4XVqKpgunAJ8fHamu6fdMid7VgAAA=="
+  },
+  "poster-openair": {
+    "format": "webp",
+    "base": "/work/margem-programme/poster-openair",
+    "width": 2880,
+    "height": 4032,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRhABAABXRUJQVlA4IAQBAADQBQCdASoUABwAPu1kqU2ppaQiMAgBMB2JbACdMuN5mLRCbU5VTyNM3/mN64l4k1eBFaDBjeTAAPqfrbO0IiLTahCTE0RQhtNXebDyKYxiEsDlvHLKYkMwEKcCM2zfPQva4Rr3z+ngQnbekGHMWUAZYfwtORqrkvZwiJQulJz8voD1myCXd8Dy4tptlVoSteh/c5JKteh/c5IsOs8O26adNMiAmlrBYfg12TFUOXuozsnReWmnZ8G49jQAJo3vrarJYdx+qFS2hvnn0LQWjZJjMkEE1qrOnuE8hHlf/ZsWPzu9IlTcD9IXMvkNmrWMNidtBV0CcWIoJDc6pzwLqljTocAAAA=="
+  },
+  "programme-covers": {
+    "format": "webp",
+    "base": "/work/margem-programme/programme-covers",
+    "width": 2880,
+    "height": 2254,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAABwBACdASoUABAAPu1iqU2ppaQiMAgBMB2JaACdMoR3ACxkyS8+RknceM5+AAD8Z+chmuoMPL0MTBHMSZmycB7frDG5I4mUYG1pPGcv7gkiCz/8KzHS/u6L48de74fSlYVSx3xKZzqYfFB/qxGOK6VDYOPc2oLsdUCg8UQUl4xCcTHjrY8x0MiIAAA="
+  },
+  "thumb-index": {
+    "format": "webp",
+    "base": "/work/margem-programme/thumb-index",
+    "width": 2880,
+    "height": 1520,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAwBACdASoUAAsAPu1iqU2ppaQiMAgBMB2JbACdMoMYAEJPNvFIRkTjRPgA+/7Ad4ydiYRIvtVt3escJ+MqX8r2oO/hZInsC86lNouMlOv45YTdlhFNpEOs7Z4EJ6sEc45R3HcfQOrYbXqutMULtX3tXx2+szaeU3UGsV8Uk1i/MX+qesKW93P0a+yHAAAA"
+  },
+  "timetable-saturday": {
+    "format": "webp",
+    "base": "/work/margem-programme/timetable-saturday",
+    "width": 2880,
+    "height": 1800,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAABQBACdASoUAA0APu1iqU2ppaOiMAgBMB2JbACdMoR4GCVM3UOyRmR19FoAAPx5AnKPMqyk5MLA3NR+AZDCSBPUTfNyMqDGxvQlWw9bOK28niTXVkMUV7PvCPPVboy++r9eW/7pQeyTy0H7A72J3WnP11VYdnOng8cnbNeJLqztaypNu/T/0bPYRH4UJmlT1GfAO+b4CCzeo0aYmnS+KcQAAAA="
+  },
+  "venue-map": {
+    "format": "webp",
+    "base": "/work/margem-programme/venue-map",
+    "width": 2880,
+    "height": 1920,
+    "widths": [
+      800,
+      1600,
+      2880
+    ],
+    "blur": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAADQBACdASoUAA0APu1iqU2ppaQiMAgBMB2JbACxBur/meEZ+v+A1/wv7iWFly9eAADgBeEfurvE0iVAkOoyvve4V2jurrgtFwfSRZ3gYFKKsPYzY93KFv+7K4lf/hXEx+9nnn+8cHVI4fIesPUrfod0Gz6JBsrVnnaixInvqFP4S/nq7OLYoBqKu17onUMu1qeTPAAA"
+  }
+}

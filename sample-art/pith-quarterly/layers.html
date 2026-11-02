@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="art-size" content="1440x900">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Hanken+Grotesk:wght@400..800&display=block" rel="stylesheet"><link rel="stylesheet" href="_shared.css"><script src="_food.js"></script>
+<style>
+html,body{background:#1F44B0}
+.hd{position:absolute;left:44px;top:34px;right:44px;display:grid;grid-template-columns:860px 1fr;column-gap:40px;align-items:end;color:#FBEEDB}
+h1{font-size:86px;line-height:.92;font-weight:780;letter-spacing:-.024em;font-variation-settings:'SOFT' 100,'WONK' 1,'opsz' 144}
+.hd p{font-style:italic;font-size:20px;line-height:1.26;font-variation-settings:'SOFT' 100,'WONK' 1,'opsz' 18}
+.lab{position:absolute;font-family:'Hanken Grotesk';font-variation-settings:normal;font-size:14px;line-height:1.28;font-weight:600;color:#FBEEDB}
+.lab b{display:block;font-family:Fraunces;font-size:32px;font-weight:800;line-height:1;color:#F8B90C;margin-bottom:3px;font-variation-settings:'SOFT' 100,'WONK' 1,'opsz' 72}
+svg.a{position:absolute;left:0;top:0}
+</style></head><body>
+<div class="hd"><h1>One tomato,<br>five cuts of paper</h1><p>The template Marta Quintal draws from for every tomato in the magazine. Each piece is cut by hand, scanned at 1200 dpi, then filled flat with a single spot ink.</p></div>
+<svg class="a" width="1440" height="900" viewBox="0 0 1440 900"><script>
+const lay=(x,y,s,only,rot=0)=>at(x,y,s,rot,tomatoHalf(17,{only}));
+const y1=430,y2=730,cols=[150,410];
+document.write(
+ lay(150,352,1.08,['skin'])+lay(150,636,1.08,['flesh'])
+ +lay(400,352,1.08,['gel'])+lay(400,636,1.08,['seed'])
+ +lay(650,352,1.08,['core'])
+ +at(1078,540,2.72,0,tomatoHalf(17)));
+</script></svg>
+<div class="lab" style="left:40px;top:476px;width:220px"><b>1</b>Skin. Red 485, cut first, largest</div>
+<div class="lab" style="left:40px;top:760px;width:220px"><b>2</b>Flesh. Orange 171, cut 9 mm inside the skin</div>
+<div class="lab" style="left:290px;top:476px;width:220px"><b>3</b>Five seed pockets. Skin red overprinted once</div>
+<div class="lab" style="left:290px;top:760px;width:220px"><b>4</b>Thirty seeds. Punched, not cut</div>
+<div class="lab" style="left:540px;top:476px;width:220px"><b>5</b>Core. Cut last, and never quite round</div>
+<div class="lab" style="left:540px;top:610px;width:220px;font-size:15px;font-family:Fraunces;font-style:italic;font-weight:400;font-variation-settings:'SOFT' 100,'WONK' 1,'opsz' 18;line-height:1.28">Ninety minutes from first cut to scan. Nothing here is drawn on a screen until the fill.</div>
+</body></html>

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Bevan&family=Oswald:wght@500&family=Bitter:ital,wght@0,700;1,400&display=block');
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow:hidden}
+body{font-family:'Spectral',serif;font-kerning:normal;font-feature-settings:'kern','liga','onum';-webkit-font-smoothing:antialiased;color:#15171a;background:#efe8d6}
+.lab{font-family:'Archivo Narrow',sans-serif;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+.mhf{font-family:'Abril Fatface',serif;font-weight:400}
+/* The cover. Everything is in em: font-size on .cv is width/100. */
+.cv{width:100em;height:139em;background:var(--bg);color:var(--fg);display:flex;flex-direction:column;padding:3.6em 3.6em 3.4em;position:relative;overflow:hidden;font-family:'Spectral',serif}
+.cv .mh{font-family:'Abril Fatface',serif;line-height:.86;white-space:nowrap;display:block;margin-top:-.02em}
+.cv .mh span{display:inline-block}
+.cv .strap{display:grid;grid-template-columns:54.5% 1fr auto;border-style:solid;border-color:var(--fg);border-width:0;font-family:'Archivo Narrow',sans-serif;font-weight:600;font-size:2.05em;letter-spacing:.06em;text-transform:uppercase}
+.cv .strap{border-bottom-width:.05em;border-top-width:.17em;margin-top:.7em;padding:.36em 0 .33em}
+.cv .art{flex:1;min-height:0;margin:2.4em -3.6em 2em}
+.cv .art svg{width:100%;height:100%;display:block}
+.cv .ttl{font-family:'Abril Fatface',serif;font-size:10.4em;line-height:.98;letter-spacing:-.005em}
+.cv .sub{display:flex;justify-content:space-between;align-items:flex-end;gap:4em;margin-top:2em;border-top:.1em solid var(--fg);padding-top:1.2em}
+.cv .by{font-style:italic;font-size:2.9em;line-height:1.15;white-space:nowrap}
+.cv .more{font-family:'Archivo Narrow',sans-serif;font-weight:500;font-size:2.15em;line-height:1.22;text-align:right}

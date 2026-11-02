@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="art-size" content="1440x1127"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Big+Shoulders+Display:wght@400..900&family=Six+Caps&display=block" rel="stylesheet"><link rel="stylesheet" href="_margem.css"><script src="_halftone.js"></script><script src="_posters.js"></script>
+<style>
+html,body{background:var(--stock);color:var(--ink)}
+.sp{position:absolute;inset:0;display:grid;grid-template-columns:720px 720px}
+.pg{position:relative;padding:30px 40px 56px 40px}
+.pg.rr{border-left:1px solid var(--ink);padding-right:72px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5px solid var(--ink);padding-bottom:8px;margin-bottom:0}
+.head b{font:400 92px/.8 'Six Caps'}
+.head span{font-weight:700;font-size:13.5px;line-height:1.18;font-stretch:82%;text-align:right}
+.e{display:grid;grid-template-columns:322px 1fr;gap:20px;border-bottom:1px solid var(--ink);padding:13px 0 13px}
+.pg.rr .e{grid-template-columns:292px 1fr}
+.e canvas{width:100%;display:block}
+.e h3{font:800 50px/.92 'Big Shoulders Display'}
+.e .num{font:800 22px/1 'Big Shoulders Display';margin-bottom:8px}
+.e .by{font-weight:760;font-size:14.5px;line-height:1.22;font-stretch:82%;margin-top:9px}
+.e p{font-size:16px;line-height:1.3;margin-top:9px;font-stretch:90%;font-weight:430}
+.when{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:11px;font:800 24px/1 'Big Shoulders Display';white-space:nowrap}
+.tab{position:absolute;right:0;top:280px;width:34px;height:84px;background:var(--ink);color:var(--signal);display:flex;align-items:center;justify-content:center;font:800 30px/1 'Big Shoulders Display'}
+.folio{position:absolute;bottom:22px;font:800 21px/1 'Big Shoulders Display'}
+</style>
+<body><div class="sp">
+<section class="pg" id="a"><div class="head"><b>TRAVESSIAS</b><span>Crossings. Twelve short films shown on<br>the ferry <i>Santa Iria</i>, Room C. Six on these pages.</span></div></section>
+<section class="pg rr" id="b"><div class="head"><b>ROOM C</b><span>One crossing to Margem Sul and back.<br>Each film runs the length of the river trip.</span></div><div class="tab">4</div></section>
+</div><div class="folio tn" style="left:40px">58</div><div class="folio tn" style="right:72px">59</div>
+<script>
+window.artReady=false;
+const F=[
+ ['a','I','Upstream','Lúcia Serrano. Portugal, 2024, 40 min.','A pilot retires and rides his route one last time as a passenger. He corrects the new pilot twice, then stops.',['Sáb 4 11:30','Qua 8 16:00'],'road',{scale:1.2,oy:.1}],
+ ['a','II','The Reed Cutters','Tomé Baptista. Guinea-Bissau, Portugal, 2025, 45 min.','Three seasons with the last family cutting thatch on the Sorna marshes, and the buyer who stops coming.',['Sáb 4 13:00','Ter 7 15:30'],'moon',{scale:1.2,oy:.1}],
+ ['a','III','Silt','Anneke de Wael. Belgium, 2025, 38 min.','A dredging crew sorts what the river returned this year. One bicycle, four safes, a piano frame.',['Sáb 4 15:00','Qui 9 12:15'],'bridge',{scale:1.05,oy:.05}],
+ ['b','IV','Father River','Marisol Quiroga. Chile, 2024, 44 min.','A woman reads her father’s tide tables aloud to him in a language he has started to lose.',['Sáb 4 16:30','Sex 10 11:00'],'window',{scale:1.1,oy:.0}],
+ ['b','V','Harbour Dog','Rui Falcão. Portugal, 2025, 42 min.','Filmed at knee height across one night on the Cais do Sal. Nobody in it is named, including the dog.',['Sáb 4 19:00','Dom 5 20:30'],'quay',{scale:1.2,oy:.06}],
+ ['b','VI','Dark Water Hymnal','Oyin Adeyemi-Clarke. Nigeria, UK, 2025, 47 min.','A choir rehearses on a barge in the only hour the tide lets it float. The sound was recorded under the hull.',['Sáb 4 21:30','Seg 6 18:00'],'cinema',{scale:1.05,oy:.05}]
+];
+const cs=[];
+for(const [pg,num,t,by,syn,when,sc,o] of F){const e=document.createElement('article');e.className='e';
+ e.innerHTML='<canvas width="'+(pg==='a'?644:584)+'" height="560"></canvas><div><div class="num">'+num+'</div><h3>'+t+'</h3><div class="by tn">'+by+'</div><p>'+syn+'</p><div class="when tn">'+when.map(w=>'<span>'+w+'</span>').join('')+'</div></div>';
+ document.getElementById(pg).append(e);cs.push([e.querySelector('canvas'),sc,o]);}
+function draw(){for(const [c,sc,o] of cs)HT.halftone(c,sc,{cell:7.4,color:'#f1eadb',gamma:1,...o});}
+document.fonts.ready.then(async()=>{await document.fonts.load('100px "Six Caps"','MARGEM');await document.fonts.load('800 100px "Big Shoulders Display"','A');await document.fonts.load('700 20px Archivo','A');draw();window.artReady=true;});
+</script></body></html>

@@ -1,0 +1,82 @@
+<!doctype html><meta charset="utf-8"><meta name="art-size" content="1440x790"><link rel="stylesheet" href="_base.css">
+<style>
+body{width:1440px;height:790px;display:grid;grid-template-columns:1fr 1fr}
+section{padding:40px 44px 36px;display:flex;flex-direction:column;position:relative}
+.old{background:#F4F1EA;color:#0B3F73}
+.new{background:#15171A;color:#EFE8D6}
+.lb{display:flex;justify-content:space-between;font-size:11.5px;border-bottom:1px solid currentColor;padding-bottom:8px}
+.row{display:grid;grid-template-columns:330px 1fr;gap:28px;margin-top:4px;flex:1;min-height:0}.row>div:last-child{display:flex;flex-direction:column}
+.notes{font-family:'Archivo Narrow';font-size:13.4px;line-height:1.34;margin-top:16px}
+.notes div{border-top:1px solid currentColor;padding:7px 0 8px}
+.notes b{font-weight:600;display:block;font-size:10px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:1px}
+.big{height:194px;display:flex;align-items:center}
+/* old masthead */
+.oldmh{font-family:'Bevan',serif;font-size:82px;letter-spacing:.015em;line-height:1;white-space:nowrap}
+.spine{font-size:11px}
+.use{margin-top:auto}
+.use .k{font-size:10px;display:block;margin-bottom:5px}
+.spinebar{height:34px;display:flex;align-items:center;padding:0 12px;justify-content:space-between}
+/* old cover */
+.oc{width:330px;height:458px;background:#0B3F73;color:#FFF;position:relative;overflow:hidden;font-family:'Bitter',serif}
+.oc canvas{position:absolute;left:0;top:92px;width:330px;height:366px}
+.oc .m{position:absolute;left:10px;right:10px;top:12px;font-family:'Bevan';font-size:52px;letter-spacing:.01em;line-height:1;text-align:center;color:#FFD400}
+.oc .t{position:absolute;left:12px;top:70px;right:12px;display:flex;justify-content:space-between;font-family:'Archivo Narrow';font-size:10.5px;font-weight:600}
+.oc .sell{position:absolute;background:#D8232A;color:#fff;font-family:'Oswald';font-weight:500;padding:5px 8px;font-size:19px;line-height:1.08;text-transform:uppercase}
+.oc .s2{position:absolute;background:#FFD400;color:#0B3F73;font-family:'Bitter';font-weight:700;font-style:normal;padding:5px 8px;font-size:14.5px;line-height:1.1}
+.oc .s3{position:absolute;color:#fff;font-style:italic;font-size:15px;line-height:1.14;font-weight:400}
+.oc .star{position:absolute;right:10px;top:112px;width:92px;height:92px}
+/* new */
+.newmh{font-family:'Abril Fatface';font-size:128px;margin-top:-22px;line-height:1;white-space:nowrap;position:relative}
+.guide{position:absolute;left:0;right:0;height:1px;background:#D1361F}
+.gl{position:absolute;right:0;font-family:'Archivo Narrow';font-size:9.5px;letter-spacing:.06em;color:#E9836F;text-transform:uppercase;transform:translateY(-110%)}
+</style>
+<section class="old">
+ <div class="lb lab"><span>Before, 1971 to 2024</span><span>Seven typefaces, four-colour process</span></div>
+ <div class="big"><div class="oldmh">HALYARD<span style="font-size:18px;vertical-align:top;margin-left:6px;font-family:'Archivo Narrow'">®</span></div></div>
+ <div class="row">
+  <div class="oc"><canvas id="cv" width="660" height="732"></canvas><div class="m">HALYARD</div>
+   <div class="t"><span>THE REVIEW OF IDEAS &amp; THE SEA</span><span>N.º 729 · SET 2024 · €6,90</span></div>
+   <div class="sell" style="left:0;top:228px">Who will save<br>our harbours?</div>
+   <svg class="star" viewBox="0 0 100 100"><polygon fill="#D8232A" points="50,0 60,18 79,8 79,30 100,30 88,48 100,68 79,70 79,92 60,82 50,100 40,82 21,92 21,70 0,68 12,48 0,30 21,30 21,8 40,18"/><text x="50" y="46" font-family="Oswald" font-size="17" fill="#fff" text-anchor="middle">SPECIAL</text><text x="50" y="65" font-family="Oswald" font-size="17" fill="#fff" text-anchor="middle">ISSUE!</text></svg>
+   <div class="s2" style="right:0;top:306px;text-align:right">PLUS: 25 years<br>of tide tables</div>
+   <div class="s3" style="left:12px;bottom:58px;width:190px">“I sailed alone from Sines to the Azores” <br>an exclusive memoir</div>
+   <div style="position:absolute;left:0;right:0;bottom:0;background:#FFD400;color:#0B3F73;font-family:'Oswald';font-weight:500;font-size:14px;padding:7px 12px;display:flex;justify-content:space-between"><span>BOOKS</span><span>ROPES</span><span>WINE</span><span>CROSSWORD</span><span>+ MORE</span></div>
+  </div>
+  <div>
+   <div class="notes" style="margin-top:0">
+    <div><b>Masthead</b>A wood-type slab, redrawn twice, stretched once. Yellow reversed out of whatever photograph the month had bought.</div>
+    <div><b>Cover</b>Library pictures at 60 lines per inch. On 70 gsm uncoated, the shadows fill in and the sea goes the colour of a wet road.</div>
+    <div><b>Sell lines</b>Between five and nine per issue, in up to four typefaces, competing with each other for a reader who already subscribes.</div>
+    <div><b>Spine</b>Unreadable below 7 mm, which was every issue since 2003.</div>
+   </div>
+   <div class="use"><span class="k lab">Spine, 7 mm</span><div class="spinebar" style="background:#0B3F73;color:#FFD400;font-family:'Bevan';font-size:15px"><span>HALYARD</span><span style="font-family:'Archivo Narrow';font-size:10px;color:#fff">SET 2024</span></div></div>
+  </div>
+ </div>
+</section>
+<section class="new">
+ <div class="lb lab"><span>After, from January 2025</span><span>Two typefaces, two inks</span></div>
+ <div class="big"><div class="newmh" id="nm">Halyard<i class="guide" style="top:44px;width:600px"><b class="gl" style="font-weight:500">x-height</b></i><i class="guide" style="top:107px;width:600px"><b class="gl" style="font-weight:500">baseline</b></i></div></div>
+ <div class="row">
+  <div id="nc"></div>
+  <div>
+   <div class="notes" style="margin-top:0">
+    <div><b>Masthead</b>Abril Fatface, cut tight with the y and the r redrawn at the join so the word holds at spine size. Lower case, because the magazine stopped shouting in 1971 and the logo never heard.</div>
+    <div><b>Cover</b>One shape, cut from paper by hand each month, in two inks on the same uncoated stock. There is nothing left to fill in.</div>
+    <div><b>Sell lines</b>Two. Always bottom right, always one size. The title of the lead essay does the rest.</div>
+    <div><b>Spine</b>Fatface at 15 pt survives every press run we have measured, down to 5 mm.</div>
+   </div>
+   <div class="use"><span class="k lab">Spine, 7 mm</span><div class="spinebar" style="background:#EFE8D6;color:#15171A;font-family:'Abril Fatface';font-size:20px"><span>Halyard</span><span style="font-family:'Archivo Narrow';font-size:10px;font-weight:600;letter-spacing:.06em">MAIO 2025</span></div></div>
+  </div>
+ </div>
+</section>
+<script src="_halyard.js"></script><script>
+// a muddy 60 lpi halftone sea: the bought-in library picture of the old covers
+const c=cv.getContext('2d');c.fillStyle='#CFE0EE';c.fillRect(0,0,660,732);c.fillStyle='#0B2B4F';
+const step=11;
+for(let y=0;y<732;y+=step){for(let x=(y/step%2)*step/2-step;x<680;x+=step){
+ const hor=210;const sky=y<hor;const wave=Math.sin(x*.018+y*.05)*.5+Math.sin(x*.05-y*.09)*.3+Math.sin(x*.003+y*.02)*.5;
+ let v=sky?.18+.2*Math.sin(x*.01)*Math.sin(y*.03)+y/hor*.15:.62+.18*wave+(y-hor)/900;
+ const bx=Math.abs(x-250),by=y-hor; if(by<8&&by>-100){const inside=bx<(by+100)*.55&&x<250+ (by+100)*.3;if(inside)v=.15;} if(by>=0&&by<28&&bx<120-by)v=.95;
+ const r=Math.max(0,Math.min(1,v))*step*.72;c.beginPath();c.arc(x,y,r,0,7);c.fill();}}
+nc.innerHTML=cover('may',330,{h:458});done();
+</script>

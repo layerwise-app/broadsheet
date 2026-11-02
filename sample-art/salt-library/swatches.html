@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="art-size" content="1440x960"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&family=Familjen+Grotesk:wght@400..700&display=block" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1440px;height:960px;overflow:hidden}body{font-family:'Familjen Grotesk',sans-serif;-webkit-font-smoothing:antialiased}body{background:#f6f1e4;color:#1e1b18}
+h1{position:absolute;left:64px;top:50px;font:800 46px/50px 'Besley',serif;letter-spacing:-.6px}
+.sub{position:absolute;left:64px;top:158px;width:560px;font:400 17px/24px 'Besley',serif}
+.meta{position:absolute;right:64px;top:58px;text-align:right;font:600 13px/19px 'Familjen Grotesk'}
+#m{position:absolute;left:64px;top:252px}#p{position:absolute;left:800px;top:176px;width:576px}
+.pt{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 16px}
+.c svg{display:block;width:100%;height:auto}.c b{display:block;font:700 15px/19px 'Besley',serif;margin-top:8px}.c i{display:block;font:500 12px/16px 'Familjen Grotesk';font-style:normal;margin-top:2px}</style></head><body><h1>Ink and stock proof</h1><div class="meta">The Salt Library, Ostra Press<br>Proof 3 of 3, Gráfica Sado<br>11 January 2024</div><p class="sub">Eight mixed inks, two uncoated stocks, and the pairing given to each title. No fifth colour was ever on press. Every third tone on the jackets is an overprint.</p><div id="m"></div><div id="p"></div>
+<script src="_jackets.js"></script><script>
+const names=Object.keys(INK); const cw=134,ch=68,lab=168, gap=6;
+let o='<svg xmlns="http://www.w3.org/2000/svg" width="'+(lab+4*cw+3*gap)+'" height="'+(26+names.length*(ch+gap))+'" style="display:block;isolation:isolate"><defs>';
+names.forEach(k=>{ o+='<pattern id="h'+k+'" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="3" cy="3" r="2.2" fill="'+INK[k]+'"/></pattern>'; });
+o+='</defs>';
+['Kraft, solid','Kraft, 40% dot','Bone, solid','Bone, 40% dot'].forEach((t,i)=>{ o+='<text x="'+(lab+i*(cw+gap))+'" y="14" font-family="'+FONT_S+'" font-size="12.5" font-weight="600" fill="#1e1b18">'+t+'</text>'; });
+names.forEach((k,r)=>{ const y=26+r*(ch+gap);
+ o+='<text x="0" y="'+(y+26)+'" font-family="'+FONT_T+'" font-weight="700" font-size="15.5" fill="#1e1b18">'+INKNAME[k]+'</text><text x="0" y="'+(y+45)+'" font-family="'+FONT_S+'" font-size="12" font-weight="500" fill="#1e1b18">Ostra '+String(r+1).padStart(2,'0')+'</text>';
+ [['kraft',1],['kraft',0],['bone',1],['bone',0]].forEach(([st,solid],i)=>{ const x=lab+i*(cw+gap); o+='<rect x="'+x+'" y="'+y+'" width="'+cw+'" height="'+ch+'" fill="'+STOCK[st]+'"/><g style="mix-blend-mode:multiply"><rect x="'+x+'" y="'+y+'" width="'+cw+'" height="'+ch+'" fill="'+(solid?INK[k]:'url(#h'+k+')')+'"/></g>'; });
+});
+document.getElementById('m').innerHTML=o+'</svg>';
+document.getElementById('p').innerHTML='<div class=pt>'+BOOKS.map(b=>{ const c=bookColours(b); return '<div class=c><svg viewBox="0 0 180 84" style="isolation:isolate"><rect width="180" height="84" fill="'+c.s+'"/><g style="mix-blend-mode:multiply"><circle cx="70" cy="42" r="30" fill="'+c.a+'"/></g><g style="mix-blend-mode:multiply"><circle cx="110" cy="42" r="30" fill="'+c.b+'"/></g></svg><b>'+b.id+' '+b.title+'</b><i>'+INKNAME[b.A]+' + '+INKNAME[b.B]+'</i></div>'; }).join('')+'</div>';</script></body></html>

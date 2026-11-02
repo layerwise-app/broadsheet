@@ -1,0 +1,23 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.6.4/schema.json",
+  "files": {
+    "includes": [
+      "src/**",
+      "scripts/**",
+      "sample-art/*.mjs",
+      "tests/**",
+      "!src/routeTree.gen.ts",
+      "!src/content/work/*.images.json"
+    ]
+  },
+  "formatter": { "enabled": false },
+  "assist": { "enabled": false },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "complexity": { "noImportantStyles": "off" },
+      "style": { "noDescendingSpecificity": "off" }
+    }
+  },
+  "css": { "parser": { "tailwindDirectives": true } }
+}

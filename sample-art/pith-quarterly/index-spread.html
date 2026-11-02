@@ -1,0 +1,57 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="art-size" content="1440x1152">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Hanken+Grotesk:wght@400..800&display=block" rel="stylesheet"><link rel="stylesheet" href="_shared.css"><script src="_food.js"></script>
+<style>
+html,body{background:#FBF3E1}
+.hd{position:absolute;left:44px;top:32px;width:1050px;border-bottom:3px solid #21130B;padding-bottom:12px;color:#21130B}
+h1{font-size:96px;line-height:.98;white-space:nowrap;letter-spacing:-.026em;font-weight:780;color:#C51D15;font-variation-settings:'SOFT' 100,'WONK' 1,'opsz' 144}
+.hd p{margin-top:8px;font-style:italic;font-size:18.5px;line-height:1.26;font-variation-settings:'SOFT' 100,'WONK' 1,'opsz' 18}
+.cols{position:absolute;left:44px;top:212px;width:1050px;height:900px;columns:4;column-gap:24px;column-rule:1px solid #C9B58F;column-fill:auto;font-size:15.8px;line-height:1.23;color:#21130B;font-variation-settings:'SOFT' 50,'WONK' 0,'opsz' 14}
+.cols h2{font-size:38px;line-height:1;font-weight:800;color:#0E4F48;margin:7px 0 1px;break-after:avoid;font-variation-settings:'SOFT' 100,'WONK' 1,'opsz' 144}
+.cols h2:first-child{margin-top:0}
+.e{display:flex;justify-content:space-between;gap:10px;break-inside:avoid}
+.e i{font-style:italic}
+.e b{font-family:'Hanken Grotesk';font-variation-settings:normal;font-weight:600;font-size:13.6px;white-space:nowrap;padding-top:1.6px}
+.v{break-inside:avoid;margin:10px 0}
+.f{position:absolute;bottom:14px;font-family:'Hanken Grotesk';font-variation-settings:normal;font-size:13px;font-weight:600}
+</style></head><body>
+<div class="hd"><h1>Everything, by ingredient</h1><p>All twelve issues. Issue first, then page. Entries in italics are arguments, not recipes. Water is omitted, though it was discussed.</p></div>
+<div class="cols" id="c"></div>
+<div class="f" style="left:44px">146</div><div class="f" style="left:1050px;width:44px;text-align:right">147</div>
+<script>
+document.write('<svg width="306" height="1152" viewBox="0 0 306 1152" style="position:absolute;left:1134px;top:0">'+'<rect width="306" height="1152" fill="#0E4F48"/>'
+ +at(150,120,1.5,-14,citrusHalf('orange',12,10))
+ +at(36,360,.6,90,sardine(21))+at(186,360,.6,90,sardine(22))
+ +at(150,750,1.2,-8,tomatoHalf(17))
+ +at(66,944,.7,-12,citrusWhole('lemon',15))+at(226,968,.74,6,slice(33))
+ +at(130,1086,.56,-10,parsley(57))
+ +'</svg>');
+</script>
+<script>
+const I={A:[['Almonds, green','3.58'],['Anchovy','2.41, 7.88, 12.33'],['Apricot kernels','6.102'],['Artichoke, trimming','5.20'],['Aubergine','3.77, 11.61']],
+B:[['Bacalhau, soaking','1.14, 9.70'],['Bay, as a threat','4.12'],['Beans, broad','10.8–51'],['Beans, a field guide','10.74'],['Beef shin','4.66'],['Beetroot tops','8.29'],['Bread, day-old','12.90–104'],['Bread, week-old','12.106'],['Bream','7.31'],['Butter, against','2.9']],
+C:[['Cabbage, black','1.50, 5.33'],['Capers','7.44'],['Carob','8.91'],['Cheese rind','4.118'],['Chickpeas','2.60, 10.77'],['Chicory','1.38'],['Clams','3.21, 7.52'],['Coriander','6.40'],['Cornmeal','5.62, 9.31'],['Courgette flowers','3.46'],['Cuttlefish ink','7.60']],
+D:[['Dates','8.75'],['Dill, defended','5.17'],['Dogfish','2.84'],['Dried pears','4.131']],
+E:[['Eels','6.70'],['Eggs, how many','1.8, 5.9'],['Eggs, poached in soup','9.44']],
+F:[['Fennel pollen','11.29'],['Fennel, wild','3.33'],['Figs','4.22, 8.12'],['Fish heads','2.72, 12.60'],['Flour, chestnut','8.54'],['Fridge, against the','11.14']],
+G:[['Garlic, new','6.17'],['Goat','5.82'],['Grapes, sour','4.48'],['Grapefruit pith','9.31'],['Grelos','1.44, 9.61']],
+H:[['Hake cheeks','6.91'],['Honey, heather','8.63'],['Hop shoots','6.28']],
+J:[['Jam, failed','4.140']],K:[['Kid, roast','5.84'],['Kohlrabi','2.33']],
+L:[['Lamb neck','9.77'],['Lard','4.98, 8.40'],['Leeks, burnt','1.60'],['Lemon, preserved','9.54'],['Lentils','2.17, 8.32'],['Limpets','7.71'],['Lupins','10.62']],
+M:[['Mackerel','3.80, 12.48'],['Marmalade','9.20–40'],['Medlars','4.60'],['Mint, too much','3.13'],['Morcela','1.70'],['Mussels','7.15'],['Mustard greens','5.47']],
+N:[['Nettles','6.54'],['Nutmeg, how little','2.46']],
+O:[['Octopus','7.20'],['Olive oil, grading','8.16'],['Olives, curing','4.76'],['Onions, burnt','1.60'],['Orange, bitter','9.12'],['Orange pith','9.23'],['Oxtail','5.71']],
+P:[['Partridge','4.109'],['Peas, shelling','6.11'],['Peppers','3.65, 11.70'],['Pig’s ear','2.97'],['Pine nuts','8.45'],['Potato water','1.26'],['Purslane','11.52']],
+Q:[['Quince','4.31–46']],R:[['Rabbit','5.40'],['Rice, burnt','2.21'],['Rocket, gone to seed','6.33'],['Rye','1.82']],
+S:[['Salt cod','1.14'],['Samphire','7.40'],['Sardines','7.8, 12.8–88'],['Sausage water','9.82'],['Sea urchin','3.90'],['Sorrel','6.44'],['Squid','7.34']],
+T:[['Tomato, green','11.42'],['Tomato leaves','11.48'],['Tomato skins','11.56'],['Tomatoes, sorting','11.6–40'],['Tripe','2.52, 5.92'],['Turnip tops','1.44']],
+V:[['Vinegar, your own','4.126'],['Vine leaves','6.82']],W:[['Walnuts, wet','8.20'],['Whey','6.60'],['Wine, the end of the','4.136']],Y:[['Yeast, wild','8.100']]};
+let h='';
+const VIG={D:at(60,50,.5,0,citrusWhole('lemon',15)),L:'',P:'',S:''};
+for(const k of Object.keys(I)){h+='<h2'+(k==='R'?' style="break-before:column;margin-top:0"':'')+'>'+k+'</h2>';for(const [n,p] of I[k]){const it=/against|defended|as a threat|too much|how many|how little|failed|the end/.test(n);h+='<div class="e"><span'+(it?' style="font-style:italic"':'')+'>'+n+'</span><b>'+p+'</b></div>';}
+ if(k==='E')h+='<div class="v"><svg width="240" height="110" viewBox="0 0 240 110">'+at(78,55,.48,-18,citrusHalf('orange',12,9))+at(190,56,.42,14,tomato(61))+'</svg></div>';
+ if(k==='M')h+='<div class="v"><svg width="240" height="86" viewBox="0 0 240 86">'+at(16,40,.47,0,sardine(21))+'</svg></div>';
+ if(k==='Q')h+='<div class="v" style="margin-bottom:0"><svg width="240" height="96" viewBox="0 0 240 96">'+at(74,8,.74,0,citrusWedge('lemon',9))+at(150,52,.5,-14,chilli(55))+'</svg></div>';
+ if(k==='R')h+='<div class="v"><svg width="240" height="110" viewBox="0 0 240 110">'+at(62,60,.46,-8,slice(33))+at(170,58,.72,0,garlic(51))+'</svg></div>';
+}
+document.getElementById('c').innerHTML=h;
+</script></body></html>

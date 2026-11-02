@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="art-size" content="1440x1127"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Big+Shoulders+Display:wght@400..900&family=Six+Caps&display=block" rel="stylesheet"><link rel="stylesheet" href="_margem.css"><script src="_halftone.js"></script><script src="_posters.js"></script>
+<style>
+html,body{background:var(--stock);color:var(--ink)}
+.l{position:absolute;left:0;top:0;width:720px;height:1127px;background:var(--ink)}
+.l canvas{width:720px;height:1127px;display:block}
+.cap{position:absolute;left:0;right:0;bottom:0;height:86px;background:var(--ink);padding:14px 30px;color:var(--stock);font-weight:600;font-size:14px;line-height:1.22;font-stretch:84%;}
+.r{position:absolute;left:720px;top:0;width:720px;height:1127px;padding:34px 72px 34px 40px;border-left:1px solid var(--ink)}
+.sec{display:flex;justify-content:space-between;font-weight:750;font-size:15px;font-stretch:82%;border-bottom:2.5px solid var(--ink);padding-bottom:8px}
+h1{font:400 158px/.9 'Six Caps';margin-top:18px;letter-spacing:.008em}
+h1 u{text-decoration:none;margin:0 .01em 0 -.075em}
+h2{font:700 25px/1.06 'Big Shoulders Display';margin-top:10px;letter-spacing:.012em}
+.meta{display:grid;grid-template-columns:82px 1fr 82px 1fr;margin-top:22px;border-top:1px solid var(--ink);font-size:14.5px;line-height:1.2}
+.meta>*{border-bottom:1px solid var(--ink);padding:6px 0 7px}
+.meta dt{font-weight:800;font-stretch:80%}
+.syn{font-size:20px;line-height:1.34;margin-top:24px;font-weight:430;font-stretch:90%;}
+.syn+.syn{margin-top:10px}
+.sc{position:absolute;left:40px;right:72px;bottom:64px;border-top:2.5px solid var(--ink)}
+.sc .ln{display:grid;grid-template-columns:128px 118px 1fr 60px;align-items:center;border-bottom:1px solid var(--ink);height:68px}
+.sc .ln b{font:800 44px/1 'Big Shoulders Display';white-space:nowrap}
+.sc .ln .v{font:800 56px/1 'Big Shoulders Display';text-align:right}
+.sc .ln span{font-size:14px;font-weight:600;line-height:1.14;font-stretch:84%}
+.tab{position:absolute;right:0;top:128px;width:34px;height:84px;background:var(--ink);color:var(--signal);display:flex;align-items:center;justify-content:center;font:800 30px/1 'Big Shoulders Display'}
+.folio{position:absolute;bottom:22px;font:800 21px/1 'Big Shoulders Display'}
+</style>
+<body>
+<section class="l"><canvas id="c" width="1440" height="2254"></canvas>
+<p class="cap">Inês Valadares’s third feature was shot in eleven nights on the lower Sorna with no lamps of its own. Every light in the frame belongs to the town.</p></section>
+<section class="r">
+  <div class="sec"><span>Competição / Competition</span><span class="tn">07 of 22</span></div>
+  <h1>THE FERRYMAN<u>’</u>S<br>DAUGHTER</h1>
+  <h2>A Filha do Barqueiro</h2>
+  <dl class="meta">
+    <dt>Director</dt><dd>Inês Valadares</dd><dt>Country</dt><dd>Portugal, Cape Verde</dd>
+    <dt>Runtime</dt><dd class="tn">112 min</dd><dt>Year</dt><dd class="tn">2025</dd>
+    <dt>Language</dt><dd>Portuguese, Kriolu</dd><dt>Subtitles</dt><dd>English, Portuguese</dd>
+    <dt>Format</dt><dd>35 mm print</dd><dt>Premiere</dt><dd>Portuguese</dd>
+  </dl>
+  <p class="syn">The last licensed ferry on the lower river is sold to a tourism company, and the woman who has crewed it since she was fourteen has six weeks to decide what she owes the man who taught her. Valadares films the crossings at the speed of the crossings, then one night refuses to cut away.</p>
+  <p class="syn">Not a film for the back rows of Room A: the first forty minutes are lit by the far bank. Come early and sit close.</p>
+  <div class="sc">
+    <div class="ln"><b class="tn">Sáb 4</b><b class="tn">18:30</b><span>Director present. Conversation after, 20 minutes.</span><div class="v">A</div></div>
+    <div class="ln"><b class="tn">Seg 6</b><b class="tn">21:15</b><span>Printed subtitles in Portuguese only.</span><div class="v">B</div></div>
+    <div class="ln"><b class="tn">Sex 10</b><b class="tn">16:00</b><span>Last screening. On the water, ferry leaves on time.</span><div class="v">C</div></div>
+  </div>
+  <div class="tab">2</div>
+  <div class="folio tn" style="right:72px">31</div>
+</section>
+<script>
+window.artReady=false;
+function draw(){HT.halftone(document.getElementById('c'),'river',{cell:11,color:'#f1eadb',scale:1,sceneA:1.5,ox:0.2,oy:0,gamma:1.1,exposure:.92});}
+document.fonts.ready.then(async()=>{await document.fonts.load('100px "Six Caps"','MARGEM');await document.fonts.load('800 100px "Big Shoulders Display"','A');await document.fonts.load('700 20px Archivo','A');draw();window.artReady=true;});
+</script></body></html>

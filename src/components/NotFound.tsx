@@ -1,25 +1,18 @@
-import { Link } from '@tanstack/react-router'
+import { Link } from '@tanstack/react-router';
 
-export function NotFound({ children }: { children?: any }) {
+export function NotFound() {
   return (
-    <div className="space-y-2 p-2">
-      <div className="text-gray-600 dark:text-gray-400">
-        {children || <p>The page you are looking for does not exist.</p>}
-      </div>
-      <p className="flex items-center gap-2 flex-wrap">
-        <button
-          onClick={() => window.history.back()}
-          className="bg-emerald-500 text-white px-2 py-1 rounded-sm uppercase font-black text-sm"
-        >
-          Go back
-        </button>
-        <Link
-          to="/"
-          className="bg-cyan-600 text-white px-2 py-1 rounded-sm uppercase font-black text-sm"
-        >
-          Start Over
-        </Link>
+    <main id='main' className='page notice-page'>
+      <p className='kicker'>Corrections</p>
+      <h1 className='notice-title'>This page did not make the edition.</h1>
+      <p className='notice-body'>
+        The address may have been set wrongly, or the story may have been
+        pulled before the presses ran. We regret the error.
       </p>
-    </div>
-  )
+      <p className='notice-body'>
+        <Link to='/'>Return to the front page</Link> or{' '}
+        <Link to='/work'>read the contents</Link>.
+      </p>
+    </main>
+  );
 }

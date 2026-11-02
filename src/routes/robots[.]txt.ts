@@ -1,8 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { siteUrl } from '~/lib/site';
 
-// Signed-in pages and the API stay out of search. Public pages that shouldn't
-// show in results, like sign-in, use `seo({ noindex: true })` instead.
+// Every page is public; only the form's server endpoint stays out of search.
 export const Route = createFileRoute('/robots.txt')({
   server: {
     handlers: {
@@ -10,8 +9,7 @@ export const Route = createFileRoute('/robots.txt')({
         new Response(
           [
             'User-agent: *',
-            'Disallow: /api/',
-            'Disallow: /dashboard',
+            'Disallow: /_serverFn/',
             '',
             `Sitemap: ${siteUrl('/sitemap.xml')}`,
             ''

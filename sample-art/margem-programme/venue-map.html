@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="art-size" content="1440x960"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Big+Shoulders+Display:wght@400..900&family=Six+Caps&display=block" rel="stylesheet"><link rel="stylesheet" href="_margem.css"><script src="_halftone.js"></script><script src="_posters.js"></script>
+<style>
+html,body{background:var(--signal);color:var(--ink)}
+svg{position:absolute;left:0;top:0}
+.t{position:absolute;left:40px;top:30px}
+.lg{position:absolute;left:40px;top:262px;width:346px;}
+.lg table{width:100%;border-collapse:collapse;font-size:15px;font-stretch:84%;font-weight:600}
+.lg td,.lg th{border-bottom:1px solid var(--ink);padding:5px 0;text-align:center;font-weight:750}
+.lg th{font:800 26px/1 'Big Shoulders Display'}
+.lg tr:first-child th{border-bottom:2.5px solid var(--ink)}
+.lg td:first-child,.lg th:first-child{text-align:left}
+.lg .cap{font-size:13.5px;line-height:1.2;font-weight:620;font-stretch:84%;margin-bottom:10px}
+</style>
+<body><svg id="m" width="1440" height="960" viewBox="0 0 1440 960"></svg>
+<div class="t"><div class="caps" style="font-size:158px;line-height:.82">ALVARIM</div><div class="bs" style="font-size:30px;margin-top:14px;line-height:1.02">Quatro salas a pé.<br>Four rooms on foot.</div></div>
+<div class="lg"><p class="cap">Walking minutes between rooms, measured at a queue’s pace by the volunteers on the Thursday before opening. The ferry to Margem Sul takes 9.</p>
+<table class="tn"><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr>
+<tr><th>A</th><td>·</td><td>6</td><td>11</td><td>2</td></tr>
+<tr><th>B</th><td>6</td><td>·</td><td>7</td><td>7</td></tr>
+<tr><th>C</th><td>11</td><td>7</td><td>·</td><td>12</td></tr>
+<tr><th>D</th><td>2</td><td>7</td><td>12</td><td>·</td></tr></table></div>
+<script>
+window.artReady=false;
+const NS='http://www.w3.org/2000/svg';const svg=document.getElementById('m');
+const add=(n,a,txt)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(txt)e.textContent=txt;svg.append(e);return e};
+// River, a wide bend sweeping across the lower sheet.
+const river='M -20 668 C 180 650 330 690 520 744 C 700 796 860 790 1010 700 C 1120 634 1260 610 1460 640 L 1460 860 C 1290 830 1190 850 1100 910 C 950 1010 730 1030 520 960 C 340 900 170 860 -20 880 Z';
+const riverPath=add('path',{d:river,fill:'#0d0c0a'});
+const L=riverPath.getTotalLength();
+const bankPts=[];for(let i=0;i<=600;i++){const p=riverPath.getPointAtLength(L*i/600);bankPts.push(p)}
+const inRiver=(x,y)=>riverPath.isPointInFill(new DOMPoint(x,y));
+// Streets: a warped street grid, cut at the water.
+const warp=(u,v)=>{const a=-0.2;const x=u*Math.cos(a)-v*Math.sin(a),y=u*Math.sin(a)+v*Math.cos(a);return [x+40*Math.sin(y/190)+18*HT.noise(u/90,v/90), y+32*Math.sin(x/230)]};
+function street(pts,w){let d='';let on=false;for(const [x,y] of pts){if(inRiver(x,y)||y>1110||x<-30||x>1470){on=false;continue}d+=(on?'L':'M')+x.toFixed(1)+' '+y.toFixed(1)+' ';on=true}add('path',{d,fill:'none',stroke:'#0d0c0a','stroke-width':w,'stroke-linejoin':'round','stroke-linecap':'butt'})}
+const skip=(i,j)=>HT.hash(i*3.1,j*1.7)>0.8;
+for(let i=-10;i<36;i++){for(let k=-10;k<30;k++){ if(skip(i,k))continue;const pts=[];for(let t=0;t<=6;t++){pts.push(warp(i*64,(k+t/6)*50))}street(pts,HT.hash(i,3)>.88?2.6:1)}}
+for(let k=-10;k<30;k++){for(let i=-10;i<36;i++){ if(skip(k+50,i))continue;const pts=[];for(let t=0;t<=6;t++){pts.push(warp((i+t/6)*64,k*50))}street(pts,HT.hash(k,5)>.9?2.6:1)}}
+// Clear the title and legend zones.
+add('rect',{x:-4,y:-4,width:426,height:544,fill:'#ffb81c',stroke:'#0d0c0a','stroke-width':2.5});
+// Railway.
+add('path',{d:'M 1460 110 C 1320 160 1210 210 1090 300 C 1064 318 1046 332 1030 344',fill:'none',stroke:'#0d0c0a','stroke-width':11});
+add('path',{d:'M 1460 110 C 1320 160 1210 210 1090 300 C 1064 318 1046 332 1030 344',fill:'none',stroke:'#ffb81c','stroke-width':6,'stroke-dasharray':'14 14'});
+svg.append(riverPath);
+// South bank promenade line and ferry route.
+add('path',{d:'M 858 752 C 930 790 1040 830 1168 868',fill:'none',stroke:'#ffb81c','stroke-width':3,'stroke-dasharray':'9 7'});
+// Walking route between rooms.
+const V={A:[640,392],B:[900,540],C:[846,716],D:[526,462]};
+add('path',{d:'M 640 392 L 526 462',fill:'none',stroke:'#0d0c0a','stroke-width':8});
+add('path',{d:'M 640 392 C 730 400 820 470 900 540',fill:'none',stroke:'#0d0c0a','stroke-width':8});
+add('path',{d:'M 900 540 C 910 600 880 670 846 716',fill:'none',stroke:'#0d0c0a','stroke-width':8});
+for(const k in V){const [x,y]=V[k];add('rect',{x:x-36,y:y-36,width:72,height:72,fill:'#0d0c0a'});add('text',{x,y:y+25,'text-anchor':'middle',fill:'#ffb81c','font-family':'Big Shoulders Display','font-weight':800,'font-size':70},k)}
+const lab=(x,y,t,o={})=>add('text',{x,y,fill:'#0d0c0a','font-family':'Archivo','font-weight':800,'font-size':o.s||17,'font-stretch':'80%','letter-spacing':o.ls||0,...o.a},t);
+const plate=(x,y,lines)=>{const h=lines.length*19+10;const w=Math.max(...lines.map(l=>l.length))*8.4+14;add('rect',{x:x-6,y:y-16,width:w,height:h,fill:'#ffb81c'});lines.forEach((l,i)=>lab(x,y+i*19,l))};
+plate(684,352,['Cine-Teatro Alvarim','412 seats']);
+plate(944,516,['Armazém 7','180 seats, Cais do Sal']);
+plate(650,690,['O Barco, Cais Novo','64 seats']);
+plate(450,526,['Jardim da Alfândega','300 chairs']);
+plate(900,356,['Estação CP','Lisbon 58 min']);
+plate(1190,300,['Rua dos Calafates']);plate(1110,600,['Cais do Sal']);plate(462,340,['Largo da Alfândega']);plate(1240,430,['Rua da Ribeira Velha']);plate(40,906,['Rua do Arsenal Sul']);
+add('rect',{x:1094,y:286,width:0,height:0});
+// River label on the path.
+add('path',{id:'rl',d:'M 40 800 C 240 790 400 830 560 880 C 720 930 880 910 1040 800 C 1140 730 1280 720 1420 740',fill:'none'});
+const rt=add('text',{fill:'#ffb81c','font-family':'Big Shoulders Display','font-weight':800,'font-size':44,'letter-spacing':14});
+const tp=document.createElementNS(NS,'textPath');tp.setAttribute('href','#rl');tp.setAttribute('startOffset','33%');tp.textContent='RIO SORNA';rt.append(tp);
+add('rect',{x:1170,y:870,width:170,height:68,fill:'#ffb81c'});add('text',{x:1180,y:902,fill:'#0d0c0a','font-family':'Big Shoulders Display','font-weight':800,'font-size':34},'Margem Sul');
+add('text',{x:1180,y:928,fill:'#0d0c0a','font-family':'Archivo','font-weight':700,'font-size':14,'font-stretch':'80%'},'Last ferry back 00:40');
+add('text',{x:930,y:844,fill:'#ffb81c','font-family':'Archivo','font-weight':800,'font-size':14,'font-stretch':'80%'},'Ferry 9 min');
+// Scale and north.
+add('rect',{x:232,y:912,width:176,height:44,fill:'#ffb81c'});add('rect',{x:240,y:938,width:160,height:6,fill:'#0d0c0a'});
+add('text',{x:240,y:930,fill:'#0d0c0a','font-family':'Archivo','font-weight':800,'font-size':14,'font-stretch':'80%'},'200 m, 3 min on foot');
+add('rect',{x:1366,y:10,width:56,height:118,fill:'#ffb81c'});add('path',{d:'M 1394 48 L 1394 118 M 1380 74 L 1394 48 L 1408 74',fill:'none',stroke:'#0d0c0a','stroke-width':3});
+add('text',{x:1394,y:40,'text-anchor':'middle',fill:'#0d0c0a','font-family':'Big Shoulders Display','font-weight':800,'font-size':30},'N');
+function draw(){}
+document.fonts.ready.then(async()=>{await document.fonts.load('100px "Six Caps"','MARGEM');await document.fonts.load('800 100px "Big Shoulders Display"','A');await document.fonts.load('700 20px Archivo','A');draw();window.artReady=true;});
+</script></body></html>

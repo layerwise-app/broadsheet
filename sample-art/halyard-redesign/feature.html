@@ -1,0 +1,45 @@
+<!doctype html><meta charset="utf-8"><meta name="art-size" content="1440x900"><link rel="stylesheet" href="_base.css">
+<style>
+body{width:1440px;height:900px;background:#EFE9D9;display:grid;grid-template-columns:720px 720px;color:#14202B;position:relative}
+.l{background:#E4572E;position:relative;--bg:#E4572E;--fg:#14202B;--a:#F3ECD9}
+.l svg{position:absolute;inset:0;width:100%;height:100%}
+.r{padding:40px 48px 34px;display:flex;flex-direction:column}
+.kick{display:flex;justify-content:space-between;font-size:11px;border-bottom:1px solid #14202B;padding-bottom:8px;color:#14202B}
+h1{font-family:'Abril Fatface';font-weight:400;font-size:98px;line-height:1.01;margin-top:14px;letter-spacing:-.006em}
+.deck{font-style:italic;font-size:21px;line-height:1.24;margin-top:12px;max-width:600px}
+.by{font-size:11px;margin-top:14px;border-top:1px solid #14202B;padding-top:8px;display:flex;justify-content:space-between}
+.body{columns:2;column-gap:22px;font-size:13.8px;line-height:1.37;margin-top:14px;hyphens:auto;text-align:justify;flex:1;min-height:0}
+.body p+p{text-indent:1em}
+.drop{float:left;font-family:'Abril Fatface';font-size:78px;line-height:.78;padding:6px 7px 0 0;color:#E4572E}
+.foot{display:flex;justify-content:space-between;align-items:baseline;font-size:11px;padding-top:10px}
+.foot b{font-family:'Abril Fatface';font-weight:400;font-size:20px;letter-spacing:0}
+.cap{position:absolute;left:32px;bottom:26px;font-size:10.5px;color:#14202B;max-width:360px;line-height:1.3}
+</style>
+<section class="l"><svg viewBox="0 0 100 125" preserveAspectRatio="xMidYMid slice" id="sv"></svg>
+<div class="cap lab">12 &nbsp; Paper cut, two inks. The <em style="font-style:normal">Dom Fuas</em> leaves Cais do Sodré, 08:40</div></section>
+<section class="r" lang="en">
+ <div class="kick lab"><span>Feature / Reportagem</span><span>The River</span></div>
+ <h1>The Last Ferry to Cacilhas</h1>
+ <p class="deck">For 140 years the crossing carried shipwrights, clerks and every child in Almada to school. In January it stops.</p>
+ <div class="by lab"><span>Words: Inês Valadão</span><span>Tradução: Rui Sotomaior, p. 20</span></div>
+ <div class="body"><p><span class="drop">T</span>he 08:40 leaves on the tenth minute after the eighth bell nobody rings any more. Arménio Vaz, who has worked the ramp since 1987, unhooks the chain with his left hand and with his right hand holds back a man who has been late every weekday for eleven years. They do not speak. The man nods. The chain drops, and the <em>Dom Fuas</em> takes up the slack in her lines and leans out into the brown water at about the speed of a walking dog.</p><p>It is a nine-minute crossing. In that time, on a Tuesday in February, I counted two nuns, a tray of custard tarts on its way to a christening, four apprentices from the Lisnave yard with no yard left to go to, and a girl revising the French subjunctive out loud. The operator’s timetable lists capacity at 492. I counted 61.</p><p>That number is the whole argument, as far as the ministry is concerned. A bridge went up in 1966 and a train came across it in 1999. Each took a share of the deck until what remained was people with nowhere urgent to be, and a line on a spreadsheet at the Ministry of Infrastructure, where it has stayed red for fourteen years.</p><p>“You can’t keep a boat for the view,” said the junior minister when I asked. Arménio has a different figure in mind. He reckons that he has carried each of Almada’s grandmothers at least nine thousand times, and that none of them has ever once said thank you, and that this is exactly as it should be.</p></div>
+ <div class="foot lab"><span>Halyard, Julho / July 2025</span><b>13</b></div>
+</section>
+<script src="_halyard.js"></script><script>
+sv.innerHTML=`
+<circle cx="72" cy="27" r="15" fill="${'var(--a)'}"/>
+<polygon points="0,76 100,76 100,125 0,125" fill="var(--fg)"/>
+${scallop(76,8,3.4,'var(--fg)',0,100,125)}
+<polygon points="-4,63 104,63 94,82 4,82" fill="var(--a)"/>
+<polygon points="10,48 88,48 92,63 6,63" fill="var(--fg)"/>
+<polygon points="20,35 66,35 69,48 17,48" fill="var(--a)"/>
+<polygon points="73,14 82,14 82,48 73,48" fill="var(--fg)"/>
+<polygon points="73,20 82,20 82,25 73,25" fill="var(--bg)"/>
+${[14,22.5,31,39.5,48,56.5,65,73.5].map(x=>`<rect x="${x}" y="52.4" width="5" height="6.6" fill="var(--a)"/>`).join('')}
+${[24,32,40,48,56].map(x=>`<rect x="${x}" y="38.5" width="5" height="5.5" fill="var(--fg)"/>`).join('')}
+<polygon points="-4,69 104,69 103,71 -3,71" fill="var(--bg)"/>
+${scallop(88,6,3.6,'var(--bg)',0,100,92)}
+${scallop(96,7,3,'var(--a)',0,100,100)}
+${scallop(106,6,3,'var(--bg)',0,100,110)}`;
+window.artReady=true;
+</script>

@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="art-size" content="1440x820"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&family=Familjen+Grotesk:wght@400..700&display=block" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}html,body{width:1440px;height:820px;overflow:hidden}body{font-family:'Familjen Grotesk',sans-serif;-webkit-font-smoothing:antialiased}body{background:#c9a87b}#a{position:absolute;inset:0}</style></head><body><div id="a"></div>
+<script src="_jackets.js"></script><script>
+const W=650,H=W*792/1760, xs=[50,740], ys=[92,92+H+58]; const ids=[12,9,11,5];
+const C=['#143d6b','#e3401b'];
+let o='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 820" width="1440" height="820" style="display:block;isolation:isolate">'+defs+paper('kraft',1440,820,5);
+ids.forEach((n,i)=>{ const x=xs[i%2],y=ys[i>>1]; o+='<svg x="'+x+'" y="'+y+'" width="'+W+'" height="'+H+'" viewBox="0 0 1760 792" overflow="hidden"><g>'+unfoldedInner(n,{folds:false}).replace(/<rect width="1760" height="792" fill="#c9a87b"\/>/,'')+'</g></svg>';
+ const b=BOOKS[n-1], sp=b.mm*4, fl=(1760-1032-sp)/2, s=W/1760;
+ // crop and fold marks
+ const m=[[x,y],[x+W,y],[x,y+H],[x+W,y+H]];
+ m.forEach(([cx,cy])=>{ const dx=cx===x?-1:1, dy=cy===y?-1:1; o+='<g stroke="#1e1b18" stroke-width=".7"><line x1="'+(cx+dx*4)+'" y1="'+cy+'" x2="'+(cx+dx*16)+'" y2="'+cy+'"/><line x1="'+cx+'" y1="'+(cy+dy*4)+'" x2="'+cx+'" y2="'+(cy+dy*16)+'"/></g>'; });
+ [fl,fl+516,fl+516+sp,fl+516+sp+516].forEach(f=>{ const fx=x+f*s; o+='<g stroke="#1e1b18" stroke-width=".7" stroke-dasharray="3 2"><line x1="'+fx+'" y1="'+(y-16)+'" x2="'+fx+'" y2="'+(y-4)+'"/><line x1="'+fx+'" y1="'+(y+H+4)+'" x2="'+fx+'" y2="'+(y+H+16)+'"/></g>'; });
+ o+='<text x="'+x+'" y="'+(y-26)+'" font-family="'+FONT_S+'" font-size="10.5" font-weight="600" fill="#1e1b18">No. '+b.id+' '+b.title+' · spine '+b.mm+' mm · flaps '+(fl/4)+' mm</text>';
+});
+const reg=(x,y,col)=>'<g stroke="'+col+'" stroke-width=".9" fill="none" style="mix-blend-mode:multiply"><circle cx="'+x+'" cy="'+y+'" r="7"/><line x1="'+(x-12)+'" y1="'+y+'" x2="'+(x+12)+'" y2="'+y+'"/><line x1="'+x+'" y1="'+(y-12)+'" x2="'+x+'" y2="'+(y+12)+'"/></g>';
+[[720,38],[24,410],[1416,410]].forEach(([x,y])=>{ o+=reg(x,y,C[0])+reg(x,y,C[1]); });
+o+='<g font-family="'+FONT_S+'" font-weight="600" font-size="12" fill="#1e1b18"><text x="50" y="30">Ostra Press · The Salt Library · Forme 3 of 9</text><text x="50" y="46" font-weight="500">Harbour Blue + Signal Vermilion on 120 g kraft · 720 × 1020 mm · 4 up</text><text x="1390" y="30" text-anchor="end">Gráfica Sado, Setúbal</text><text x="1390" y="46" text-anchor="end" font-weight="500">Pass sheet, signed 14.02.2024 N.C.</text></g>';
+// colour bar
+let bx=50, by=ys[1]+H+26; const tint=(id,col,step,r)=>'<pattern id="'+id+'" width="'+step+'" height="'+step+'" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="'+step/2+'" cy="'+step/2+'" r="'+r+'" fill="'+col+'"/></pattern>';
+o+='<defs>'+[0,1].map(c=>[[.9,'a'],[1.4,'b'],[1.9,'c']].map(([r,t])=>tint('t'+c+t,C[c],4,r)).join('')).join('')+'</defs>';
+for(let k=0;k<20;k++){ const c=k%2; const kind=['','c','b','a','o'][Math.floor(k/2)%5]; const f=kind==='o'?null:(kind===''?C[c]:'url(#t'+c+kind+')');
+  if(kind==='o'){ o+='<g style="mix-blend-mode:multiply"><rect x="'+bx+'" y="'+by+'" width="64" height="22" fill="'+C[0]+'"/></g><g style="mix-blend-mode:multiply"><rect x="'+bx+'" y="'+by+'" width="64" height="22" fill="'+C[1]+'"/></g>'; }
+  else o+='<g style="mix-blend-mode:multiply"><rect x="'+bx+'" y="'+by+'" width="64" height="22" fill="'+f+'"/></g>';
+  bx+=67; }
+o+='</svg>'; document.getElementById('a').innerHTML=o;</script></body></html>

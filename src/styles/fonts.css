@@ -1,0 +1,38 @@
+/*
+ * The site's fonts. In the production build Vite embeds them in the stylesheet
+ * (`assetsInlineLimit` in vite.config.ts). The stylesheet blocks first paint, so
+ * the text is drawn once, in the right font: nothing swaps and nothing moves, on
+ * any connection. Keep these files small; every page loads them. The family names
+ * must match `fonts` in src/portfolio.config.ts.
+ */
+@font-face {
+  font-family: 'Newsreader';
+  src: url('/src/styles/fonts/newsreader.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Newsreader';
+  src: url('/src/styles/fonts/newsreader-italic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Noto Serif Display';
+  src: url('/src/styles/fonts/noto-serif-display-condensed.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Noto Serif Display';
+  src: url('/src/styles/fonts/noto-serif-display-condensed-italic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 500 800;
+  font-display: block;
+}

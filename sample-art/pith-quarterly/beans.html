@@ -1,0 +1,57 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="art-size" content="1440x1152">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Hanken+Grotesk:wght@400..800&display=block" rel="stylesheet"><link rel="stylesheet" href="_shared.css"><script src="_food.js"></script>
+<style>
+html,body{background:#F8EED8}
+.hd{position:absolute;left:44px;right:44px;top:34px;display:grid;grid-template-columns:790px 1fr;column-gap:40px;align-items:end;border-bottom:3px solid #21130B;padding-bottom:16px;color:#21130B}
+h1{font-size:92px;line-height:.92;font-weight:780;letter-spacing:-.024em;color:#0F4A2B;font-variation-settings:'SOFT' 100,'WONK' 1,'opsz' 144}
+.hd p{font-size:18px;line-height:1.28;font-style:italic;font-variation-settings:'SOFT' 100,'WONK' 1,'opsz' 18}
+.g{position:absolute;left:0;top:228px;width:1440px;display:grid;grid-template-columns:repeat(6,240px);grid-auto-rows:231px;}
+.c{position:relative;padding:0 12px}
+.c svg{position:absolute;left:0;top:0}
+.t{position:absolute;left:14px;right:8px;bottom:12px}
+.t b{display:block;font-size:21px;line-height:1.05;font-weight:700;font-variation-settings:'SOFT' 100,'WONK' 0,'opsz' 24}
+.t span{display:block;font-family:'Hanken Grotesk';font-variation-settings:normal;font-size:13px;line-height:1.26;margin-top:3px;font-weight:500}
+.f{position:absolute;bottom:0;font-family:'Hanken Grotesk';font-variation-settings:normal;font-size:13px;font-weight:600}
+</style></head><body>
+<div class="hd"><h1>A Field Guide<br>to Beans</h1><p>Twenty-four beans at twice life size, with where they grow and how long they take from a soak. Times are for 2 kg of tap water at a low simmer. Your water will disagree.</p></div>
+<div class="g" id="g"></div>
+<script>
+const B=[
+['Cannellini','Tuscany. 60 min',{base:'#F4ECD9',hi:'#FFFDF4',hilum:'#D8C8A4',L:128,W:50,bend:.42,fat:.5}],
+['Feijão manteiga','Ribatejo. 50 min',{base:'#E9C67F',hi:'#F6E1A9',hilum:'#FFF6D8',L:96,W:60,bend:.5,fat:.5}],
+['Borlotti','Veneto. 55 min',{base:'#EFD9C2',hi:'#FBEEDF',hilum:'#FFF6E8',pattern:'streak',p1:'#A5243B',p2:'#7A1A30',L:108,W:62,bend:.42,fat:.5,n:20}],
+['Black turtle','Oaxaca. 70 min',{base:'#1B1612',hi:'#4A423A',hilum:'#F1EEE2',L:82,W:50,bend:.5,fat:.5}],
+['Pinto','Durango. 60 min',{base:'#E2C49A',hi:'#F2DDBC',hilum:'#F6EBD4',pattern:'streak',p1:'#7E4A23',p2:'#5F3517',L:102,W:58,bend:.5,fat:.5,n:18}],
+['Flageolet','Arpajon. 45 min',{base:'#BBD197',hi:'#DBE7BC',hilum:'#F1F5DC',L:92,W:40,bend:.48,fat:.5}],
+['Gigante','Prespa. 90 min',{base:'#F2E7CF',hi:'#FFFBEE',hilum:'#CDBB94',L:150,W:88,bend:.42,fat:.44}],
+['Scarlet runner','Puebla. 80 min',{base:'#7E2C6B',hi:'#A45795',hilum:'#F4DDE0',pattern:'streak',p1:'#1F0F22',p2:'#2C1630',L:126,W:76,bend:.42,fat:.46,n:22}],
+['Black-eyed pea','Alentejo. 35 min',{base:'#EFE3C6',hi:'#FBF5E0',hilum:'#F5EBD0',pattern:'eye',p1:'#17110E',L:84,W:60,bend:.62,fat:.46}],
+['Adzuki','Hokkaidō. 45 min',{base:'#8C1F24',hi:'#B4474A',hilum:'#F4E8D8',L:62,W:42,bend:.26,fat:.42}],
+['Mung','Rajasthan. 30 min',{base:'#5C8A32',hi:'#8BB35B',hilum:'#E8EFCB',L:52,W:34,bend:.18,fat:.42}],
+['Yin yang','Sonora. 60 min',{base:'#F5EFDF',hi:'#FFFDF4',hilum:null,pattern:'half',p1:'#19140F',L:104,W:64,bend:.42,fat:.48}],
+['Jacob’s cattle','Maine. 60 min',{base:'#F5EBD4',hi:'#FFFBEE',hilum:'#FFF9E8',pattern:'cattle',p1:'#7B1E2F',L:110,W:58,bend:.46,fat:.48}],
+['Red kidney','Cuzco. 60 min',{base:'#8E1626',hi:'#BC4150',hilum:'#F4DEDC',L:120,W:58,bend:.76,fat:.46}],
+['Tarbais','Bigorre. 75 min',{base:'#F7F0DF',hi:'#FFFFFA',hilum:'#D3C4A3',L:142,W:52,bend:.36,fat:.44}],
+['Tiger’s eye','Chile. 60 min',{base:'#D19A3C',hi:'#E9BF6F',hilum:'#F6E5BE',pattern:'flame',p1:'#6B3A17',L:102,W:56,bend:.46,fat:.48,n:11}],
+['Christmas lima','Peru. 50 min',{base:'#EFE1C3',hi:'#FBF4DF',hilum:'#FFF9E8',pattern:'flame',p1:'#8B2332',L:130,W:90,bend:.3,fat:.42,n:13}],
+['Dried fava','Alentejo. 70 min',{base:'#A7814A',hi:'#C8A56F',hilum:null,L:120,W:86,bend:.34,fat:.42}],
+['Chickpea','Not a bean. 90 min',null],
+['Catarino','Beira Alta. 55 min',{base:'#D98B8E',hi:'#EDB3B3',hilum:'#F8E6DC',L:88,W:54,bend:.46,fat:.48}],
+['Feijoca','Trás-os-Montes. 80 min',{base:'#D8BC8A',hi:'#EBD6AE',hilum:'#F9EDD4',pattern:'streak',p1:'#4E2A5C',p2:'#2F1838',L:138,W:82,bend:.44,fat:.44,n:26}],
+['Tolosa','Basque Country. 90 min',{base:'#2A1B24',hi:'#57434F',hilum:'#EEE3DA',L:78,W:58,bend:.3,fat:.42}],
+['Soldier','Vermont. 55 min',{base:'#F4EAD1',hi:'#FFFBEE',hilum:'#FFF9E8',pattern:'eye',p1:'#A84E23',L:104,W:52,bend:.44,fat:.48}],
+['Haricot','Lancashire tin. 50 min',{base:'#F7F2E2',hi:'#FFFFFA',hilum:'#D3C4A3',L:66,W:42,bend:.36,fat:.46}]
+];
+const cw=240;let h='';
+const G={co:['#1F44B0','#F8F1DF'],pi:['#0E4F48','#F8F1DF'],pk:['#F6B9C4','#21130B'],ye:['#F8B90C','#21130B'],ru:['#C8421A','#FBEEDB'],cr:['#FBF3E1','#21130B'],sk:['#8FB4E8','#21130B']};
+const order=['co','pi','ye','pk','ru','cr', 'ru','ye','pi','cr','pk','co', 'pi','pk','co','pi','ru','cr', 'co','pi','sk','ye','co','ru'];
+B.forEach(([n,d,sp],i)=>{
+ const [bg,fg]=G[order[i]];
+ const big=sp?bean(Object.assign({seed:i*7+3},sp)):chickpea(8);
+ const small=sp?bean(Object.assign({seed:i*7+9},sp)):chickpea(11);
+ const body=sp?(at(cw*.4,84,1.12,-12+(i%3)*9,big)+at(cw*.85,132,.5,38-(i%4)*22,small)):(at(cw*.4,84,1.3,-12,big)+at(cw*.84,130,.66,36,small));
+ h+='<div class="c" style="background:'+bg+';color:'+fg+'"><svg width="'+cw+'" height="170" viewBox="0 0 '+cw+' 170">'+body+'</svg><div class="t"><b>'+n+'</b><span>'+d+'</span></div></div>';
+});
+document.getElementById('g').innerHTML=h;
+</script>
+</body></html>

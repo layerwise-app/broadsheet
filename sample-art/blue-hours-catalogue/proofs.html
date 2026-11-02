@@ -1,0 +1,93 @@
+<!doctype html><meta charset="utf-8"><meta name="art-size" content="1440x1080">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Hanken+Grotesk:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=IBM+Plex+Mono:wght@400;500&family=Reenie+Beanie&display=block">
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#e9e4d6;overflow:hidden}svg{display:block}</style>
+<body><div id="a"></div><script src="_tiles.js"></script><script>
+const {RNG,tile,pat,C}=Tiles;
+const D='#13286e';
+const W=1440,H=1080;
+let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">`;
+const t=(X,Y,txt,o='')=>`<text x="${X}" y="${Y}" ${o}>${txt}</text>`;
+const mono=`font-family="IBM Plex Mono"`;
+// Sheet.
+s+=`<rect x="40" y="36" width="1360" height="1008" fill="#f7f4ec"/>`;
+// Crop marks and registration.
+const K='#1a1a1e';
+const reg=(x,y)=>`<circle cx="${x}" cy="${y}" r="7" fill="none" stroke="${K}" stroke-width=".7"/><path d="M${x-12} ${y}H${x+12}M${x} ${y-12}V${y+12}" stroke="${K}" stroke-width=".7"/>`;
+const crop=(x,y,sx,sy)=>`<path d="M${x+sx*6} ${y}H${x+sx*30}M${x} ${y+sy*6}V${y+sy*30}" stroke="${K}" stroke-width=".7"/>`;
+[[110,104,-1,-1],[1330,104,1,-1],[110,982,-1,1],[1330,982,1,1]].forEach(a=>s+=crop(...a));
+s+=reg(720,66)+reg(720,1030)+reg(66,540)+reg(1374,540);
+s+=t(120,62,'BLUE HOURS / MUSEU DA RIBEIRA / INK DRAWDOWN SHEET 7 OF 9 / SERRA MATTE ART 150 GSM',`${mono} font-size="9.5" fill="${K}"`);
+s+=t(120,76,'PRINTER: TIPOGRAFIA DO ALMADA, PRESS 2 (5-COLOUR, 102 CM) / 11 MARCH / 06:40',`${mono} font-size="9.5" fill="${K}"`);
+// Colour bar.
+const bar=['#00a4d6','#d6006f','#f4dd00','#1a1a1e',D];
+let bx=120;
+for(let i=0;i<48;i++){
+  const col=bar[i%5];
+  const op=[1,.8,.5,.25][Math.floor(i/5)%4];
+  s+=`<rect x="${bx}" y="996" width="23" height="14" fill="${col}" opacity="${op}"/>`;
+  bx+=25;
+}
+// Test mixes: spot blue vs process builds, each printed as a bar, tint scale and tile.
+const mixes=[
+ ['A','Stock process blue','#0b3b9a','ΔE 6.8','too green in the shadows'],
+ ['B','Stock reflex blue','#17228f','ΔE 5.1','violet, reads as ballpoint'],
+ ['C','Reflex + 12% black','#141f75','ΔE 3.9','closer. Heavy on 150 gsm'],
+ ['D','Custom 1 / reflex + rhodamine','#16277e','ΔE 2.3','holds in the tints'],
+ ['E','Custom 2 / D + 4% trans white','#1a2f88','ΔE 1.4','MATCH TO MR 2204'],
+ ['F','Custom 3 / E + 3% process cyan','#1c3c98','ΔE 2.2','for pre-1650 group only'],
+];
+const X0=120,Y0=108,CW=(1200)/6;
+const tones=[1,.8,.6,.4,.2,.1];
+mixes.forEach(([id,name,col,de,note],i)=>{
+  const x=X0+i*CW;
+  const w=CW-16;
+  s+=t(x,Y0+22,id,`font-family="Cormorant Garamond" font-weight="600" font-size="34" fill="${K}"`);
+  s+=t(x+30,Y0+12,name.length>26?name.slice(0,name.indexOf('/')+0):name,`${mono} font-size="8.6" fill="${K}"`);
+  if(name.includes('/')) s+=t(x+30,Y0+24,name.slice(name.indexOf('/')+2),`${mono} font-size="8.6" fill="${K}"`);
+  // Solid.
+  s+=`<rect x="${x}" y="${Y0+34}" width="${w}" height="190" fill="${col}"/>`;
+  // Tints.
+  const tw=w/6;
+  tones.forEach((o,j)=>{s+=`<rect x="${x+j*tw}" y="${Y0+224}" width="${tw}" height="34" fill="${col}" opacity="${o}"/>`;});
+  // Tile printed in that ink.
+  const recolour=(str)=>str.replaceAll(C.d,col).replaceAll(C.m,col);
+  const m=tile(0,0,100,5000+i*23,(p)=>pat.star(p,{ground:col}));
+  s+=`<svg x="${x}" y="${Y0+268}" width="${w}" height="${w}" viewBox="0 0 100 100">${recolour(m)}</svg>`;
+  const yy=Y0+268+w+18;
+  s+=t(x,yy,de,`${mono} font-weight="500" font-size="11" fill="${K}"`);
+  s+=t(x+58,yy,'Densit. '+(1.42+i*0.07).toFixed(2),`${mono} font-size="9" fill="${K}"`);
+});
+// Second block: an original tile vs the print, side by side, with readings.
+const y2=Y0+268+184+50;
+s+=`<path d="M120 ${y2}H1320" stroke="${K}" stroke-width=".7"/>`;
+s+=t(120,y2+22,'REFERENCE: inv. MR 2204 Cer, read with spectro at 9 points. Target L*28.4 a*7.2 b*-46.1 under D50.',`${mono} font-size="9.5" fill="${K}"`);
+const size=250;
+const ty=y2+36;
+const orig=tile(0,0,100,5117,(p)=>pat.star(p));
+s+=`<svg x="120" y="${ty}" width="${size}" height="${size}" viewBox="0 0 100 100">${orig}</svg>`;
+const mix=tile(0,0,100,5117,(p)=>pat.star(p,{ground:'#1a2f88'}));
+s+=`<svg x="${120+size+12}" y="${ty}" width="${size}" height="${size}" viewBox="0 0 100 100">${mix.replaceAll(C.d,'#1a2f88').replaceAll(C.m,'#1a2f88')}</svg>`;
+s+=t(120,ty+size+15,'Object, cross-polarised light',`${mono} font-size="9" fill="${K}"`);
+s+=t(120+size+12,ty+size+15,'Print, mix E, 1.70 density',`${mono} font-size="9" fill="${K}"`);
+// Readings table.
+const tx=680;
+s+=t(tx,ty+12,'POINT     L*     a*      b*     dE',`${mono} font-weight="500" font-size="11" xml:space="preserve" fill="${K}"`);
+const rr=RNG(44);
+for(let i=0;i<9;i++){
+  const yy=ty+32+i*20;
+  const l=(28.4+(rr()-.5)*2).toFixed(1),a=(7.2+(rr()-.5)*1.2).toFixed(1),b=(-46.1+(rr()-.5)*2).toFixed(1),d=(0.7+rr()*1.3).toFixed(1);
+  s+=`<text x="${tx}" y="${yy}" ${mono} font-size="11" xml:space="preserve" fill="${K}">  ${i+1}       ${l}   ${a}    ${b}   ${d}</text>`;
+  s+=`<path d="M${tx} ${yy+6}H${tx+292}" stroke="${K}" stroke-width=".35"/>`;
+}
+// Pencil notes, one red, one blue.
+const pen=`font-family="Reenie Beanie" font-size="31"`;
+const red='#a92a22';
+s+=`<path d="M${X0+CW*4-5} ${Y0+28}h${CW-6}v${268+184+2}h-${CW-6}z" fill="none" stroke="${red}" stroke-width="2.1"/>`;
+s+=t(985,ty+36,'E it is. Sign off 06:55',`${pen} fill="${red}"`);
+s+=t(985,ty+74,'watch the tints on p. 149, dot gain',`${pen} fill="${red}"`);
+s+=t(985,ty+110,'F for the Seville group? ask Inês',`${pen} fill="${red}"`);
+s+=t(985,ty+170,'— N.C. / J. Macedo, press',`${pen} fill="${K}"`);
+s+=`<path d="M985 ${ty+190}c60 -14 150 10 240 -8" fill="none" stroke="${K}" stroke-width="1.2"/>`;
+s+='</svg>';
+document.getElementById('a').innerHTML=s;
+</script></body>

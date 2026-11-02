@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="art-size" content="1440x760"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Big+Shoulders+Display:wght@400..900&family=Six+Caps&display=block" rel="stylesheet"><link rel="stylesheet" href="_margem.css"><script src="_halftone.js"></script><script src="_posters.js"></script>
+<style>
+html,body{background:var(--ink);color:var(--signal)}
+.rowp{position:absolute;left:36px;top:40px;width:1248px;display:grid;grid-template-columns:repeat(9,1fr);gap:9px}
+.pg{position:relative;background:var(--signal);color:var(--ink);height:680px;overflow:hidden}
+.pg .d{position:absolute;left:9px;top:26px;font:400 98px/.96 'Six Caps'}
+.pg .n{position:absolute;left:9px;top:112px;right:9px;font:800 15.5px/1.04 'Big Shoulders Display'}
+.pg .l{position:absolute;left:9px;right:9px;font-weight:680;font-size:8.8px;line-height:1.16;font-stretch:78%;bottom:12px;}
+.pg .l span{display:block;border-top:1px solid var(--ink);padding:3px 0 4px}
+.pg .tab{position:absolute;right:0;width:18px;height:64px;background:var(--ink);color:var(--signal);display:flex;align-items:center;justify-content:center;font:800 15px 'Big Shoulders Display'}
+.edge{position:absolute;right:36px;top:40px;width:96px;height:680px}
+.edge .bk{position:absolute;left:0;top:0;width:44px;height:680px;background:var(--signal)}
+.edge .bk i{position:absolute;left:0;right:0;height:64px;background:var(--ink)}
+.edge .bk u{position:absolute;left:0;right:0;height:1px;background:var(--ink);opacity:.16}
+.edge p{position:absolute;left:52px;bottom:0;width:48px;font-weight:700;font-size:10.5px;line-height:1.18;font-stretch:78%}
+.mini{position:absolute;left:9px;right:24px;top:268px;height:262px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.mini i{position:absolute;background:var(--ink);display:block}
+.mini b{position:absolute;top:-16px;font:800 11px/1 'Big Shoulders Display'}
+.edge .bk{left:0!important;width:96px!important;height:560px!important}
+.edge p{left:0!important;width:96px!important;bottom:0!important}
+</style>
+<body>
+<div class="rowp" id="r"></div>
+<div class="edge"><div class="bk" id="b"></div><p>Fore-edge, book closed. Nine marks step down the block; the thumb finds the day without light.</p></div>
+<script>
+window.artReady=false;
+const days=[['SEX 3','Sexta<br>Friday',14,['21:00 Abertura A','22:45 Barco C']],['SÁB 4','Sábado<br>Saturday',22,['18:30 Ferryman A','20:45 Quay D']],['DOM 5','Domingo<br>Sunday',22,['11:00 Arquivo B','19:30 Wren D']],['SEG 6','Segunda<br>Monday',17,['18:00 Hymnal C','21:15 Ferryman B']],['TER 7','Terça<br>Tuesday',16,['17:15 Dredger B','21:30 Almanac A']],['QUA 8','Quarta<br>Wednesday',17,['16:00 Silt C','22:00 Swimmers D']],['QUI 9','Quinta<br>Thursday',18,['19:15 Eels A','23:45 Engine B']],['SEX 10','Sexta<br>Friday',23,['16:00 Ferryman C','23:45 Midnight A']],['SÁB 11','Sábado<br>Saturday',19,['18:00 Palmarés A','21:30 Closing A']]];
+const R=document.getElementById('r');const B=document.getElementById('b');
+days.forEach(([d,n,c,l],i)=>{const y=14+i*(680-28-64)/8;const p=document.createElement('div');p.className='pg';
+ p.innerHTML='<div class="d">'+d.replace(' ','<br>')+'</div><div class="tab" style="top:'+y+'px">'+(i+1)+'</div>';
+ const lines=document.createElement('div');lines.className='l';lines.innerHTML='<div style="font:800 26px/.9 \'Big Shoulders Display\';margin-bottom:6px" class="tn">'+c+'</div><div style="margin-bottom:8px">sessões<br>screenings</div>'+l.map(x=>'<span>'+x+'</span>').join('');
+ const nm=document.createElement('div');nm.className='n';nm.style.top='218px';nm.innerHTML=n;p.append(nm,lines);R.append(p);
+ const m=document.createElement('i');const ey=8+i*(560-16-40)/8;m.style.cssText='top:'+ey+'px;height:40px;left:'+(i*96/9)+'px;right:auto;width:'+(96/9)+'px';B.append(m);
+ // The day's real shape: four rooms across, ten in the morning to one at night, down the page.
+ const mini=document.createElement('div');mini.className='mini';
+ ['A','B','C','D'].forEach((L,col)=>{const b=document.createElement('b');b.textContent=L;b.style.left=(col*25)+'%';mini.append(b);
+  let y0=(i===0?(col===0?.72:col===2?.8:1.1):(col===3?.62:.02+HT.hash(col,i)*.08));
+  while(y0<.98){const len=(col===2?.05:.085)+HT.hash(col*7+i,y0*97)*(col===2?.03:.075);const gap=(col===2?.045:.025)+HT.hash(col+i*3,y0*53)*.05;if(y0+len>1)break;const r=document.createElement('i');r.style.cssText='left:'+(col*25)+'%;width:21%;top:'+(y0*100)+'%;height:'+(len*100)+'%';mini.append(r);y0+=len+gap;}});
+ p.append(mini);});
+for(let i=0;i<40;i++){const u=document.createElement('u');u.style.cssText='left:'+(i*96/40)+'px;top:0;bottom:0;width:1px;height:auto;right:auto';B.prepend(u);}
+function draw(){}
+document.fonts.ready.then(async()=>{await document.fonts.load('100px "Six Caps"','MARGEM');await document.fonts.load('800 100px "Big Shoulders Display"','A');await document.fonts.load('700 20px Archivo','A');draw();window.artReady=true;});
+</script></body></html>

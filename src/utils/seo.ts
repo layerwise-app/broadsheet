@@ -11,7 +11,7 @@ export type SeoOptions = {
   image?: string;
   imageAlt?: string;
   type?: 'website' | 'article';
-  /** Keeps the page out of search results, like sign-in pages and dashboards. */
+  /** Keeps the page out of search results, like the not-found page. */
   noindex?: boolean;
   /** schema.org structured data, like a LocalBusiness or Product. */
   jsonLd?: JsonLd | JsonLd[];

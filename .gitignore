@@ -18,3 +18,5 @@ dist
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+# Rendered sample-art sources; `pnpm render-art` rebuilds them.
+/.art/

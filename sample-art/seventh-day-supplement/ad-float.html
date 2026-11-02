@@ -1,0 +1,69 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Seventh Day: three layouts, one page</title><meta name="art-size" content="1440x960">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Libre+Franklin:wght@400;600;700;800;900&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=block" rel="stylesheet"><link rel="stylesheet" href="_base.css">
+<script src="_lib.js"></script>
+<style>html,body{background:var(--ink)}
+.pg{position:absolute;top:96px;width:444px;height:592px;background:var(--paper);overflow:hidden}
+.pg canvas{position:absolute;left:0;top:0;width:444px;height:592px}
+.ttl{position:absolute;left:12px;top:10px;font:400 30px/1 var(--head);text-transform:uppercase}
+.mini{position:absolute;font:400 8.4px/10.2px var(--text);text-align:justify;hyphens:auto}
+.mini p+p{text-indent:.8em}
+.ad2{position:absolute;border:2px solid var(--ink);padding:6px 7px;display:flex;flex-direction:column;justify-content:space-between;background:var(--paper)}
+.cap{position:absolute;top:706px;width:444px;color:var(--paper)}
+.cap .tm{font:400 40px/1 var(--head);text-transform:uppercase;color:var(--custard)}
+.cap p{font:400 18px/1.3 var(--text);margin-top:8px}
+</style></head>
+<body>
+<div class="abs strip" style="left:30px;right:30px;top:30px;color:var(--paper);font-size:15px"><span>One page, three deadlines</span><span>Every feature is built three times, because the ads move until Friday</span><span>Page 21</span></div>
+<div class="abs" style="left:30px;right:30px;top:56px;height:3px;background:var(--paper)"></div>
+<div class="pg" style="left:30px" id="p0"></div>
+<div class="pg" style="left:498px" id="p1"></div>
+<div class="pg" style="left:966px" id="p2"></div>
+<div class="cap" style="left:30px"><div class="tm">Thursday, noon: A</div><p>Our close. Nothing is sold yet, so the story takes the page. The drawing runs five decks deep and the text gets the full width.</p></div>
+<div class="cap" style="left:498px"><div class="tm">Friday, 11am: B</div><p>A quarter arrives. The drawing loses a deck, the text keeps every word, and no one has to be phoned. The sub picks B on the template.</p></div>
+<div class="cap" style="left:966px"><div class="tm">Friday, 4pm: C</div><p>Half page plus an upright. The drawing shrinks to four columns, the headline drops one size, and the ending is marked in advance as the cut.</p></div>
+<script>
+const STORY=['Mina Clough got on at Bank Street at 7.14 with a flask, a notebook and eleven pounds in exact change. Route 47 had one driver, Stan Ibbotson, 31 years on the Aldmouth and District, who said good morning without looking round and knew her stop before she did. The first of the nine got on at the Co-op: Mrs Elsie Roper, 83, who goes to the end of the line and back because the bus is warm and her daughter has stopped ringing on Fridays.','By Chapel Row there were three. A boy called Dean, on his way to a job he did not want to discuss. Mr Lal, who has run the shoe repairer on Mill Lane since 1979 and takes the bus because a man who mends shoes should not be seen to wear them out. They nodded at one another as people do who have shared a vehicle for a decade without exchanging a surname.','The county’s figure for the route is nine passengers a day and a subsidy of £4.12 for each of them. It is a figure nobody on the bus disputes. Ibbotson does the sum for you, unprompted, at the lights by the gasworks. “That’s a pint and a half,” he says. “That’s what we’re closing for. A pint and a half each.”','On the top road, where nobody has lived since the quarry shut, the bus stops at a shelter with a bench in it and no one waiting. Ibbotson opens the doors anyway, counts to five, and closes them. Asked why, he says the timetable says so. Asked who reads the timetable, he says that is not the point of a timetable.','The last service on the last Friday carried 41 people, more than the route had seen in a month, and most of them had brought a camera. Mrs Roper had a seat at the front that nobody had to be asked to give her. At Bank Street she stayed on for a moment after the engine stopped, and then asked him what time he was going out again. “You’ll have to ask the county,” said Stan.'];
+function flow(pg,boxes){
+ let bi=0,box=null;const next=()=>{const [x,y,w,h]=boxes[bi++]||[];if(x===undefined)return null;const d=document.createElement('div');d.className='mini';d.style.cssText='left:'+x+'px;top:'+y+'px;width:'+w+'px;height:'+h+'px;overflow:hidden';pg.appendChild(d);return {d,h}};
+ box=next();
+ for(let pi=0;pi<STORY.length;pi++){
+  let p=document.createElement('p');if(pi)p.style.textIndent='.9em';box.d.appendChild(p);
+  const words=STORY[pi].split(' ');
+  for(const w of words){const before=p.textContent;p.textContent=before?before+' '+w:w;
+   if(box.d.scrollHeight>box.h){p.textContent=before;p.style.textAlignLast='justify';box=next();if(!box)return false;p=document.createElement('p');p.textContent=w;box.d.appendChild(p)}}
+ }
+ return true;
+}
+Promise.all(["10px Anton","10px 'Alfa Slab One'","700 10px 'PT Serif'","italic 10px 'PT Serif'","800 10px 'Libre Franklin'","400 10px 'Libre Franklin'"].map(f=>document.fonts.load(f))).then(()=>{
+ const pageW=444,pageH=592;
+ const cols=(x,y,n,w,h,g=9)=>Array.from({length:n},(_,i)=>[x+i*(w+g),y,w,h]);
+ const conf=[
+  {art:[0,50,444,326],boxes:cols(12,384,4,98,200),ads:[],fit:420,t:'The last bus to nowhere'},
+  {art:[0,50,444,232],boxes:[...cols(12,290,2,98,292),...cols(226,290,2,98,112)],ads:[[226,408,206,172,`<div class="head" style="font-size:27px;line-height:1">Pennington’s Carpets</div><div style="font:700 11.5px/1.15 var(--text)">Everything must go. Again.</div><div class="slab" style="font-size:32px;line-height:1;color:var(--red)">40% off</div><div style="font:400 7.5px/1.25 var(--label)">Underlay fitted free over £200. 12 Mill Lane, Aldmouth.</div>`]],fit:420,t:'The last bus to nowhere'},
+  {art:[0,38,286,142],boxes:cols(12,190,3,84,190),ads:[[12,392,420,190,`<div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="head" style="font-size:46px;line-height:1">Mackle &amp; Sons</div><div style="font:600 8px/1.3 var(--label);width:92px;text-align:right">14 Chapel Row, Aldmouth. Day and night. Ask for Geoffrey.</div></div><div class="slab" style="font-size:33.5px;line-height:1.05;white-space:normal">We’ll be the last to let you down</div><div style="font:700 13px/1.2 var(--text)">Funeral directors since 1911.</div>`],[298,46,134,334,`<div class="head" style="font-size:35px;line-height:1.02">Dorrit’s Bakery</div><div style="font:700 15.5px/1.18 var(--text)">Monday’s bread, on sale from Sunday at four, for people who have already given up on Sunday.</div><div class="slab" style="font-size:34px;line-height:1;color:var(--custard)">£2.40</div><div style="font:400 7.5px/1.25 var(--label)">31 Bank Street. Ring ahead: Aldmouth 40172.</div>`]],fit:274,t:'The last bus to nowhere'}
+ ];
+ conf.forEach((c,i)=>{
+  const pg=document.getElementById('p'+i);
+  const t=layer(pageW,pageH,3);pg.appendChild(t.canvas);const ctx=t.ctx;
+  const [ax,ay,aw,ah]=c.art;
+  ctx.fillStyle=SPOT.custard;ctx.fillRect(ax,ay,aw,ah);
+  // the bus, in small
+  const k=Math.min(aw/1320,(ah-30)/620);const bx=ax+(aw-1190*k)/2,by=ay+ah-14-(458+78)*k;
+  const tone=layer(pageW,pageH,3);tone.ctx.filter='blur(14px)';tone.ctx.fillStyle='#222';tone.ctx.fillRect(ax-20,ay+ah*0.55,aw+40,ah);
+  const cp=new Path2D();cp.rect(ax,ay,aw,ah);halftone(t,tone,{pitch:7,angle:45,clip:cp});
+  ctx.fillStyle=INK;ctx.fillRect(ax,ay+ah-16,aw,16);
+  ctx.fillStyle=PAPER;ctx.fillRect(bx,by,1190*k,462*k);
+  ctx.fillStyle=INK;for(let w=0;w<6;w++)ctx.fillRect(bx+(36+w*150)*k,by+62*k,136*k,158*k);
+  ctx.fillRect(bx+950*k,by+62*k,100*k,340*k);ctx.fillRect(bx+1064*k,by+62*k,108*k,206*k);
+  ctx.fillRect(bx,by+(462-60)*k,1190*k,60*k);ctx.fillRect(bx,by+268*k,1190*k,8*k);
+  ctx.fillStyle=SPOT.custard;ctx.beginPath();ctx.arc(bx+(36+2*150+68)*k,by+126*k,28*k,0,7);ctx.fill();ctx.fillRect(bx+(36+2*150+28)*k,by+166*k,80*k,54*k);
+  [220,880].forEach(w=>{ctx.fillStyle=SPOT.custard;ctx.beginPath();ctx.arc(bx+w*k,by+458*k,88*k,0,7);ctx.fill();ctx.fillStyle=INK;ctx.beginPath();ctx.arc(bx+w*k,by+458*k,78*k,0,7);ctx.fill();ctx.fillStyle=PAPER;ctx.beginPath();ctx.arc(bx+w*k,by+458*k,30*k,0,7);ctx.fill()});
+  const h=document.createElement('div');h.className='abs head';h.style.cssText='left:12px;top:8px;line-height:1';h.innerHTML='<span data-fit="'+c.fit+'">'+c.t+'</span>';pg.appendChild(h);
+  flow(pg,c.boxes);
+  c.ads.forEach(([x,y,w,h,html])=>{const d=document.createElement('div');d.className='ad2';d.style.cssText+='left:'+x+'px;top:'+y+'px;width:'+w+'px;height:'+h+'px';d.innerHTML=html;pg.appendChild(d)});
+  const f=document.createElement('div');f.className='abs folio';f.style.cssText='left:12px;bottom:3px;font-size:6px';pg.appendChild(f);
+  fitAll(pg);
+ });
+ window.artReady=true;
+});
+</script></body></html>

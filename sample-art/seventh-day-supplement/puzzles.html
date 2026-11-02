@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Seventh Day: puzzles</title><meta name="art-size" content="1440x1920">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Libre+Franklin:wght@400;600;700;800;900&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=block" rel="stylesheet"><link rel="stylesheet" href="_base.css">
+<script src="_lib.js"></script>
+<style>:root{--spot:var(--custard)} body{background:var(--paper)}
+.g{position:absolute;display:grid;background:var(--ink);border:4px solid var(--ink);gap:2px}
+.g i{display:block;position:relative;background:var(--paper);font-style:normal}
+.g i.b{background:var(--ink)}
+.g i small{position:absolute;left:4px;top:2px;font:700 14px/1 var(--label)}
+.clues{font:400 21.5px/1.26 var(--text)} .clues h3{font:400 40px/1 var(--head);text-transform:uppercase;border-top:5px solid var(--ink);padding-top:6px;margin-bottom:6px}
+.clues li{list-style:none;padding-left:32px;text-indent:-32px;margin-bottom:8px}.clues li b{display:inline-block;width:32px;text-indent:0;font:800 16px var(--label)}
+.su{position:absolute;display:grid;grid-template-columns:repeat(9,1fr);border:4px solid var(--ink);background:var(--paper)}
+.su i{font:700 29px/1 var(--text);font-style:normal;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.su i.r3{border-right:3px solid var(--ink)} .su i.b3{border-bottom:3px solid var(--ink)} .su i.rn{border-right:0}.su i.bn{border-bottom:0}
+</style></head>
+<body>
+<div class="abs" style="left:0;top:0;width:1440px;height:318px;background:var(--custard)"></div>
+<div class="abs strip" style="left:40px;right:40px;top:28px"><span>Seventh Day</span><span>Sunday 29 September 2024</span><span>Puzzles</span></div>
+<div class="abs" style="left:40px;right:40px;top:56px;height:3px;background:var(--ink)"></div>
+<div class="abs head" style="left:40px;top:66px;line-height:1"><span data-fit="1360">The long sit down</span></div>
+<div class="abs head" style="left:40px;top:342px;font-size:66px">Crossword No. 2,216</div>
+<div class="abs" style="left:796px;top:352px;font:400 italic 24px/1.22 var(--text);width:604px">Set by Ploughman. Quick clues, as promised. Do it in pen.</div>
+<div class="g" id="xw" style="left:40px;top:432px;width:716px;height:716px"></div>
+<div class="abs clues" style="left:796px;top:432px;width:290px"><h3>Across</h3><ul id="ac"></ul></div>
+<div class="abs clues" style="left:1110px;top:432px;width:290px"><h3>Down</h3><ul id="dn"></ul></div>
+<div class="abs" style="left:40px;right:40px;top:1192px;height:9px;background:var(--ink)"></div>
+<div class="abs head" style="left:40px;top:1218px;font-size:66px">Sudoku</div>
+<div class="abs" style="left:262px;top:1234px;font:400 italic 21px/1.2 var(--text);width:300px">One to nine, every row, column and box. A Sunday: moderate.</div>
+<div class="su" id="su" style="left:40px;top:1306px;width:522px;height:522px"></div>
+<div class="abs head" style="left:612px;top:1218px;font-size:66px">Word ladder</div>
+<div class="abs" style="left:612px;top:1302px;width:360px;font:400 21px/1.26 var(--text)">Turn the loaf into the meat, one letter at a time, making a real word on every rung. Four changes.</div>
+<div class="abs" id="ladder" style="left:612px;top:1432px;width:360px"></div>
+<div class="abs ad" style="left:1020px;top:1218px;width:380px;height:352px;background:var(--custard)">
+  <div class="head" style="font-size:66px;line-height:1">Mackle &amp; Sons</div>
+  <div style="font:700 31px/1.12 var(--text)">Funeral directors, Aldmouth, since 1911.</div>
+  <div class="slab" style="font-size:25px;line-height:1.1;white-space:normal">We&rsquo;ll be the last to let you down</div>
+  <div style="font:600 15px/1.3 var(--label)">14 Chapel Row. Day and night. Ask for Geoffrey.</div>
+</div>
+<div class="abs" style="left:1020px;top:1590px;width:380px;border-top:5px solid var(--ink);padding-top:8px">
+  <div class="head" style="font-size:32px">Answers, for the weak</div>
+  <div style="position:relative;height:196px;margin-top:9px">
+   <div id="sol" style="position:absolute;right:0;top:0;width:196px;height:196px;display:grid;transform:rotate(180deg);background:var(--ink);gap:1px;border:1px solid var(--ink)"></div>
+   <div style="position:absolute;left:0;top:0;width:164px;transform:rotate(180deg);font:400 16px/1.3 var(--text)">Ladder: loaf, leaf, lead, mead, meat. Sudoku solution next Sunday, with an apology.</div>
+  </div>
+</div>
+<div class="abs folio" style="left:40px;bottom:22px">30</div>
+<div class="abs folio" style="right:40px;bottom:22px">Pens: Seventh Day accepts no liability for ink on the tablecloth</div>
+<script>
+const G=["AMBER#EXTRA","L#A#A#A#H#U","LADEN#TREND","O#G#G###I#I","WEEKEND#RIO","####R#E####","PER#SELLERS","A#I###I#X#P","ROVER#VOICE","I#E#A#E#S#N","SORRY#RATED"];
+const CL={AMBER:"Traffic light's moment of indecision",EXTRA:"One more roast potato, perhaps",LADEN:"Like the plate on a second helping",TREND:"Direction of travel for gravy prices",WEEKEND:"What this section is for",RIO:"Copacabana's city, familiarly",PER:"For each, as in miles ___ gallon",SELLERS:"Car-boot traders",ROVER:"Dog's traditional name",VOICE:"What the vicar loses by Easter",SORRY:"British for nearly anything",RATED:"Given stars by the critic",ALLOW:"Permit",PARIS:"City of Light",BADGE:"Scout's reward",RIVER:"The Ald, at Aldmouth, for example",RANGERS:"Park wardens",RAY:"Skate's flat relative",EAT:"Sit down to the roast",DELIVER:"Bring round, as the Ledger does before seven",THEIR:"Belonging to the neighbours",EXIST:"Be, on a Monday",AUDIO:"The sound part of a broadcast",SPEND:"Pass, as a Sunday afternoon"};
+const N=11;const xw=document.getElementById('xw');xw.style.gridTemplateColumns=xw.style.gridTemplateRows='repeat(11,1fr)';
+let num=0;const ac=[],dn=[];
+for(let r=0;r<N;r++)for(let c=0;c<N;c++){const ch=G[r][c];const i=document.createElement('i');if(ch==='#'){i.className='b'}else{
+ const sa=(c===0||G[r][c-1]==='#')&&c<N-1&&G[r][c+1]!=='#',sd=(r===0||G[r-1][c]==='#')&&r<N-1&&G[r+1][c]!=='#';
+ if(sa||sd){num++;const s=document.createElement('small');s.textContent=num;i.appendChild(s);
+  if(sa){let w='';for(let k=c;k<N&&G[r][k]!=='#';k++)w+=G[r][k];ac.push([num,w])}
+  if(sd){let w='';for(let k=r;k<N&&G[k][c]!=='#';k++)w+=G[k][c];dn.push([num,w])}}}xw.appendChild(i)}
+const list=(id,a)=>{document.getElementById(id).innerHTML=a.map(([n,w])=>{if(!CL[w])throw new Error('no clue '+w);return '<li><b>'+n+'</b>'+CL[w].replace("'","&rsquo;")+' ('+w.length+')</li>'}).join('')};
+list('ac',ac);list('dn',dn);
+const sol=document.getElementById('sol');sol.style.gridTemplateColumns=sol.style.gridTemplateRows='repeat(11,1fr)';
+for(let r=0;r<N;r++)for(let c=0;c<N;c++){const ch=G[r][c];const i=document.createElement('i');i.style.cssText='background:'+(ch==='#'?'var(--ink)':'var(--paper)')+';font:700 12px/1 var(--label);font-style:normal;display:flex;align-items:center;justify-content:center';if(ch!=='#')i.textContent=ch;sol.appendChild(i)}
+const SU="600000105000409030000001290400070602760000013102090004078600000050904000906000001";
+const su=document.getElementById('su');[...SU].forEach((v,i)=>{const e=document.createElement('i');const r=i/9|0,c=i%9;e.className=(c%3===2&&c<8?'r3 ':'')+(r%3===2&&r<8?'b3 ':'')+(c===8?'rn ':'')+(r===8?'bn ':'');if(v!=='0')e.textContent=v;su.appendChild(e)});
+const lad=document.getElementById('ladder');const rows=['LOAF','','','','MEAT'];lad.innerHTML=rows.map(w=>'<div style="display:flex;gap:6px;margin-bottom:6px">'+[0,1,2,3].map(k=>'<div style="width:70px;height:70px;border:3px solid var(--ink);display:flex;align-items:center;justify-content:center;font:400 40px var(--head);'+(w?'background:var(--custard)':'')+'">'+(w[k]||'')+'</div>').join('')+'</div>').join('');
+Promise.all(["10px Anton","10px 'Alfa Slab One'","700 10px 'PT Serif'","italic 10px 'PT Serif'","800 10px 'Libre Franklin'","400 10px 'Libre Franklin'"].map(f=>document.fonts.load(f))).then(()=>{fitAll();window.artReady=true;});
+</script></body></html>
