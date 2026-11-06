@@ -395,6 +395,22 @@ a:hover .gloss,
   gap: 2px 18px;
 }
 
+/* The links stay at the right edge, beside the badge. */
+.footer-imprint {
+  margin-right: auto;
+}
+
+.footer-badge {
+  align-self: center;
+  display: block;
+  line-height: 0;
+}
+
+.footer-badge img {
+  width: 174px;
+  height: 28px;
+}
+
 /* ---------- Front page ---------- */
 
 .front {
@@ -2094,6 +2110,11 @@ a:hover .gloss,
   .footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .footer-badge {
+    align-self: flex-start;
+    margin-top: 10px;
   }
 }
 

@@ -1,8 +1,21 @@
+<a href="https://layerwise.app"><picture><source media="(prefers-color-scheme: dark)" srcset="https://layerwise.app/powered-by-dark.png"><img src="https://layerwise.app/powered-by.png" alt="Powered by Layerwise" width="174" height="28"></picture></a>
+
 # Broadsheet
 
-A portfolio template set like a printed newspaper. The sample owner, clients, and
-work are fictional. Built with TanStack Start on Cloudflare Workers, with D1 for
-contact messages.
+Broadsheet is a portfolio template for one designer, set like a printed newspaper. It
+suits art directors, editorial and book designers, illustrators, and anyone whose work
+reads best as a story. Visitors open on a front page with the lead project, a short
+bio, and the rest of the work set as stories. They can then browse the Contents and filter it by
+discipline, read each case study as a long-form feature with numbered figures and
+margin notes, find services, clients, and a CV in the Colophon, and write in through
+Letters to the editor. The sample owner, clients, and work are fictional. See the live
+demo at [broadsheet.layerwise.site](https://broadsheet.layerwise.site/).
+
+Broadsheet was built with [Layerwise](https://layerwise.app), and you can open it in
+Layerwise to make your own version. It runs on TanStack Start and Cloudflare Workers,
+with a D1 database for contact messages.
+
+## Where things live
 
 The owner changes the site by asking the Layerwise agent, or by editing these files:
 
@@ -12,6 +25,10 @@ The owner changes the site by asking the Layerwise agent, or by editing these fi
 | `src/content/about.ts`        | Services, selected clients, experience, CV link               |
 | `src/content/work/<slug>.ts`  | One case study                                                |
 | `public/work/<slug>/`         | That case study's images                                      |
+| `src/lib/site.ts`             | Search and sharing: site address, default share image, fixed sitemap pages |
+| `src/routes/`                 | Each page, with its headings and copy                         |
+| `src/components/`             | Shared parts, such as the masthead and footer                 |
+| `src/styles/app.css`          | Type sizes, spacing, and layout                               |
 
 ## Add a project
 
@@ -74,10 +91,16 @@ Delete, for each sample slug, `src/content/work/<slug>.ts`,
 `src/content/work/<slug>.images.json`, `public/work/<slug>/`, and `sample-art/<slug>/`.
 Add your own projects as above. At least one project must remain. Then update
 `src/portfolio.config.ts`, `src/content/about.ts`, and `public/noor-castellan-cv.pdf`.
+The default share image is `public/og-image.jpg`, 1200 × 630.
+
+`tests/content.test.ts` checks the sample issue: at least six projects, and at least
+five distinct images in each. Change those numbers when your own work differs.
 
 The sample art was built in HTML, SVG, and canvas. `pnpm render-art <slug>` renders
-`sample-art/<slug>/` to PNGs in `.art/<slug>/` using the installed Google Chrome. Remove
-the `sample-art` folder when it is no longer useful.
+`sample-art/<slug>/` to PNGs in `.art/<slug>/` using the installed Google Chrome.
+`node sample-art/_print.mjs` prints the CV and the default share image from
+`sample-art/_cv.html` and `sample-art/_og.html`. Remove the `sample-art` folder when it
+is no longer useful.
 
 ## Change the fonts and colours
 
@@ -87,7 +110,7 @@ Both are in `src/portfolio.config.ts`.
 - **Fonts:** put open-licensed `.woff2` files in `src/styles/fonts/`, declare them in
   `src/styles/fonts.css`, and set the family names in `fonts` in the config. The fonts are
   embedded in the stylesheet, so subset them to the characters and weights you use; these
-  four total about 200 KB. Sizes and spacing live in `src/styles/app.css`.
+  four total about 155 KB. Sizes and spacing live in `src/styles/app.css`.
 
 ### Fonts in this template
 

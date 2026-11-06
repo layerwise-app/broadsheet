@@ -26,6 +26,20 @@ export function Footer() {
           </li>
         ))}
       </ul>
+      <a
+        className='footer-badge'
+        href='https://layerwise.app'
+        target='_blank'
+        rel='noopener'
+      >
+        <img
+          src='https://layerwise.app/powered-by.png'
+          alt='Powered by Layerwise'
+          width={174}
+          height={28}
+          loading='lazy'
+        />
+      </a>
     </footer>
   );
 }
